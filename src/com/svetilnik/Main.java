@@ -8,7 +8,10 @@ import static java.lang.Math.sqrt;
 public class Main {
 
     public static void main(String[] args) {
-        LineProgramming.task1();
+//        LineProgramming.lineTask1();
+//        LineProgramming.lineTask2();
+//        LineProgramming.lineTask3();
+        LineProgramming.lineTask4();
     }
 
 }

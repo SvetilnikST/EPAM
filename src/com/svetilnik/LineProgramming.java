@@ -9,7 +9,7 @@ public class LineProgramming {
 
     public static Scanner in = new Scanner(System.in);
 
-    public static void task1() {
+    public static void lineTask1() {
         int a, b, c, z;
 
         System.out.println("Enter a: ");
@@ -28,7 +28,7 @@ public class LineProgramming {
     }
 
     //пересмотреть решение
-    public static void task2() {
+    public static void lineTask2() {
         double a, b, c, Z;
 
 //        System.out.println("Enter a: ");
@@ -47,6 +47,29 @@ public class LineProgramming {
         Z = ((b + sqrt(pow(b, 2) + 4 * a * c)) / 2 * a) - (pow(a, 3) * c + pow(b, -2));
 
         System.out.println("Result 2: " + Z);
+    }
+
+    public static void lineTask3() {
+        double x, y, Z;
+
+        x = 1;
+        y = 1;
+
+        Z = ((sin(x) + cos(y)) / (cos(x) - sin(y))) * tan(x * y);
+
+        System.out.println("Result 3: " + Z);
+    }
+
+    //нужно ещё подумать. при числе 354.789 проблема с округрлением при расчетах
+    public static void lineTask4() {
+        double x = 354.789;
+
+        int left = (int) x;
+        int right = (int) ((x - left) * 1000);
+        double d = right + (double) left / 1000;
+        System.out.println("Start number: " + x);
+        System.out.println("End number: " + d);
+
     }
 
 }
