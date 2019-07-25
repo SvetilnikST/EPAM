@@ -1,4 +1,4 @@
-package com.svetilnik;
+package com.svetilnik.block;
 
 import java.util.Scanner;
 
@@ -35,4 +35,15 @@ public class Cycles {
         }
         System.out.println("Сумма = " + sum);
     }
+
+    //TODO Done
+    public static void cyclesTask4() {
+        int pr=1;
+        for (int i = 1; i < 5; i++) {
+            pr = pr*(int) pow(i, 2);
+        }
+        System.out.println("Произведение = " + pr);
+    }
+
+
 }

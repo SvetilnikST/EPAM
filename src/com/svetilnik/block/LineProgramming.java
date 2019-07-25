@@ -1,4 +1,4 @@
-package com.svetilnik;
+package com.svetilnik.block;
 
 import java.util.Scanner;
 

@@ -1,9 +1,6 @@
 package com.svetilnik;
 
-import java.util.Scanner;
-
-import static java.lang.Math.pow;
-import static java.lang.Math.sqrt;
+import com.svetilnik.block.Branching;
 
 public class Main {
 
@@ -15,8 +12,11 @@ public class Main {
 //        LineProgramming.lineTask5();
 //        LineProgramming.lineTask6();
 //        Branching.branchingTask1();
+        Branching.branchingTask2();
+//        Branching.branchingTask3();
 //        Cycles.cyclesTask1();
 //        Cycles.cyclesTask3();
+//        Cycles.cyclesTask4();
     }
 
 }
