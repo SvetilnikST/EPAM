@@ -72,4 +72,31 @@ public class LineProgramming {
 
     }
 
+
+    //TODO Done
+    //дано натуральное число длительность прошедшего времени в секундах. привести к формату HH:mm:ss
+    public static void lineTask5() {
+        int time = 8000;
+        int hour = time / 3600;
+        int minute = time % 3600 / 60;
+        int second = time % 60;
+
+        System.out.print(hour + "ч ");
+        System.out.print(minute + "мин ");
+        System.out.print(second + "с.");
+    }
+
+    //TODO DONE
+    public static void lineTask6(){
+        int x,y;
+        x=-5;
+        y=3;
+
+        if (((x >= -3) && (x <= 4) && (y >= -3) && (y <= 4))) {
+            System.out.println("true");
+        } else {
+            System.out.println("false");
+        }
+
+    }
 }

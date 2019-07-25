@@ -11,7 +11,9 @@ public class Main {
 //        LineProgramming.lineTask1();
 //        LineProgramming.lineTask2();
 //        LineProgramming.lineTask3();
-        LineProgramming.lineTask4();
+//        LineProgramming.lineTask4();
+//        LineProgramming.lineTask5();
+        LineProgramming.lineTask6();
     }
 
 }
