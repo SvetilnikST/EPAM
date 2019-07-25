@@ -13,7 +13,10 @@ public class Main {
 //        LineProgramming.lineTask3();
 //        LineProgramming.lineTask4();
 //        LineProgramming.lineTask5();
-        LineProgramming.lineTask6();
+//        LineProgramming.lineTask6();
+//        Branching.branchingTask1();
+//        Cycles.cyclesTask1();
+//        Cycles.cyclesTask3();
     }
 
 }
