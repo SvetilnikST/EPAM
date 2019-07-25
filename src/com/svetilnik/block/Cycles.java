@@ -4,13 +4,21 @@ import java.util.Scanner;
 
 import static java.lang.Math.pow;
 
+/**
+ * Класс с решением задач из блока "Циклы"
+ */
 public class Cycles {
 
-    //TODO Done
+    /**
+     * Суммирование всех чисел от 1 до введенного пользователем
+     */
     public static void cyclesTask1() {
+
         Scanner in = new Scanner(System.in);
+
         int number;
         int sum = 0;
+
         System.out.println("Введите любое целое положительное число: ");
         number = in.nextInt();
 
@@ -23,25 +31,37 @@ public class Cycles {
             sum = sum + i;
             System.out.println(i);
         }
+
         System.out.println("Сумма = " + sum);
+
         in.close();
     }
 
-    //TODO Done
+    /**
+     * Найти сумму квадратов первых ста чисел
+     */
     public static void cyclesTask3() {
+
         int sum = 0;
+
         for (int i = 0; i < 100; i++) {
             sum = sum + (int) pow(i, 2);
         }
+
         System.out.println("Сумма = " + sum);
     }
 
-    //TODO Done
+    /**
+     * Нахождение произведения квадратов первых двухсот чисел
+     */
     public static void cyclesTask4() {
-        int pr=1;
+
+        int pr = 1;
+
         for (int i = 1; i < 5; i++) {
-            pr = pr*(int) pow(i, 2);
+            pr = pr * (int) pow(i, 2);
         }
+
         System.out.println("Произведение = " + pr);
     }
 

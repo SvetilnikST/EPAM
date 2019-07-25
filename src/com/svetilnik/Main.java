@@ -1,18 +1,19 @@
 package com.svetilnik;
 
 import com.svetilnik.block.Branching;
+import com.svetilnik.block.LinearPrograms;
 
 public class Main {
 
     public static void main(String[] args) {
-//        LineProgramming.lineTask1();
-//        LineProgramming.lineTask2();
-//        LineProgramming.lineTask3();
-//        LineProgramming.lineTask4();
-//        LineProgramming.lineTask5();
-//        LineProgramming.lineTask6();
+//        LinearPrograms.lineTask1();
+        LinearPrograms.lineTask2();
+//        LinearPrograms.lineTask3();
+//        LinearPrograms.lineTask4();
+//        LinearPrograms.lineTask5();
+//        LinearPrograms.lineTask6();
 //        Branching.branchingTask1();
-        Branching.branchingTask2();
+//        Branching.branchingTask2();
 //        Branching.branchingTask3();
 //        Cycles.cyclesTask1();
 //        Cycles.cyclesTask3();
