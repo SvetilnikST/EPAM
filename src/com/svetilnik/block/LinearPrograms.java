@@ -105,7 +105,7 @@ public class LinearPrograms {
 
         int left = (int) x;
         int right = (int) ((x - left) * 1000);
-        double d = right + (double) left / 1000;
+        double d = right + ((double) left) / 1000.0;
         System.out.println("Начальное число: " + x);
         System.out.println("Число после преобразования: " + d);
     }

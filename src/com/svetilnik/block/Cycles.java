@@ -2,6 +2,7 @@ package com.svetilnik.block;
 
 import java.util.Scanner;
 
+import static java.lang.Math.abs;
 import static java.lang.Math.pow;
 
 /**
@@ -65,5 +66,83 @@ public class Cycles {
         System.out.println("Произведение = " + pr);
     }
 
+    /**
+     * Дан числовой ряд и число е. найти сумму тех членов ряда, можуль которых больше или равен заданному е.
+     */
+    public static void cycleTask5() {
+//        double e = -3.0;
+//        double sum = 0.0;
+//        int n = 4;
+//        double a;
+        double e, a;
+        int n;
+        double sum = 0;
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите числа:");
+
+        System.out.print("e (действительное): ");
+        e = scanner.nextDouble();
+
+        System.out.print("n (целое число): ");
+        n = scanner.nextInt();
+
+        for (int i = 1; i < n; i++) {
+            a = 1 / pow(2, i) + 1 / pow(3, i);
+            System.out.println("Член ряда №" + i + " :" + a);
+            if ((abs(a) > e) || (abs(a) == e)) {
+                sum = sum + a;
+            }
+        }
+        System.out.println("Сумма членов ряда, модуль которых '>=' e: " + sum);
+    }
+
+    /**
+     * Вывести на экран соответствия между символами и их численными значениями
+     */
+    public static void cyclesTask6() {
+        for (char c = 0; c < 128; c++) {
+            if (Character.isLowerCase(c))
+                System.out.println("Cимвол: " + c + " значение: " + (int) c);
+        }
+    }
+
+    /**
+     * Для каждого натурального числа в промежутке от m до n вывести все делители, кроме единицы и самого числа.
+     */
+    public static void cyclesTask7() {
+
+        int m, n;
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите 2 целых числа:");
+
+        System.out.print("m: ");
+        m = scanner.nextInt();
+
+        System.out.print("n: ");
+        n = scanner.nextInt();
+
+        while (m <= n) {
+            if (m > 0) {
+                System.out.print(m + ": ");
+                find(m);
+                System.out.println();
+            }
+            m++;
+        }
+    }
+
+    static void find(int m) {
+        int i = 2;
+        while (i <= m/2) {
+            if (m % i == 0) {
+                System.out.print(i + " ");
+            }
+            i++;
+        }
+    }
 
 }
+
+

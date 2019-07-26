@@ -28,16 +28,12 @@ public class Branching {
         b = scanner.nextInt();
 
         if ((a + b) < 180) {
-
             System.out.println("Треугольник существует!");
 
             if ((a == 90) || (b == 90) || (a + b == 90)) {
-
                 System.out.println("Третий угол прямоугольный.");
-
             } else
                 System.out.println("Третий угол не прямоугольный.");
-
         } else
             System.out.println("Треугольник не существует!");
 
@@ -60,16 +56,16 @@ public class Branching {
 
         System.out.println("Введите 4 целых числа:");
 
-        System.out.println("a: ");
+        System.out.print("a: ");
         a = scanner.nextInt();
 
-        System.out.println("b: ");
+        System.out.print("b: ");
         b = scanner.nextInt();
 
-        System.out.println("c: ");
+        System.out.print("c: ");
         c = scanner.nextInt();
 
-        System.out.println("d: ");
+        System.out.print("d: ");
         d = scanner.nextInt();
 
         minLeft = a < b ? a : b;
@@ -89,7 +85,7 @@ public class Branching {
     public static void branchingTask3() {
 //        int x1 = 3, x2 = -5, x3 = 27;
 //        int y1 = -7, y2 = 4, y3 = -40;
-        int x1,x2,x3,y1,y2,y3;
+        int x1, x2, x3, y1, y2, y3;
 
         Scanner scanner = new Scanner(System.in);
 
@@ -114,11 +110,47 @@ public class Branching {
         y3 = scanner.nextInt();
 
         if (((x3 - x1) / (x2 - x1)) == ((y3 - y1) / (y2 - y1))) {
-
             System.out.println("Точки на одной прямой.");
-
-        } else
+        } else {
             System.out.println("Точки не на одной прямой.");
+        }
+
+        scanner.close();
+
+    }
+
+    /**
+     * Заданы размеры a b прямоугольного отверстия и размеры x y z кирпича
+     */
+    public static void branchingTask4() {
+        Scanner scanner = new Scanner(System.in);
+
+        int A, B, x, y, z;
+
+        System.out.println("Введите значения прямоугольного отверстия (целые числа):");
+
+        System.out.print("A: ");
+        A = scanner.nextInt();
+
+        System.out.print("B: ");
+        B = scanner.nextInt();
+
+        System.out.println("Введите размеры кирпича (целые числа):");
+
+        System.out.print("x: ");
+        x = scanner.nextInt();
+
+        System.out.print("y: ");
+        y = scanner.nextInt();
+
+        System.out.print("z: ");
+        z = scanner.nextInt();
+
+        if ((((A < x) && (B < y)) || ((A < x) && (B < z)) || ((A < z) && (B < y)))) {
+            System.out.println("Кирпич не пройдет через отверстие.");
+        } else {
+            System.out.println("Кирпич через отверстие пройдет.");
+        }
 
         scanner.close();
 
