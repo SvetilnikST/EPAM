@@ -1,5 +1,6 @@
 package com.svetilnik.block;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import static java.lang.Math.abs;
@@ -10,33 +11,51 @@ import static java.lang.Math.pow;
  */
 public class Cycles {
 
+    private static final int mod = 10;
+    private static final int ASCIIcharacters = 128;
+
     /**
      * Суммирование всех чисел от 1 до введенного пользователем
      */
     public static void cyclesTask1() {
 
-        Scanner in = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         int number;
         int sum = 0;
 
-        System.out.println("Введите любое целое положительное число: ");
-        number = in.nextInt();
+        System.out.print("Enter a positive integer: ");
+        number = scanner.nextInt();
 
         while (number < 0) {
-            System.out.println("Вы ввели неверное число, попробуйте ещё раз!");
-            number = in.nextInt();
+            System.out.println("You entered an invalid number. Try again!");
+            number = scanner.nextInt();
         }
 
+        System.out.print("Cycles task_1 Result: ");
         for (int i = 1; i < number; i++) {
             sum = sum + i;
-            System.out.println(i);
+            System.out.print(i + " ");
         }
 
-        System.out.println("Сумма = " + sum);
-
-        in.close();
+        System.out.println("Sum = " + sum);
+        scanner.close();
     }
+
+    public static void cyclesTask2(int a, int b, int h) {
+        System.out.print("Cycles task_2 Result: ");
+        while (a <= b) {
+            System.out.print(funcY(a) + " ");
+            a = a + h;
+        }
+        System.out.println();
+    }
+
+    private static int funcY(int x) {
+        if (x > 2) return x;
+        else return -x;
+    }
+
 
     /**
      * Найти сумму квадратов первых ста чисел
@@ -49,7 +68,7 @@ public class Cycles {
             sum = sum + (int) pow(i, 2);
         }
 
-        System.out.println("Сумма = " + sum);
+        System.out.println("Cycles task_3 Result: Sum = " + sum);
     }
 
     /**
@@ -57,91 +76,95 @@ public class Cycles {
      */
     public static void cyclesTask4() {
 
-        int pr = 1;
+        int productOfNumbers = 1;
 
         for (int i = 1; i < 5; i++) {
-            pr = pr * (int) pow(i, 2);
+            productOfNumbers = productOfNumbers * (int) pow(i, 2);
         }
 
-        System.out.println("Произведение = " + pr);
+        System.out.println("Cycles task_4 Result: Product of numbers = " + productOfNumbers);
     }
 
     /**
      * Дан числовой ряд и число е. найти сумму тех членов ряда, можуль которых больше или равен заданному е.
      */
-    public static void cycleTask5() {
-//        double e = -3.0;
-//        double sum = 0.0;
-//        int n = 4;
-//        double a;
-        double e, a;
-        int n;
-        double sum = 0;
+    public static void cyclesTask5(double e, int n) {
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите числа:");
-
-        System.out.print("e (действительное): ");
-        e = scanner.nextDouble();
-
-        System.out.print("n (целое число): ");
-        n = scanner.nextInt();
+        double a;
+        double sum = 0.0;
 
         for (int i = 1; i < n; i++) {
             a = 1 / pow(2, i) + 1 / pow(3, i);
-            System.out.println("Член ряда №" + i + " :" + a);
+            System.out.println("Member row №" + i + " :" + a);
             if ((abs(a) > e) || (abs(a) == e)) {
                 sum = sum + a;
             }
         }
-        System.out.println("Сумма членов ряда, модуль которых '>=' e: " + sum);
+        System.out.println("Cycles task_5 Result: Sum = " + sum);
     }
 
     /**
      * Вывести на экран соответствия между символами и их численными значениями
      */
     public static void cyclesTask6() {
-        for (char c = 0; c < 128; c++) {
+        System.out.println("Cycles task_6 Result:");
+        for (char c = 0; c < ASCIIcharacters; c++) {
             if (Character.isLowerCase(c))
-                System.out.println("Cимвол: " + c + " значение: " + (int) c);
+                System.out.println("Symbol: " + c + " value: " + (int) c);
         }
     }
 
     /**
      * Для каждого натурального числа в промежутке от m до n вывести все делители, кроме единицы и самого числа.
      */
-    public static void cyclesTask7() {
+    public static void cyclesTask7(int m, int n) {
 
-        int m, n;
-
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите 2 целых числа:");
-
-        System.out.print("m: ");
-        m = scanner.nextInt();
-
-        System.out.print("n: ");
-        n = scanner.nextInt();
-
+        System.out.println("Cycles task_7 Result:");
         while (m <= n) {
             if (m > 0) {
                 System.out.print(m + ": ");
-                find(m);
+                dividerSearch(m);
                 System.out.println();
             }
             m++;
         }
     }
 
-    static void find(int m) {
+    static void dividerSearch(int m) {
         int i = 2;
-        while (i <= m/2) {
+        while (i <= m / 2) {
             if (m % i == 0) {
                 System.out.print(i + " ");
             }
             i++;
         }
     }
+
+    //Даны два числа. Определить цифры входящие в запись как первого, так и второго числа
+    public static void cyclesTask8(int a, int b) {
+        int c, d;
+
+        ArrayList<Integer> list = new ArrayList<>();
+
+        while (a > 0) {
+            d = Math.floorMod(a, mod);
+            a = a / mod;
+            c = b;
+            while (c > 0) {
+                if (Math.floorMod(c, mod) == d) {
+                    if (list.contains(d)) {
+                        break;
+                    } else
+                        list.add(d);
+                    break;
+                }
+                c = c / mod;
+            }
+        }
+
+        System.out.println(list.toString());
+    }
+
 
 }
 

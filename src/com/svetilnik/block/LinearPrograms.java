@@ -1,7 +1,5 @@
 package com.svetilnik.block;
 
-import java.util.Scanner;
-
 import static java.lang.Math.*;
 
 /**
@@ -13,144 +11,85 @@ public class LinearPrograms {
     /**
      * Найти значение функции  z = ((a - 3) * b / 2) + c;
      */
-    public static void lineTask1() {
+    public static void linearTask1(double a, double b, double c) {
 
-        int a, b, c, z;
-
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Введите 4 целых числа:");
-
-        System.out.println("a: ");
-        a = scanner.nextInt();
-
-        System.out.println("b: ");
-        b = scanner.nextInt();
-
-        System.out.println("c: ");
-        c = scanner.nextInt();
-
+        double z;
         z = ((a - 3) * b / 2) + c;
-
-        System.out.println("Результат вычислений:" + z);
-
-        scanner.close();
+        System.out.println("Linear task_1 Result Z = " + z);
     }
 
     /**
      * Вычислить выражение по формуле
      * (все переменные принимают действительные числа).
      */
-    public static void lineTask2() {
+    public static void linearTask2(double a, double b, double c) {
 
-        double a, b, c, Z;
-//        a = 1.0;
-//        b = 1.0;
-//        c = 1.0;
+        double Z, numerator, denominator, fraction;
 
-        Scanner scanner = new Scanner(System.in);
+        numerator = b + sqrt(pow(b, 2) + 4 * a * c);
 
-        System.out.println("Введите 3 действительных числа:");
+        denominator = 2 * a;
 
-        System.out.println("a: ");
-        a = scanner.nextDouble();
+        fraction = numerator / denominator;
 
-        System.out.println("b: ");
-        b = scanner.nextDouble();
+        Z = fraction - pow(a, 3) * c + pow(b, -2);
 
-        System.out.println("c: ");
-        c = scanner.nextDouble();
-
-        Z = ((b + sqrt(pow(b, 2) + 4 * a * c)) / 2 * a) - (pow(a, 3) * c + pow(b, -2));
-
-        System.out.printf("Результат вычислений: %.3f", Z);
-
-        scanner.close();
-
+        System.out.printf("Linear task_2 Result Z = %.3f", Z);
+        System.out.println();
     }
 
     /**
      * Вычислить выражение по формуле
      * (все переменные принимают действительные числа).
      */
-    public static void lineTask3() {
+    public static void linearTask3(double x, double y) {
 
-        double x, y, Z;
-//        x = 1;
-//        y = 1;
+        double Z, numerator, denominator, fraction;
 
-        Scanner scanner = new Scanner(System.in);
+        numerator = sin(x) + cos(y);
+        denominator = cos(x) - sin(y);
+        fraction = numerator / denominator;
 
-        System.out.println("Введите 2 действительных числа:");
+        Z = fraction * tan(x * y);
 
-        System.out.println("x: ");
-        x = scanner.nextDouble();
-
-        System.out.println("y: ");
-        y = scanner.nextDouble();
-
-        Z = ((sin(x) + cos(y)) / (cos(x) - sin(y))) * tan(x * y);
-
-        System.out.println("Результат вычислений: " + Z);
-
-        scanner.close();
+        System.out.println("Linear task_3 Result Z = " + Z);
     }
 
+    public static void linearTask4(double x) {
 
-    //TODO переделать
-    //нужно ещё подумать. при числе 354.789 проблема с округрлением при расчетах
-    public static void lineTask4() {
+        int left;
+        double right, result;
 
-        double x = 354.789;
+        left = (int) x;
+        right = Math.round((x - left) * 1000);
+        result = right + left / 1000.0;
 
-        int left = (int) x;
-        int right = (int) ((x - left) * 1000);
-        double d = right + ((double) left) / 1000.0;
-        System.out.println("Начальное число: " + x);
-        System.out.println("Число после преобразования: " + d);
+        System.out.println("Linear task_4 Result = " + result);
     }
-
 
     /**
      * Дано натуральное число длительность прошедшего времени в секундах. привести к формату HH:mm:ss
      */
-    public static void lineTask5() {
+    public static void linearTask5(int time) {
 
-        int time = 8000;
-        int hour = time / 3600;
-        int minute = time % 3600 / 60;
-        int second = time % 60;
+        int hour, minute, second;
 
-        System.out.print(hour + "ч ");
-        System.out.print(minute + "мин ");
-        System.out.print(second + "с.");
+        hour = time / 3600;
+        minute = time % 3600 / 60;
+        second = time % 60;
+
+        System.out.println("Linear task_5 Result = " + hour + "ч " + minute + "мин " + second + "с.");
     }
 
     /**
      * Попадание/нет в заданную область
      */
-    public static void lineTask6() {
+    public static boolean linearTask6(int x, int y) {
 
-        int x, y;
-//        x = -5;
-//        y = 3;
-
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Введите 2 действительных числа:");
-        System.out.println("x: ");
-        x = scanner.nextInt();
-
-        System.out.println("y: ");
-        y = scanner.nextInt();
-
-        if (((x >= -3) && (x <= 4) && (y >= -3) && (y <= 4))) {
-            System.out.println("true");
-        } else {
-            System.out.println("false");
-        }
-
-        scanner.close();
+        return (x >= -4) && (x <= 4) && (y >= -3) && (y <= 4);
 
     }
+
+
+
 }
