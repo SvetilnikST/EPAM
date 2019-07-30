@@ -10,9 +10,8 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        //TODO блоки try/cath
-        LinearPrograms.linearTask1(1, 2, 3);
-        LinearPrograms.linearTask2(3.0, 1.0, 2.0);
+        LinearPrograms.linearTask1(4, 3, 3);
+        LinearPrograms.linearTask2(0.0, 0.0, 0.0);
         LinearPrograms.linearTask3(1.0, 3.5);
         LinearPrograms.linearTask4(378.651);
         LinearPrograms.linearTask5(8000);

@@ -16,7 +16,7 @@ public class LinearPrograms {
     public static void linearTask1(double a, double b, double c) {
 
         double z;
-        z = ((a - 3) * b / 2) + c;
+        z = (a - 3) * b / 2 + c;
         System.out.println("Linear task_1 Result Z = " + z);
     }
 
@@ -28,13 +28,15 @@ public class LinearPrograms {
 
         double Z, numerator, denominator, fraction;
 
-            numerator = b + sqrt(pow(b, 2) + 4 * a * c);
-            denominator = 2 * a;
-            fraction = numerator / denominator;
-            Z = fraction - pow(a, 3) * c + pow(b, -2);
+        numerator = b + sqrt(pow(b, 2) + 4 * a * c);
+        denominator = 2 * a;
 
-            System.out.printf("Linear task_2 Result Z = %.3f", Z);
-            System.out.println();
+        fraction = numerator / denominator;
+        Z = fraction - pow(a, 3) * c + pow(b, -2);
+
+        System.out.printf("Linear task_2 Result Z = %.3f", Z);
+        System.out.println();
+
     }
 
     /**
@@ -51,7 +53,8 @@ public class LinearPrograms {
 
         Z = fraction * tan(x * y);
 
-        System.out.println("Linear task_3 Result Z = " + Z);
+        System.out.printf("Linear task_3 Result Z = %.3f", Z);
+        System.out.println();
     }
 
     public static void linearTask4(double x) {
@@ -77,7 +80,7 @@ public class LinearPrograms {
         minute = time % 3600 / 60;
         second = time % 60;
 
-        System.out.printf("Linear task_5 Result = %02dч %02dмин %02dс.", hour ,minute ,second );
+        System.out.printf("Linear task_5 Result = %02dч %02dмин %02dс.", hour, minute, second);
         System.out.println();
     }
 
