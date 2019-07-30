@@ -1,16 +1,17 @@
 package com.svetilnik.algorithmization;
 
 import java.util.Random;
+import java.util.stream.IntStream;
 
 public class OneDimensionalArrays {
     public static void OneArraysTask1(int N, int K) {
 
-        int[] A = new int[N];
         int sum = 0;
+        int[] A = new int[N];
 
-        for (int i = 0; i < N; i++) {
+        for (int i = 0; i < A.length; i++) {
             A[i] = i + 1;
-            System.out.print(A[i]);
+            System.out.print(A[i] + " ");
         }
 
         System.out.println();
@@ -25,11 +26,12 @@ public class OneDimensionalArrays {
 
     public static void OneArraysTask2(int n, double Z) {
 
-        double[] array = new double[n];
         int count = 0;
+        double[] array = new double[n];
 
-        fillArray(array);
+        fillDoubleArray(array);
         print(array);
+
         System.out.println();
 
         for (int i = 0; i < array.length; i++) {
@@ -42,48 +44,108 @@ public class OneDimensionalArrays {
         System.out.println("Number of replacements = " + count);
     }
 
-    private static void print(double[] array) {
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
-        }
-    }
-
-    private static void fillArray(double[] array) {
-        for (int i = 0; i < array.length; i++) {
-            array[i] = i + 1.0;
-        }
-    }
-
-
     public static void OneArraysTask3(int n, double Z) {
+
         int positive = 0;
         int negative = 0;
         int nullElemet = 0;
 
         double[] array = new double[n];
 
-        for (int i = 0; i < array.length; i++) {
-            array[i] = i + 0.5;
-        }
+        fillDoubleArray(array);
 
-        for (double anArray : array) {
-            if (anArray < 0) {
+        for (double ellement : array) {
+            if (ellement < 0) {
                 negative++;
-            } else if (anArray == 0) {
+            } else if (ellement == 0) {
                 nullElemet++;
-            } else if (anArray > 0)
+            } else if (ellement > 0)
                 positive++;
         }
 
         print(array);
-
         System.out.println(" Positive = " + positive + " Negative = " + negative + " NullElement = " + nullElemet);
     }
 
     public static void OneArraysTask4(int n, double Z) {
+        double[] array = new double[n];
 
+        double min;
+        double max;
+
+        fillDoubleArray(array);
+        print(array);
+        System.out.println();
+        min = array[0];
+        int indexMin = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < min) {
+                min = array[i];
+                indexMin = i;
+            }
+        }
+        System.out.print("Min = " + min + " ");
+
+        max = array[0];
+        int indexMax = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > max) {
+                max = array[i];
+                indexMax = i;
+            }
+        }
+        System.out.println("Max = " + max);
+
+        array[indexMax] = min;
+        array[indexMin] = max;
+
+        print(array);
 
     }
 
 
+    public static void OneArraysTask5(int n) {
+        int[] array = new int[n];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = i + 2;
+        }
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > i) {
+                System.out.print(array[i] + " ");
+            }
+        }
+
+    }
+
+    //не работает
+    public static void OneArraysTask6(int n) {
+
+        double[] array = new double[n];
+        double sum = 0.0;
+        fillDoubleArray(array);
+        print(array);
+
+        for (int i =1; i < array.length; i++) {
+            if (i>1 &&i % 1 == 0 && i % i == 0) {
+                sum = sum + array[i];
+            }
+        }
+        print(array);
+        System.out.println("Sum = " + sum);
+
+    }
+
+
+    private static void print(double[] array) {
+        for (double arr : array) {
+            System.out.print(arr + "  ");
+        }
+    }
+
+    private static void fillDoubleArray(double[] array) {
+        for (int i = 0; i < array.length; i++) {
+            array[i] = i + 1.0;
+        }
+    }
 }
