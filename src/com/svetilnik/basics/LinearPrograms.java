@@ -1,6 +1,4 @@
-package com.svetilnik.block;
-
-import java.io.IOException;
+package com.svetilnik.basics;
 
 import static java.lang.Math.*;
 
@@ -26,7 +24,10 @@ public class LinearPrograms {
      */
     public static void linearTask2(double a, double b, double c) {
 
-        double Z, numerator, denominator, fraction;
+        double Z;
+        double numerator;
+        double denominator;
+        double fraction;
 
         numerator = b + sqrt(pow(b, 2) + 4 * a * c);
         denominator = 2 * a;
@@ -45,7 +46,10 @@ public class LinearPrograms {
      */
     public static void linearTask3(double x, double y) {
 
-        double Z, numerator, denominator, fraction;
+        double Z;
+        double numerator;
+        double denominator;
+        double fraction;
 
         numerator = sin(x) + cos(y);
         denominator = cos(x) - sin(y);
@@ -60,7 +64,8 @@ public class LinearPrograms {
     public static void linearTask4(double x) {
 
         int left;
-        double right, result;
+        double right;
+        double result;
 
         left = (int) x;
         right = Math.round((x - left) * 1000);
@@ -74,7 +79,9 @@ public class LinearPrograms {
      */
     public static void linearTask5(int time) {
 
-        int hour, minute, second;
+        int hour;
+        int minute;
+        int second;
 
         hour = time / 3600;
         minute = time % 3600 / 60;

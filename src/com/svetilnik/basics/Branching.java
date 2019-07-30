@@ -1,4 +1,4 @@
-package com.svetilnik.block;
+package com.svetilnik.basics;
 
 /**
  * Класс содержащий решение задач блока "Ветвления"
@@ -32,7 +32,9 @@ public class Branching {
      */
     public static void branchingTask2(int a, int b, int c, int d) {
 
-        int minLeft, minRight, max;
+        int minLeft;
+        int minRight;
+        int max;
 
         minLeft = a < b ? a : b;
         minRight = c < d ? c : d;
@@ -46,7 +48,8 @@ public class Branching {
      */
     public static void branchingTask3(int x1, int x2, int x3, int y1, int y2, int y3) {
 
-        int left, right;
+        int left;
+        int right;
 
         left = (x3 - x1) / (x2 - x1);
         right = (y3 - y1) / (y2 - y1);
