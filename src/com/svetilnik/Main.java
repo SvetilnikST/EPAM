@@ -4,19 +4,19 @@ import com.svetilnik.block.Branching;
 import com.svetilnik.block.Cycles;
 import com.svetilnik.block.LinearPrograms;
 
+import java.io.IOException;
+
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         //TODO блоки try/cath
         LinearPrograms.linearTask1(1, 2, 3);
-        LinearPrograms.linearTask2(1.0, 2.0, 3.3);
+        LinearPrograms.linearTask2(3.0, 1.0, 2.0);
         LinearPrograms.linearTask3(1.0, 3.5);
         LinearPrograms.linearTask4(378.651);
-
-        //подумай ещё про формат. 02 выводить
         LinearPrograms.linearTask5(8000);
-        System.out.println("Linear task_6 Result: " + LinearPrograms.linearTask6(1, 1));
+        System.out.println("Linear task_6 Result: " + LinearPrograms.linearTask6(1.1, 1.2));
         System.out.println();
 
         Branching.branchingTask1(90, 30);
@@ -36,6 +36,7 @@ public class Main {
         Cycles.cyclesTask7(1,50);
         System.out.println();
         Cycles.cyclesTask8(123456,154863);
+
     }
 
 }

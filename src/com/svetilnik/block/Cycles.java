@@ -142,8 +142,8 @@ public class Cycles {
 
     //Даны два числа. Определить цифры входящие в запись как первого, так и второго числа
     public static void cyclesTask8(int a, int b) {
-        int c, d;
 
+        int c, d;
         ArrayList<Integer> list = new ArrayList<>();
 
         while (a > 0) {
@@ -161,7 +161,6 @@ public class Cycles {
                 c = c / mod;
             }
         }
-
         System.out.println(list.toString());
     }
 

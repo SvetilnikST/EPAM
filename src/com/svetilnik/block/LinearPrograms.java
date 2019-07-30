@@ -1,5 +1,7 @@
 package com.svetilnik.block;
 
+import java.io.IOException;
+
 import static java.lang.Math.*;
 
 /**
@@ -26,16 +28,13 @@ public class LinearPrograms {
 
         double Z, numerator, denominator, fraction;
 
-        numerator = b + sqrt(pow(b, 2) + 4 * a * c);
+            numerator = b + sqrt(pow(b, 2) + 4 * a * c);
+            denominator = 2 * a;
+            fraction = numerator / denominator;
+            Z = fraction - pow(a, 3) * c + pow(b, -2);
 
-        denominator = 2 * a;
-
-        fraction = numerator / denominator;
-
-        Z = fraction - pow(a, 3) * c + pow(b, -2);
-
-        System.out.printf("Linear task_2 Result Z = %.3f", Z);
-        System.out.println();
+            System.out.printf("Linear task_2 Result Z = %.3f", Z);
+            System.out.println();
     }
 
     /**
@@ -78,18 +77,17 @@ public class LinearPrograms {
         minute = time % 3600 / 60;
         second = time % 60;
 
-        System.out.println("Linear task_5 Result = " + hour + "ч " + minute + "мин " + second + "с.");
+        System.out.printf("Linear task_5 Result = %02dч %02dмин %02dс.", hour ,minute ,second );
+        System.out.println();
     }
 
     /**
      * Попадание/нет в заданную область
      */
-    public static boolean linearTask6(int x, int y) {
-
+    public static boolean linearTask6(double x, double y) {
         return (x >= -4) && (x <= 4) && (y >= -3) && (y <= 4);
 
     }
-
 
 
 }
