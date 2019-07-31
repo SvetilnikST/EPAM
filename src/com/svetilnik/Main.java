@@ -5,6 +5,7 @@ import com.svetilnik.basics.Branching;
 import com.svetilnik.basics.Cycles;
 import com.svetilnik.basics.LinearPrograms;
 import com.svetilnik.basics.StartBasics;
+import com.svetilnik.strings.StartStrings;
 
 import java.io.IOException;
 
@@ -14,6 +15,7 @@ public class Main {
 
 //        StartBasics.startBasics();
         StartAlgorithmization.startAlgorithmization();
+//        StartStrings.startStrings();
     }
 
 }
