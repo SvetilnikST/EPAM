@@ -169,21 +169,43 @@ public class OneDimensionalArrays {
         printInt(b);
     }
 
-    public static int OneArraysTask9() {
-        int[] a = new int[]{1, 2, 1, 1, 1, 2, 2, 2, 3, 5, 6, 7, 1};
+    public static void OneArraysTask9() {
+        int[] a = new int[]{2,2,2,1,1,1};
 
-        int dub=a[0];
+        int num = a[0];
+        int max = 1;
+
         for (int i = 0; i < a.length; i++) {
-            for (int j = 0; j < a.length; j++) {
 
-                if(a[i]==a[j]){
-                    return a[i];
+            int count = 1;
+
+            for (int j = 1; j < a.length-1; j++) {
+
+                if (a[i] == a[j]) {
+
+
+
+
+                    count += 1;
+
+                    if (count > max) {
+                        max = count;
+                        num = a[i];
+                    }
+
                 }
             }
 
-            System.out.println();
+
+
         }
-        return dub;
+
+        System.out.println();
+        if (max > 1) {
+            System.out.println("встречается" + max + " " + num);
+        } else System.out.println("все уник");
+
+
     }
 
     private static void print(double[] array) {
