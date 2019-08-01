@@ -1,8 +1,5 @@
 package com.svetilnik.algorithmization;
 
-import java.util.Random;
-import java.util.stream.IntStream;
-
 public class OneDimensionalArrays {
     public static void OneArraysTask1(int N, int K) {
 
@@ -118,22 +115,76 @@ public class OneDimensionalArrays {
 
     }
 
-    //не работает
-    public static void OneArraysTask6(int n) {
 
+    public static void OneArraysTask6(int n) {
         double[] array = new double[n];
         double sum = 0.0;
         fillDoubleArray(array);
-
-        for (int i = 0; i < array.length; i++) {
-
-
+        for (int i = 2; i < n; i++) {
+            boolean k = true;
+            for (int j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    k = false;
+                    break;
+                }
+            }
+            if (k) {
+                sum = sum + array[i];
+            }
         }
         print(array);
         System.out.println("Sum = " + sum);
 
     }
 
+
+    public static void OneArraysTask8(int n) {
+
+        int a[] = new int[n];
+
+        printInt(a);
+        int min = a[0];
+        int count = 0;
+        int index = 0;
+
+        for (int anA : a) {
+            if (anA < min) min = anA;
+
+        }
+
+        for (int anA : a) {
+            if (anA == min) {
+                count++;
+            }
+        }
+
+        int b[] = new int[a.length - count];
+        for (int anA : a) {
+            if (anA != min) {
+                b[index] = anA;
+                index++;
+            }
+        }
+        System.out.println();
+        printInt(b);
+    }
+
+    public static int OneArraysTask9() {
+        int[] a = new int[]{1, 2, 1, 1, 1, 2, 2, 2, 3, 5, 6, 7, 1};
+
+        int dub=a[0];
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a.length; j++) {
+
+                if(a[i]==a[j]){
+                    return a[i];
+                }
+            }
+
+            System.out.println();
+        }
+        return dub;
+    }
 
     private static void print(double[] array) {
         for (double arr : array) {
@@ -146,4 +197,17 @@ public class OneDimensionalArrays {
             array[i] = i + 1.0;
         }
     }
+
+    private static void fillIntArray(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            array[i] = i + 1;
+        }
+    }
+
+    private static void printInt(int[] array) {
+        for (int arr : array) {
+            System.out.print(arr + "  ");
+        }
+    }
+
 }

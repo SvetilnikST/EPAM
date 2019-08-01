@@ -9,6 +9,9 @@ public class StartAlgorithmization {
 //        OneDimensionalArrays.OneArraysTask5(10);
 //        OneDimensionalArrays.OneArraysTask6(6);
 
-        ArraysArrays.ArraysArraysTast1(2,3);
+//        OneDimensionalArrays.OneArraysTask8(10);
+        OneDimensionalArrays.OneArraysTask9();
+
+//        ArraysArrays.ArraysArraysTast1(2,3);
     }
 }
