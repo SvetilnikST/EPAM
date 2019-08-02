@@ -10,8 +10,12 @@ public class StartAlgorithmization {
 //        OneDimensionalArrays.OneArraysTask6(6);
 
 //        OneDimensionalArrays.OneArraysTask8(10);
-        OneDimensionalArrays.OneArraysTask9();
+//        OneDimensionalArrays.OneArraysTask9();
+//        OneDimensionalArrays.OneArraysTask10(10);
 
-//        ArraysArrays.ArraysArraysTast1(2,3);
+//        ArraysArrays.ArraysArraysTast1(3,4);
+
+//        ArraysArrays.ArraysArraysTast2(3,3);
+        ArraysArrays.ArraysArraysTast3(3,3, 2,1);
     }
 }
