@@ -16,6 +16,8 @@ public class StartAlgorithmization {
 //        ArraysArrays.ArraysArraysTast1(3,4);
 
 //        ArraysArrays.ArraysArraysTast2(3,3);
-        ArraysArrays.ArraysArraysTast3(3,3, 2,1);
+//        ArraysArrays.ArraysArraysTast3(3,3, 2,1);
+//        ArraysArrays.ArraysArraysTast4(4);
+        ArraysArrays.ArraysArraysTast5(6);
     }
 }

@@ -112,8 +112,84 @@ public class ArraysArrays {
     }
 
 
+    public static void ArraysArraysTast4(int n) {
 
-    public static void ArraysArraysTast4(int n, int m, int k, int p) {
+        int[][] array = new int[n][n];
+        int k = 1;
+        int num = n;
+
+        fillInt(array);
+        printArrayInt(array);
+        System.out.println();
+
+        for (int i = 0; i < array.length; i++) {
+            if (i % 2 == 0) {
+
+                for (int j = 0; j < array[0].length; j++) {
+                    array[i][j] = k;
+                    k++;
+
+                }
+                k = 1;
+            } else {
+                for (int j = 0; j < array[0].length; j++) {
+                    array[i][j] = num;
+                    num--;
+                }
+                num = n;
+            }
+        }
+        printArrayInt(array);
+    }
+
+
+    public static void ArraysArraysTast5(int n) {
+        int[][] array = new int[n][n];
+
+        System.out.println();
+        int k = 1;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                array[i][j] = k;
+            }
+            k++;
+        }
+        printArrayInt(array);
+        System.out.println();
+
+        for (int i = 0; i < n; i++) {
+            for (int j = n - i; j < n; j++) {
+                array[i][j] = 0;
+            }
+
+        }
+
+
+
+        printArrayInt(array);
 
     }
+
+
+    public static void fillInt(int[][] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[0].length; j++) {
+                array[i][j] = i + 1;
+            }
+
+        }
+    }
+
+    private static void printArrayInt(int[][] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[0].length; j++) {
+                System.out.print(array[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+    }
+
+
 }
