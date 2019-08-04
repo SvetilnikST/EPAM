@@ -1,5 +1,7 @@
 package com.svetilnik.algorithmization;
 
+import static java.lang.Math.pow;
+
 public class ArraysArrays {
     public static void ArraysArraysTast1(int n, int m) {
 
@@ -143,7 +145,7 @@ public class ArraysArrays {
     }
 
 
-    public static void ArraysArraysTast5(int n) {
+    public static void ArraysArraysTask5(int n) {
         int[][] array = new int[n][n];
 
         System.out.println();
@@ -164,10 +166,77 @@ public class ArraysArrays {
             }
 
         }
-
-
-
         printArrayInt(array);
+
+    }
+
+    //TODO
+    public static void ArraysArraysTask6(int n) {
+        int[][] array = new int[n][n];
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                array[i][j] = 1;
+
+            }
+        }
+
+        int k = 0;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = n - i; j < n; j++) {
+                array[i][j] = 0;
+
+            }
+
+
+        }
+        printArrayInt(array);
+
+
+    }
+
+
+    public static void ArraysArraysTask7(int n) {
+
+        double[][] array = new double[n][n];
+
+        int count = 0;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                array[i][j] = Math.sin(pow(i, 2) - pow(j, 2)) / n;
+                System.out.printf("%.4f ",array[i][j]);
+                if (array[i][j] > 0.0) {
+                    count++;
+                }
+
+            }
+            System.out.println();
+        }
+        System.out.println("Count positive elements = " + count);
+
+
+    }
+
+    public static void ArraysArraysTask10(int n) {
+
+        double[][] array = new double[n][n];
+
+        int count = 0;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                array[i][j] = Math.sin(pow(i, 2) - pow(j, 2)) / n;
+                System.out.printf("%.4f ",array[i][j]);
+                if (array[i][j] > 0.0) {
+                    count++;
+                }
+
+            }
+            System.out.println();
+        }
+        System.out.println("Count positive elements = " + count);
+
 
     }
 

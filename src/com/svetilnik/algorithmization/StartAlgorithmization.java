@@ -18,6 +18,10 @@ public class StartAlgorithmization {
 //        ArraysArrays.ArraysArraysTast2(3,3);
 //        ArraysArrays.ArraysArraysTast3(3,3, 2,1);
 //        ArraysArrays.ArraysArraysTast4(4);
-        ArraysArrays.ArraysArraysTast5(6);
+//        ArraysArrays.ArraysArraysTask5(6);
+
+//        ArraysArrays.ArraysArraysTask6(6);
+
+        ArraysArrays.ArraysArraysTask7(3);
     }
 }
