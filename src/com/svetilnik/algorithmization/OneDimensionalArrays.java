@@ -137,6 +137,28 @@ public class OneDimensionalArrays {
 
     }
 
+    //TODO исправить
+    public static void OneArraysTask7(int n) {
+
+        int max;
+        int[] array = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            array[i] = i + 1;
+        }
+
+        printInt(array);
+
+        max = array[1] + array[2 * n];
+
+        for (int i = 2; i < n; i++) {
+            if (array[i] + array[i * n - 1] > max) {
+                max = array[i] + array[i * n - 1];
+            }
+        }
+        System.out.println(max);
+
+    }
 
     public static void OneArraysTask8(int n) {
 

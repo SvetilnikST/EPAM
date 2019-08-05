@@ -327,7 +327,49 @@ public class ArraysArrays {
     }
 
 
+    public static void ArraysArraysTask13(int n) {
+        int[][] array = new int[n][n];
+        fillIntNew(array);
+        printArrayInt(array);
+        descColumn(array,n);
+        System.out.println();
+        printArrayInt(array);
 
+//        inc(array,n);
+//        System.out.println();
+//        printArrayInt(array);
+
+    }
+
+
+
+
+    public static void ArraysArraysTask15(int m, int n) {
+        int[][]array = new int[m][n];
+        int max=array[0][0];
+
+        fillIntNew(array);
+        printArrayInt(array);
+        System.out.println();
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if(array[i][j]>max){
+                    max = array[i][j];
+                }
+            }
+        }
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if(array[i][j]%2!=0){
+                     array[i][j]= max;
+                }
+            }
+        }
+
+        printArrayInt(array);
+    }
 
     private static void desc(int [][] array, int n){
         int number;
@@ -338,6 +380,22 @@ public class ArraysArrays {
                         number= array[k][j];
                         array[k][j]= array[k][j+1];
                         array[k][j+1]= number;
+                    }
+                }
+            }
+        }
+    }
+
+
+    private static void descColumn(int [][] array, int n){
+        int number;
+        for (int k = 0; k < n; k++) {
+            for (int i = 0; i < n - 1; i++) {
+                for (int j = 0; j < (n - i - 1); j++) {
+                    if (array[i][k]<array[i+1][k]){
+                        number= array[i][k];
+                        array[i][k]= array[i+1][k];
+                        array[i+1][k]= number;
                     }
                 }
             }
