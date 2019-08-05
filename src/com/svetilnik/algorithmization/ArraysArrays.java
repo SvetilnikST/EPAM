@@ -187,57 +187,94 @@ public class ArraysArrays {
                 array[i][j] = 0;
 
             }
-
-
         }
         printArrayInt(array);
-
-
     }
 
 
     public static void ArraysArraysTask7(int n) {
 
         double[][] array = new double[n][n];
-
         int count = 0;
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 array[i][j] = Math.sin(pow(i, 2) - pow(j, 2)) / n;
-                System.out.printf("%.4f ",array[i][j]);
+                System.out.printf("%.4f ", array[i][j]);
                 if (array[i][j] > 0.0) {
                     count++;
                 }
-
             }
             System.out.println();
         }
         System.out.println("Count positive elements = " + count);
-
-
     }
+
+    public static void ArraysArraysTask8(int n, int a, int b) {
+        int[][] array = new int[n][n];
+        int k;
+        fillIntNew(array);
+
+        printArrayInt(array);
+        System.out.println();
+
+        for (int j = 0; j < n; j++) {
+            for (int i = 0; i < n; i++) {
+                k = array[i][a];
+                array[i][a] = array[i][b];
+                array[i][b] = k;
+            }
+        }
+        printArrayInt(array);
+    }
+
+
+    public static void ArraysArraysTask9(int n) {
+        int sum = 0;
+        int maxSum = 0;
+        int number = 0;
+
+        int[][] array = new int[n][n];
+
+        fillIntNew(array);
+        printArrayInt(array);
+
+        for (int j = 0; j < n; j++) {
+            for (int i = 0; i < n; i++) {
+                sum = sum + array[i][j];
+            }
+
+            if (sum > maxSum) {
+                maxSum = sum;
+                number = j;
+            }
+            sum = 0;
+        }
+        System.out.println("MaxSum in " + number + " = " + maxSum);
+    }
+
 
     public static void ArraysArraysTask10(int n) {
 
-        double[][] array = new double[n][n];
+        int[][] array = new int[n][n];
 
-        int count = 0;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[0].length; j++) {
+                array[i][j] = i + 1;
+            }
 
+        }
+
+        printArrayInt(array);
+
+        System.out.println();
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                array[i][j] = Math.sin(pow(i, 2) - pow(j, 2)) / n;
-                System.out.printf("%.4f ",array[i][j]);
-                if (array[i][j] > 0.0) {
-                    count++;
+                if (i == j && array[i][j] > 0.0) {
+                    System.out.print(array[i][j]);
                 }
-
             }
-            System.out.println();
         }
-        System.out.println("Count positive elements = " + count);
-
-
     }
 
 
@@ -250,6 +287,20 @@ public class ArraysArrays {
         }
     }
 
+    public static void fillIntNew(int[][] array) {
+        array[0][0] = 1;
+        array[0][1] = 2;
+        array[0][2] = 3;
+
+        array[1][0] = 4;
+        array[1][1] = 5;
+        array[1][2] = 6;
+
+        array[2][0] = 7;
+        array[2][1] = 8;
+        array[2][2] = 9;
+    }
+
     private static void printArrayInt(int[][] array) {
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[0].length; j++) {
@@ -260,5 +311,52 @@ public class ArraysArrays {
 
     }
 
+
+    public static void ArraysArraysTask12(int n) {
+        int[][] array = new int[n][n];
+        fillIntNew(array);
+        printArrayInt(array);
+        desc(array,n);
+        System.out.println();
+        printArrayInt(array);
+
+        inc(array,n);
+        System.out.println();
+        printArrayInt(array);
+
+    }
+
+
+
+
+    private static void desc(int [][] array, int n){
+        int number;
+        for (int k = 0; k < n; k++) {
+            for (int i = 0; i < n - 1; i++) {
+                for (int j = 0; j < (n - i - 1); j++) {
+                    if (array[k][j]<array[k][j+1]){
+                        number= array[k][j];
+                        array[k][j]= array[k][j+1];
+                        array[k][j+1]= number;
+                    }
+                }
+            }
+        }
+    }
+
+    private static void inc(int [][] array, int n){
+        int number;
+        for (int k = 0; k < n; k++) {
+            for (int i = 0; i < n - 1; i++) {
+                for (int j = 0; j < (n - i - 1); j++) {
+                    if (array[k][j]>array[k][j+1]){
+                        number= array[k][j];
+                        array[k][j]= array[k][j+1];
+                        array[k][j+1]= number;
+                    }
+                }
+            }
+        }
+    }
 
 }
