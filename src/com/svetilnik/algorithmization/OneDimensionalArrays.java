@@ -140,23 +140,13 @@ public class OneDimensionalArrays {
     //TODO исправить
     public static void OneArraysTask7(int n) {
 
-        int max;
-        int[] array = new int[n];
-
         for (int i = 0; i < n; i++) {
-            array[i] = i + 1;
+
+
         }
 
-        printInt(array);
 
-        max = array[1] + array[2 * n];
 
-        for (int i = 2; i < n; i++) {
-            if (array[i] + array[i * n - 1] > max) {
-                max = array[i] + array[i * n - 1];
-            }
-        }
-        System.out.println(max);
 
     }
 
@@ -193,44 +183,77 @@ public class OneDimensionalArrays {
 
 
     //TODO разобраться до конца
+//    public static void OneArraysTask9() {
+//        int[] a = new int[]{3, 3, 1,1};
+//
+//        int num = a[0];
+//        int max = 1;
+//        int min = a[0];
+//
+//        for (int i = 0; i < a.length; i++) {
+//
+//            int count = 1;
+//
+//            for (int j = i+1; j < a.length; j++) {
+//
+//                if (a[i] == a[j]) {
+//                    count++;
+//
+//                    if (count > max) {
+//                        max = count;
+//                        num = a[i];
+//                        if (num < min) {
+//                            min=num;
+//                            max = count;
+//                        }
+//
+//                    }
+//
+//                }
+//            }
+//
+//        }
+//
+//        System.out.println();
+//        if (max > 1) {
+//            System.out.println("встречается" + max + " раз  " + min);
+//        } else System.out.println("все уник");
+//    }
+
+
     public static void OneArraysTask9() {
-        int[] a = new int[]{3, 3, 3, 3, 3, 1, 1, 1, 1, 1};
+        int[] array = new int[]{3, 3, 1,1};
 
-        int num = a[0];
-        int max = 1;
+        int[] freq = new int[array.length];
+        int globalFreqCounter = 0;
 
-        for (int i = 0; i < a.length; i++) {
-
-            int count = 1;
-
-            for (int j = 1; j < a.length - 1; j++) {
-
-                if (a[i] == a[j]) {
-
-                    count++;
-
-                    if (count > max) {
-                        max = count;
-                        num = a[i];
-
-                        //todo
-                        if (a[i] < num) {
-                            num = a[i];
-
-                        }
-
-                    }
-
+        for (int i = 0; i < array.length; i++) {
+            int number = array[i];
+            int counter = 0;
+            for (int j = 0; j < array.length; j++) {
+                if (array[j] == number) {
+                    counter++;
                 }
             }
-
+            freq[i] = counter;
+            if (counter > globalFreqCounter) {
+                globalFreqCounter = counter;
+            }
         }
 
-        System.out.println();
-        if (max > 1) {
-            System.out.println("встречается" + max + " раза  " + num);
-        } else System.out.println("все уник");
+        int result = Integer.MAX_VALUE;
+        for (int i = 0; i < freq.length; i++) {
+            if (freq[i] == globalFreqCounter && array[i] < result) {
+                result = array[i];
+            }
+        }
+
+        System.out.println(result);
+
+
     }
+
+
 
 
     public static void OneArraysTask10(int n) {
