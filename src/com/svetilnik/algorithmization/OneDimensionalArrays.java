@@ -1,5 +1,7 @@
 package com.svetilnik.algorithmization;
 
+import static java.lang.Long.sum;
+
 public class OneDimensionalArrays {
     public static void OneArraysTask1(int N, int K) {
 
@@ -138,17 +140,46 @@ public class OneDimensionalArrays {
     }
 
     //TODO исправить
-    public static void OneArraysTask7(int n) {
+//    public static void OneArraysTask7(int n) {
+//
+//        int[][] arr = new int[n][n];
+//        int tmp;
+//        int max;
+//
+//        max = sum(0,arr,n);
+//        for (int i = 1; i < n - 1; i++) {
+//            if (max < tmp) {
+//                max = tmp;
+//            }
+//
+//            tmp = RetMax(sum(i, n), sum((i + 1), n));
+//        }
+//
+//
+//    }
+//
+//    private static int sum(int i, int[][] arr, int n) {
+//
+//        int l = 2 * n - 1 - i;
+//        int sum = arr[i] + arr[l];
+//
+//        return sum;
+//    }
 
-        for (int i = 0; i < n; i++) {
+//    private static void sum(int n) {
+//        int sum=0;
+//        for (int i = 0; i < n; i++) {
+//            sum = arr[i] + arr[2 * n - 1 - i];
+//        }
+//
+//    }
 
 
-        }
 
-
-
-
-    }
+//    private int RetMax(int a, int b) {
+//        if (a > b) return a;
+//        else return b;
+//    }
 
     public static void OneArraysTask8(int n) {
 
@@ -222,7 +253,7 @@ public class OneDimensionalArrays {
 
 
     public static void OneArraysTask9() {
-        int[] array = new int[]{3, 3, 1,1};
+        int[] array = new int[]{3, 3, 1, 1};
 
         int[] freq = new int[array.length];
         int globalFreqCounter = 0;
@@ -252,8 +283,6 @@ public class OneDimensionalArrays {
 
 
     }
-
-
 
 
     public static void OneArraysTask10(int n) {

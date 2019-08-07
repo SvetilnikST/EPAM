@@ -8,7 +8,7 @@ public class StartAlgorithmization {
 //        OneDimensionalArrays.OneArraysTask4(10,6.0);
 //        OneDimensionalArrays.OneArraysTask5(10);
 //        OneDimensionalArrays.OneArraysTask6(6);
-        OneDimensionalArrays.OneArraysTask7(6);
+//        OneDimensionalArrays.OneArraysTask7(6);
 //        OneDimensionalArrays.OneArraysTask8(10);
 //        OneDimensionalArrays.OneArraysTask9();
 //        OneDimensionalArrays.OneArraysTask10(10);
@@ -26,7 +26,7 @@ public class StartAlgorithmization {
 //        ArraysArrays.ArraysArraysTask8(3, 0, 2);
 //        ArraysArrays.ArraysArraysTask9(3);
 //        ArraysArrays.ArraysArraysTask10(3);
-
+        ArraysArrays.ArraysArraysTask11();
 //        ArraysArrays.ArraysArraysTask12(3);
 //        ArraysArrays.ArraysArraysTask13(3);
 //        ArraysArrays.ArraysArraysTask15(3,3);

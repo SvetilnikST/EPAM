@@ -1,5 +1,7 @@
 package com.svetilnik.algorithmization;
 
+import java.util.Random;
+
 import static java.lang.Math.pow;
 
 public class ArraysArrays {
@@ -277,6 +279,48 @@ public class ArraysArrays {
         }
     }
 
+    public static void ArraysArraysTask11() {
+        int n = 5;
+        int m = 10;
+        int[][] array = new int[n][m];
+        int min = 0;
+        int max = 15;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[0].length; j++) {
+                array[i][j] = random(min, max);
+            }
+        }
+
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[0].length; j++) {
+                System.out.print(array[i][j] + "         ");
+            }
+            System.out.println();
+        }
+
+        int count = 0;
+        int number;
+        for (int i = 0; i < n; i++) {
+            count = 0;
+            for (int j = 0; j < m; j++) {
+                if (array[i][j] == 5) {
+                    count++;
+                }
+                if (count > 3 || count == 3) {
+                    number = i;
+                    System.out.println("Number row: " + number);
+                }
+            }
+        }
+
+
+    }
+
+    public static int random(int min, int max) {
+        max -= min;
+        return (int) (Math.random() * ++max) + min;
+    }
+
 
     public static void fillInt(int[][] array) {
         for (int i = 0; i < array.length; i++) {
@@ -316,11 +360,11 @@ public class ArraysArrays {
         int[][] array = new int[n][n];
         fillIntNew(array);
         printArrayInt(array);
-        desc(array,n);
+        desc(array, n);
         System.out.println();
         printArrayInt(array);
 
-        inc(array,n);
+        inc(array, n);
         System.out.println();
         printArrayInt(array);
 
@@ -331,7 +375,7 @@ public class ArraysArrays {
         int[][] array = new int[n][n];
         fillIntNew(array);
         printArrayInt(array);
-        descColumn(array,n);
+        descColumn(array, n);
         System.out.println();
         printArrayInt(array);
 
@@ -342,11 +386,9 @@ public class ArraysArrays {
     }
 
 
-
-
     public static void ArraysArraysTask15(int m, int n) {
-        int[][]array = new int[m][n];
-        int max=array[0][0];
+        int[][] array = new int[m][n];
+        int max = array[0][0];
 
         fillIntNew(array);
         printArrayInt(array);
@@ -354,7 +396,7 @@ public class ArraysArrays {
 
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                if(array[i][j]>max){
+                if (array[i][j] > max) {
                     max = array[i][j];
                 }
             }
@@ -362,8 +404,8 @@ public class ArraysArrays {
 
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                if(array[i][j]%2!=0){
-                     array[i][j]= max;
+                if (array[i][j] % 2 != 0) {
+                    array[i][j] = max;
                 }
             }
         }
@@ -371,15 +413,15 @@ public class ArraysArrays {
         printArrayInt(array);
     }
 
-    private static void desc(int [][] array, int n){
+    private static void desc(int[][] array, int n) {
         int number;
         for (int k = 0; k < n; k++) {
             for (int i = 0; i < n - 1; i++) {
                 for (int j = 0; j < (n - i - 1); j++) {
-                    if (array[k][j]<array[k][j+1]){
-                        number= array[k][j];
-                        array[k][j]= array[k][j+1];
-                        array[k][j+1]= number;
+                    if (array[k][j] < array[k][j + 1]) {
+                        number = array[k][j];
+                        array[k][j] = array[k][j + 1];
+                        array[k][j + 1] = number;
                     }
                 }
             }
@@ -387,30 +429,30 @@ public class ArraysArrays {
     }
 
 
-    private static void descColumn(int [][] array, int n){
+    private static void descColumn(int[][] array, int n) {
         int number;
         for (int k = 0; k < n; k++) {
             for (int i = 0; i < n - 1; i++) {
                 for (int j = 0; j < (n - i - 1); j++) {
-                    if (array[i][k]<array[i+1][k]){
-                        number= array[i][k];
-                        array[i][k]= array[i+1][k];
-                        array[i+1][k]= number;
+                    if (array[i][k] < array[i + 1][k]) {
+                        number = array[i][k];
+                        array[i][k] = array[i + 1][k];
+                        array[i + 1][k] = number;
                     }
                 }
             }
         }
     }
 
-    private static void inc(int [][] array, int n){
+    private static void inc(int[][] array, int n) {
         int number;
         for (int k = 0; k < n; k++) {
             for (int i = 0; i < n - 1; i++) {
                 for (int j = 0; j < (n - i - 1); j++) {
-                    if (array[k][j]>array[k][j+1]){
-                        number= array[k][j];
-                        array[k][j]= array[k][j+1];
-                        array[k][j+1]= number;
+                    if (array[k][j] > array[k][j + 1]) {
+                        number = array[k][j];
+                        array[k][j] = array[k][j + 1];
+                        array[k][j + 1] = number;
                     }
                 }
             }
