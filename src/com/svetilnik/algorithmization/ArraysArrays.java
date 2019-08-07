@@ -1,7 +1,5 @@
 package com.svetilnik.algorithmization;
 
-import java.util.Random;
-
 import static java.lang.Math.pow;
 
 public class ArraysArrays {
@@ -338,12 +336,14 @@ public class ArraysArrays {
     }
 
     private static void printArrayInt(int[][] array) {
+
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[0].length; j++) {
                 System.out.print(array[i][j] + " ");
             }
             System.out.println();
         }
+        System.out.println();
 
     }
 
@@ -352,11 +352,11 @@ public class ArraysArrays {
         int[][] array = new int[n][n];
         fillIntNew(array);
         printArrayInt(array);
-        desc(array, n);
+        descRow(array, n);
         System.out.println();
         printArrayInt(array);
 
-        inc(array, n);
+        incRow(array, n);
         System.out.println();
         printArrayInt(array);
 
@@ -366,14 +366,17 @@ public class ArraysArrays {
     public static void ArraysArraysTask13(int n) {
         int[][] array = new int[n][n];
         fillIntNew(array);
-        printArrayInt(array);
-        descColumn(array, n);
-        System.out.println();
+        System.out.println("Array: ");
         printArrayInt(array);
 
-//        inc(array,n);
-//        System.out.println();
-//        printArrayInt(array);
+        descColumn(array, n);
+
+        System.out.println("Desk Column: ");
+        printArrayInt(array);
+
+        System.out.println("Inc Column: ");
+        incColumn(array,n);
+        printArrayInt(array);
 
     }
 
@@ -405,7 +408,22 @@ public class ArraysArrays {
         printArrayInt(array);
     }
 
-    private static void desc(int[][] array, int n) {
+    private static void incRow(int[][] array, int n) {
+        int number;
+        for (int k = 0; k < n; k++) {
+            for (int i = 0; i < n - 1; i++) {
+                for (int j = 0; j < (n - i - 1); j++) {
+                    if (array[k][j] > array[k][j + 1]) {
+                        number = array[k][j];
+                        array[k][j] = array[k][j + 1];
+                        array[k][j + 1] = number;
+                    }
+                }
+            }
+        }
+    }
+
+    private static void descRow(int[][] array, int n) {
         int number;
         for (int k = 0; k < n; k++) {
             for (int i = 0; i < n - 1; i++) {
@@ -421,12 +439,12 @@ public class ArraysArrays {
     }
 
 
-    private static void descColumn(int[][] array, int n) {
+    private static void incColumn(int[][] array, int n) {
         int number;
         for (int k = 0; k < n; k++) {
-            for (int i = 0; i < n - 1; i++) {
-                for (int j = 0; j < (n - i - 1); j++) {
-                    if (array[i][k] < array[i + 1][k]) {
+            for (int j = 0; j < n - 1; j++) {
+                for (int i = 0; i < n - 1-j; i++) {
+                    if (array[i][k]> array[i + 1][k]) {
                         number = array[i][k];
                         array[i][k] = array[i + 1][k];
                         array[i + 1][k] = number;
@@ -436,19 +454,23 @@ public class ArraysArrays {
         }
     }
 
-    private static void inc(int[][] array, int n) {
+    private static void descColumn(int[][] array, int n) {
         int number;
         for (int k = 0; k < n; k++) {
-            for (int i = 0; i < n - 1; i++) {
-                for (int j = 0; j < (n - i - 1); j++) {
-                    if (array[k][j] > array[k][j + 1]) {
-                        number = array[k][j];
-                        array[k][j] = array[k][j + 1];
-                        array[k][j + 1] = number;
+                for (int j = 0; j < n - 1; j++) {
+                    for (int i = 0; i < n - 1-j; i++) {
+                    if (array[i][k]< array[i + 1][k]) {
+                        number = array[i][k];
+                        array[i][k] = array[i + 1][k];
+                        array[i + 1][k] = number;
                     }
                 }
             }
         }
     }
+
+
+
+
 
 }
