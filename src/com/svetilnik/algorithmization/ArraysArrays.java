@@ -280,8 +280,8 @@ public class ArraysArrays {
     }
 
     public static void ArraysArraysTask11() {
-        int n = 5;
-        int m = 10;
+        int n = 10;
+        int m = 20;
         int[][] array = new int[n][m];
         int min = 0;
         int max = 15;
@@ -298,22 +298,14 @@ public class ArraysArrays {
             System.out.println();
         }
 
-        int count = 0;
-        int number;
+        int count;
         for (int i = 0; i < n; i++) {
             count = 0;
             for (int j = 0; j < m; j++) {
-                if (array[i][j] == 5) {
-                    count++;
-                }
-                if (count > 3 || count == 3) {
-                    number = i;
-                    System.out.println("Number row: " + number);
-                }
+                if (array[i][j] == 5) count++;
             }
+            if (count > 3 || count == 3) System.out.println("Number row: " + i);
         }
-
-
     }
 
     public static int random(int min, int max) {
