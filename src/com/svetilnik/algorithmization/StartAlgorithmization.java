@@ -13,23 +13,22 @@ public class StartAlgorithmization {
 //        OneDimensionalArrays.OneArraysTask9();
 //        OneDimensionalArrays.OneArraysTask10(10);
 
-//        ArraysArrays.ArraysArraysTast1(3,4);
-//        ArraysArrays.ArraysArraysTast2(3,3);
-//        ArraysArrays.ArraysArraysTast3(3,3, 2,1);
-//        ArraysArrays.ArraysArraysTast4(4);
-//        ArraysArrays.ArraysArraysTask5(6);
+//        MultidimensionalArrays.MultidimensionalArrays1(3,4,1,20);
+//        MultidimensionalArrays.MultidimensionalArrays2(3,1,10);
+//        MultidimensionalArrays.MultidimensionalArrays3(3,3, 2,1,1,15);
+//        MultidimensionalArrays.MultidimensionalArrays4(6);
+//        MultidimensionalArrays.MultidimensionalArrays5(6);
 
-        //TODO
-//        ArraysArrays.ArraysArraysTask6(6);
+//        MultidimensionalArrays.MultidimensionalArrays6(6);
 
-//        ArraysArrays.ArraysArraysTask7(3);
-//        ArraysArrays.ArraysArraysTask8(3, 0, 2);
-//        ArraysArrays.ArraysArraysTask9(3);
-//        ArraysArrays.ArraysArraysTask10(3);
-//        ArraysArrays.ArraysArraysTask11();
-//        ArraysArrays.ArraysArraysTask12(3);
-//        ArraysArrays.ArraysArraysTask13(3);
-//        ArraysArrays.ArraysArraysTask15(3,3);
+//        MultidimensionalArrays.MultidimensionalArrays7(3);
+//        MultidimensionalArrays.MultidimensionalArrays8(3, 0, 2, 2,30);
+//        MultidimensionalArrays.MultidimensionalArrays9(3,1,6);
+//        MultidimensionalArrays.MultidimensionalArrays10(3, 1, 10);
+//        MultidimensionalArrays.MultidimensionalArrays11(10,20, 0,15);
+//        MultidimensionalArrays.MultidimensionalArrays12(3,1,10);
+//        MultidimensionalArrays.MultidimensionalArrays13(3,1,10);
+//        MultidimensionalArrays.MultidimensionalArrays15(3,3,1,10);
 
     }
 }
