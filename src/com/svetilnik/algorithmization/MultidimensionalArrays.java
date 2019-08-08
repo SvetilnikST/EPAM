@@ -274,7 +274,8 @@ public class MultidimensionalArrays {
         printArrayInt(array);
     }
 
-    public static void MultidimensionalArrays14(){}
+    public static void MultidimensionalArrays14() {
+    }
 
     public static void MultidimensionalArrays15(int m, int n, int min, int max) {
 
@@ -301,6 +302,43 @@ public class MultidimensionalArrays {
         }
 
         printArrayInt(array);
+    }
+
+
+    public static void MultidimensionalArrays16(int n) {
+        int[][] array = new int[n][n];
+        int k = 1;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[0].length; j++) {
+                array[i][j] = k;
+                k++;
+            }
+        }
+
+        printArrayInt(array);
+
+
+        int t;
+        for (int i = 0; i < array.length/2; i++) {
+            for (int j = 0; j < array.length / 2; j++) {
+                if(i==j){
+                    t = array[i][j];
+                    array[i][j] = array[array.length-1-i][array.length-1-j];
+                    array[array.length-1-i][array.length-1-j]=t;
+                }
+            }
+        }
+
+//        int l;
+//        for (int i=0, int j=array.length-1-i; i <= (array.length/2)-1;++i, --j){
+//
+//            l=array[i][j];
+//            array[i][j]=a[j][i];
+//            a[j][i]=t;
+//        }
+
+
+
     }
 
 

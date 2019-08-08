@@ -29,6 +29,6 @@ public class StartAlgorithmization {
 //        MultidimensionalArrays.MultidimensionalArrays12(3,1,10);
 //        MultidimensionalArrays.MultidimensionalArrays13(3,1,10);
 //        MultidimensionalArrays.MultidimensionalArrays15(3,3,1,10);
-
+        MultidimensionalArrays.MultidimensionalArrays16(3);
     }
 }
