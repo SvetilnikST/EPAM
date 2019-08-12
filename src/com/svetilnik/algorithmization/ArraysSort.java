@@ -1,14 +1,15 @@
 package com.svetilnik.algorithmization;
 
+import java.util.Arrays;
+
 public class ArraysSort {
 
 
     //TODO Hren
-    public static void ArraysSort1(int n, int m) {
+    public static void ArraysSort1(int n, int m, int k) {
         int[] a = new int[n];
         int[] b = new int[m];
 
-        int k = 1;
         int u = 1;
 
         for (int i = 0; i < n; i++) {
@@ -25,19 +26,24 @@ public class ArraysSort {
             System.out.print(b[i] + " ");
         }
 
+        int length = a.length+b.length;
+        a = Arrays.copyOf(a,a.length+b.length);
+        for (int i = 0; i < length; i++) {
+            if (i == k) {
+            for (int j = 0; j < b.length; j++) {
+                    a[i + 1] = b[i];
 
-        for (int i = 0; i < m; i++) {
-           n=n+1;
-            for (int j = n; j <k+i+1 ; j++) {
-                a[j]= b[j-1];
-                a[k+i]= b[i];
+                }
             }
         }
-        int o = 0;
+
+
+
+
+
+
         System.out.println();
-        for (int i = 0; i < n; i++) {
-            System.out.print(a[i] + " ");
-        }
+       OneDimensionalArrays.printInt(a);
 
     }
 
@@ -61,6 +67,16 @@ public class ArraysSort {
             System.out.print(a[left]+"  ");
         }
 
+    }
+
+    public static void ArraysSort4(int n) {
+        int[] a = new int[n];
+
+        OneDimensionalArrays.fillIntArray(a);
+        OneDimensionalArrays.printInt(a);
+
+        System.out.println();
+        System.out.println("Sort array:");
     }
 
 
