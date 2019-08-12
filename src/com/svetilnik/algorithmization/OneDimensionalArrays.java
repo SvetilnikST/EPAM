@@ -300,7 +300,7 @@ public class OneDimensionalArrays {
     }
 
 
-    private static void print(double[] array) {
+    public static void print(double[] array) {
         for (double arr : array) {
             System.out.print(arr + "  ");
         }
@@ -312,13 +312,13 @@ public class OneDimensionalArrays {
         }
     }
 
-    private static void fillIntArray(int[] array) {
+    public static void fillIntArray(int[] array) {
         for (int i = 0; i < array.length; i++) {
             array[i] = i + 1;
         }
     }
 
-    private static void printInt(int[] array) {
+    static void printInt(int[] array) {
         for (int arr : array) {
             System.out.print(arr + "  ");
         }

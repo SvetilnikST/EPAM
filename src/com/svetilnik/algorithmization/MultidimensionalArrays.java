@@ -304,41 +304,59 @@ public class MultidimensionalArrays {
         printArrayInt(array);
     }
 
-
+    //TODO Think about it
     public static void MultidimensionalArrays16(int n) {
-        int[][] array = new int[n][n];
+        int[][] a = new int[n][n];
+
+        System.out.println("Ishodniy massiv: ");
+        GenerateArray(a);
+        PrintArray(a);
+        System.out.println("Magicheskiy kvadrat: ");
+        ReverseArray1(a);
+        ReverseArray2(a);
+        PrintArray(a);
+    }
+
+
+    public static void PrintArray(int a[][]) {
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a.length; j++) {
+                System.out.print(a[i][j] + "\t");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void GenerateArray(int a[][]) {
         int k = 1;
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[0].length; j++) {
-                array[i][j] = k;
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a.length; j++) {
+                a[i][j] = k;
                 k++;
             }
         }
+    }
 
-        printArrayInt(array);
-
-
+    public static void ReverseArray1(int a[][]) {
         int t;
-        for (int i = 0; i < array.length/2; i++) {
-            for (int j = 0; j < array.length / 2; j++) {
-                if(i==j){
-                    t = array[i][j];
-                    array[i][j] = array[array.length-1-i][array.length-1-j];
-                    array[array.length-1-i][array.length-1-j]=t;
+        for (int i = 0; i < a.length / 2; i++) {
+            for (int j = 0; j < a.length / 2; j++) {
+                if (i == j) {
+                    t = a[i][j];
+                    a[i][j] = a[a.length - 1 - i][a.length - 1 - j];
+                    a[a.length - 1 - i][a.length - 1 - j] = t;
                 }
             }
         }
+    }
 
-//        int l;
-//        for (int i=0, int j=array.length-1-i; i <= (array.length/2)-1;++i, --j){
-//
-//            l=array[i][j];
-//            array[i][j]=a[j][i];
-//            a[j][i]=t;
-//        }
-
-
-
+    public static void ReverseArray2(int a[][]) {
+        int t;
+        for (int i = 0, j = a.length - 1 - i; i <= (a.length / 2) - 1; ++i, --j) {
+            t = a[i][j];
+            a[i][j] = a[j][i];
+            a[j][i] = t;
+        }
     }
 
 

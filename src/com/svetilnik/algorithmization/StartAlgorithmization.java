@@ -32,6 +32,8 @@ public class StartAlgorithmization {
 //        MultidimensionalArrays.MultidimensionalArrays16(3);
 
 
-        ArraysSort.ArraysSort1(5, 3);
+
+//        ArraysSort.ArraysSort1(5, 3);
+        ArraysSort.ArraysSort3(9);
     }
 }
