@@ -28,6 +28,17 @@ public class ArraysSort {
     }
 
 
+    public static void ArraysSort2() {
+        int[] a = new int[]{1, 2, 3, 4, 5};
+        int[] b = new int[]{10, 20, 30};
+        int[] c = new int[a.length + b.length];
+
+
+
+    }
+
+
+
     public static void ArraysSort3(int n) {
         int[] a = new int[n];
 
