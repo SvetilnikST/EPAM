@@ -1,55 +1,35 @@
 package com.svetilnik.algorithmization;
 
-import java.util.Arrays;
-
 public class ArraysSort {
 
+    public static void ArraysSort1(int k) {
+        int[] a = new int[]{1, 2, 3, 4, 5};
+        int[] b = new int[]{10, 20, 30};
+        int[] c = new int[a.length + b.length];
+        int z=0;
 
-    //TODO Hren
-    public static void ArraysSort1(int n, int m, int k) {
-        int[] a = new int[n];
-        int[] b = new int[m];
+        for (int i = 0; i < c.length; i++) {
 
-        int u = 1;
+            for (int j = 0; j < k+1; j++) {
+                c[j]=a[j];
+            }
 
-        for (int i = 0; i < n; i++) {
-            a[i] = u;
-            u++;
-            System.out.print(a[i] + " ");
-        }
+            for (int j = k+1; j <c.length; j++,z++) {
+                if (z==b.length){break;}
+                c[j]=b[z];
+            }
 
-        System.out.println();
-
-        for (int i = 0; i < m; i++) {
-            b[i] = u + 10;
-            u++;
-            System.out.print(b[i] + " ");
-        }
-
-        int length = a.length+b.length;
-        a = Arrays.copyOf(a,a.length+b.length);
-        for (int i = 0; i < length; i++) {
-            if (i == k) {
-            for (int j = 0; j < b.length; j++) {
-                    a[i + 1] = b[i];
-
-                }
+            for (int j = k+1; j <a.length ; j++) {
+                c[j+b.length]=a[j];
             }
         }
 
-
-
-
-
-
-        System.out.println();
-       OneDimensionalArrays.printInt(a);
-
+        OneDimensionalArrays.printInt(c);
     }
 
 
     public static void ArraysSort3(int n) {
-        int [] a = new int[n];
+        int[] a = new int[n];
 
         OneDimensionalArrays.fillIntArray(a);
         OneDimensionalArrays.printInt(a);
@@ -58,13 +38,13 @@ public class ArraysSort {
         System.out.println("Sort array:");
         for (int left = 0; left < a.length; left++) {
             int maxInd = left;
-            for (int i = left; i <a.length ; i++) {
-                if(a[i]>a[maxInd]){
-                    maxInd=i;
+            for (int i = left; i < a.length; i++) {
+                if (a[i] > a[maxInd]) {
+                    maxInd = i;
                 }
             }
-            swap(a,left,maxInd);
-            System.out.print(a[left]+"  ");
+            swap(a, left, maxInd);
+            System.out.print(a[left] + "  ");
         }
 
     }
@@ -80,17 +60,14 @@ public class ArraysSort {
     }
 
 
-
     /*
     metods for task
      */
-    private static void swap(int [] array, int ind1, int ind2){
+    private static void swap(int[] array, int ind1, int ind2) {
         int tmp = array[ind1];
-        array[ind1]= array[ind2];
-        array[ind2]= tmp;
+        array[ind1] = array[ind2];
+        array[ind2] = tmp;
     }
-
-
 
 
 }
