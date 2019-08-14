@@ -6,21 +6,23 @@ public class ArraysSort {
         int[] a = new int[]{1, 2, 3, 4, 5};
         int[] b = new int[]{10, 20, 30};
         int[] c = new int[a.length + b.length];
-        int z=0;
+        int z = 0;
 
         for (int i = 0; i < c.length; i++) {
 
-            for (int j = 0; j < k+1; j++) {
-                c[j]=a[j];
+            for (int j = 0; j < k + 1; j++) {
+                c[j] = a[j];
             }
 
-            for (int j = k+1; j <c.length; j++,z++) {
-                if (z==b.length){break;}
-                c[j]=b[z];
+            for (int j = k + 1; j < c.length; j++, z++) {
+                if (z == b.length) {
+                    break;
+                }
+                c[j] = b[z];
             }
 
-            for (int j = k+1; j <a.length ; j++) {
-                c[j+b.length]=a[j];
+            for (int j = k + 1; j < a.length; j++) {
+                c[j + b.length] = a[j];
             }
         }
 
@@ -29,14 +31,25 @@ public class ArraysSort {
 
 
     public static void ArraysSort2() {
-        int[] a = new int[]{1, 2, 3, 4, 5};
-        int[] b = new int[]{10, 20, 30};
+//        int[] a = new int[]{1, 3, 5, 7};
+//        int[] b = new int[]{2, 4, 6};
+        int[] a = new int[]{1, 2, 3};
+        int[] b = new int[]{4, 6};
         int[] c = new int[a.length + b.length];
 
 
+        for (int i = 0; i < b.length; i++) {
+            if (a[i] < b[i]) {
+                c[i] = a[i];
+            } else c[i] = b[i];
+        }
+
+        for (int i = 0; i < c.length; i++) {
+            System.out.print(c[i] + " ");
+        }
+
 
     }
-
 
 
     public static void ArraysSort3(int n) {

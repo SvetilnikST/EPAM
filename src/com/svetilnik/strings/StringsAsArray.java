@@ -4,10 +4,12 @@ public class StringsAsArray {
 
 
 
-    public static void stringsAsArrayTask3(){
-
-
-
+    public static void stringsAsArrayTask2(){
+        String str = "Starts word replace word word.";
+        String forReplace = "word";
+        String replacementValue = "letter";
+        System.out.println(str);
+        System.out.println(str.replace(forReplace, replacementValue));
     }
 
     //неправильно. нужно как с массивом символов

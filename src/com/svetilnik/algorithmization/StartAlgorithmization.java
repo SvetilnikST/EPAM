@@ -35,7 +35,7 @@ public class StartAlgorithmization {
 
 //        ArraysSort.ArraysSort1(2);
 
-        ArraysSort.ArraysSort2();
+//        ArraysSort.ArraysSort2();
 //        ArraysSort.ArraysSort3(9);
     }
 }
