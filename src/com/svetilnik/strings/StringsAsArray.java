@@ -2,14 +2,41 @@ package com.svetilnik.strings;
 
 public class StringsAsArray {
 
+    public static void stringsAsArrayTask1(){
+
+
+        String str = "camelCase";
+        str = str.toLowerCase();
+
+        System.out.println(str);
+
+    }
 
 
     public static void stringsAsArrayTask2(){
-        String str = "Starts word replace word word.";
+//        String str = "Starts word replace word word.";
+//        String forReplace = "word";
+//        String replacementValue = "letter";
+//        System.out.println(str);
+//        System.out.println(str.replace(forReplace, replacementValue));
+
+       String  [] strings = new String[]{"Start", "word", "replace", "word", "word"};
         String forReplace = "word";
         String replacementValue = "letter";
-        System.out.println(str);
-        System.out.println(str.replace(forReplace, replacementValue));
+        for (int i = 0; i < strings.length; i++) {
+            if(strings[i]==forReplace){
+                strings[i]=replacementValue;
+
+            }
+        }
+
+        for (int i = 0; i < strings.length; i++) {
+            System.out.print(strings[i]+" ");
+        }
+
+
+
+
     }
 
     //неправильно. нужно как с массивом символов
