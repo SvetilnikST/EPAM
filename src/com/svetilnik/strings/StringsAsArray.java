@@ -1,5 +1,8 @@
 package com.svetilnik.strings;
 
+/**
+ * Работа со строкой как с массивом символов
+ */
 public class StringsAsArray {
 
     public static void stringsAsArrayTask1() {

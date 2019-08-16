@@ -14,8 +14,8 @@ public class Main {
     public static void main(String[] args) {
 
 //        StartBasics.startBasics();
-//        StartAlgorithmization.startAlgorithmization();
-        StartStrings.startStrings();
+        StartAlgorithmization.startAlgorithmization();
+//        StartStrings.startStrings();
     }
 
 }

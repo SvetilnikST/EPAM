@@ -1,6 +1,8 @@
 package com.svetilnik.algorithmization;
 
-import static java.lang.Long.sum;
+/**
+ * Одномерные массивы
+ */
 
 public class OneDimensionalArrays {
     public static void OneArraysTask1(int N, int K) {
@@ -318,10 +320,17 @@ public class OneDimensionalArrays {
         }
     }
 
+    public static void fillIntArrayForSort(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            array[i] = 10-i;
+        }
+    }
+
     static void printInt(int[] array) {
         for (int arr : array) {
             System.out.print(arr + "  ");
         }
+        System.out.println();
     }
 
 }

@@ -1,5 +1,8 @@
 package com.svetilnik.algorithmization;
 
+/**
+ * Задачи одномерные массивы. Сортировки
+ */
 public class ArraysSort {
 
     public static void ArraysSort1(int k) {
@@ -75,12 +78,25 @@ public class ArraysSort {
 
     public static void ArraysSort4(int n) {
         int[] a = new int[n];
+        int count = 0;
 
-        OneDimensionalArrays.fillIntArray(a);
+        OneDimensionalArrays.fillIntArrayForSort(a);
         OneDimensionalArrays.printInt(a);
-
-        System.out.println();
         System.out.println("Sort array:");
+
+        for (int i = a.length - 1; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if (a[j] > a[j + 1]) {
+                    int tmp = a[j];
+                    a[j] = a[j + 1];
+                    a[j + 1] = tmp;
+                    count++;
+                }
+            }
+        }
+
+        OneDimensionalArrays.printInt(a);
+        System.out.println("Count swap = " + count);
     }
 
 
