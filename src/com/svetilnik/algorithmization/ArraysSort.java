@@ -32,7 +32,6 @@ public class ArraysSort {
         OneDimensionalArrays.printInt(c);
     }
 
-
     public static void ArraysSort2() {
 //        int[] a = new int[]{1, 3, 5, 7};
 //        int[] b = new int[]{2, 4, 6};
@@ -40,11 +39,14 @@ public class ArraysSort {
         int[] b = new int[]{4, 6};
         int[] c = new int[a.length + b.length];
 
+        for (int i = 0; i < c.length; i++) {
+            if (a[i] > b[i]) {
+                c[i] = b[i];
+            } else c[i] = a[i];
+            if(i==b.length||i>b.length){
+                c[i]= a[i];
+            }
 
-        for (int i = 0; i < b.length; i++) {
-            if (a[i] < b[i]) {
-                c[i] = a[i];
-            } else c[i] = b[i];
         }
 
         for (int i = 0; i < c.length; i++) {
@@ -54,7 +56,7 @@ public class ArraysSort {
 
     }
 
-
+    //Сортировка выбором
     public static void ArraysSort3(int n) {
         int[] a = new int[n];
 
@@ -76,6 +78,7 @@ public class ArraysSort {
 
     }
 
+    //Сортировка обменами
     public static void ArraysSort4(int n) {
         int[] a = new int[n];
         int count = 0;
