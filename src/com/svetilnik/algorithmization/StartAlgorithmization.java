@@ -39,6 +39,7 @@ public class StartAlgorithmization {
 //        ArraysSort.ArraysSort4(5);
 
 
-        Voids.Task1(365,478);
+//        Voids.Task1(365,478);
+//        Voids.Task2(15,30,40,50);
     }
 }
