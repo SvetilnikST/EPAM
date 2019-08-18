@@ -28,6 +28,33 @@ public class Voids {
         System.out.println("Square: " + S);
     }
 
+    public static void Task4(int n) {
+        int[] A = new int[n];
+
+        OneDimensionalArrays.fillIntArrayForSort(A);
+        OneDimensionalArrays.printInt(A);
+
+        System.out.println("Second by size"+ secondBySize(A));
+    }
+
+    protected static int secondBySize(int []A){
+        int max1;
+        int max2 = 0;
+        for (int i = 2; i < A.length; i++) {
+            max1 = A[0];
+            max2 = A[1];
+            if (A[i] > max2) {
+                max2 = A[i];
+            }
+            if (max2 > max1) {
+                int tmp = max1;
+                max1 = max2;
+                max2 = tmp;
+            }
+        }
+        return max2;
+    }
+
 
     protected static int nod(int a, int b) {
         while (a != b) {

@@ -28,7 +28,7 @@ public class Branching {
     }
 
     /**
-     * Найти max{min(a,b), min(c,d)}
+     * Найти secondBySize{min(a,b), min(c,d)}
      */
     public static void branchingTask2(int a, int b, int c, int d) {
 

@@ -146,12 +146,12 @@ public class OneDimensionalArrays {
 //
 //        int[][] arr = new int[n][n];
 //        int tmp;
-//        int max;
+//        int secondBySize;
 //
-//        max = sum(0,arr,n);
+//        secondBySize = sum(0,arr,n);
 //        for (int i = 1; i < n - 1; i++) {
-//            if (max < tmp) {
-//                max = tmp;
+//            if (secondBySize < tmp) {
+//                secondBySize = tmp;
 //            }
 //
 //            tmp = RetMax(sum(i, n), sum((i + 1), n));
@@ -220,7 +220,7 @@ public class OneDimensionalArrays {
 //        int[] a = new int[]{3, 3, 1,1};
 //
 //        int num = a[0];
-//        int max = 1;
+//        int secondBySize = 1;
 //        int min = a[0];
 //
 //        for (int i = 0; i < a.length; i++) {
@@ -232,12 +232,12 @@ public class OneDimensionalArrays {
 //                if (a[i] == a[j]) {
 //                    count++;
 //
-//                    if (count > max) {
-//                        max = count;
+//                    if (count > secondBySize) {
+//                        secondBySize = count;
 //                        num = a[i];
 //                        if (num < min) {
 //                            min=num;
-//                            max = count;
+//                            secondBySize = count;
 //                        }
 //
 //                    }
@@ -248,8 +248,8 @@ public class OneDimensionalArrays {
 //        }
 //
 //        System.out.println();
-//        if (max > 1) {
-//            System.out.println("встречается" + max + " раз  " + min);
+//        if (secondBySize > 1) {
+//            System.out.println("встречается" + secondBySize + " раз  " + min);
 //        } else System.out.println("все уник");
 //    }
 
