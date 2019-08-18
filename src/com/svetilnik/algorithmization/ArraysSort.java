@@ -35,23 +35,60 @@ public class ArraysSort {
     public static void ArraysSort2() {
 //        int[] a = new int[]{1, 3, 5, 7};
 //        int[] b = new int[]{2, 4, 6};
-        int[] a = new int[]{1, 2, 3};
-        int[] b = new int[]{4, 6};
-        int[] c = new int[a.length + b.length];
+//        int[] a = new int[]{1, 2, 3};
+//        int[] b = new int[]{4, 6};
+//        int[] c = new int[a.length + b.length];
+//        int k = 0;
+//
+//        for (int i = 0; i < c.length; i++) {
+//
+//            if(a.length<b.length) {
+//                while (i < a.length - 1) {
+//
+//                    if (a[i] < b[i]) {
+//                        c[k] = a[i];
+//                        k++;
+//                        i++;
+//                    } else {
+//                        c[k] = b[i];
+//                        k++;
+//                        i++;
+//                    }
+//                }
+//                if(k==a.length){
+//                    c[k]=b[i];
+//                    k++;
+//                }
+//            }else {
+//                while (i < b.length - 1) {
+//
+//                    if (b[i] < a[i]) {
+//                        c[k] = b[i];
+//                        k++;
+//                        i++;
+//                    } else {
+//                        c[k] = a[i];
+//                        k++;
+//                        i++;
+//                    }
+//                }
+//                if(k==b.length){
+//                    c[k]=a[i];
+//                    k++;
+//                }
+//
+//
+//
+//
+//            }
 
-        for (int i = 0; i < c.length; i++) {
-            if (a[i] > b[i]) {
-                c[i] = b[i];
-            } else c[i] = a[i];
-            if(i==b.length||i>b.length){
-                c[i]= a[i];
-            }
 
-        }
+//        }
 
-        for (int i = 0; i < c.length; i++) {
-            System.out.print(c[i] + " ");
-        }
+//
+//        for (int i = 0; i < c.length; i++) {
+//            System.out.print(c[i] + " ");
+//        }
 
 
     }
