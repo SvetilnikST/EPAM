@@ -1,5 +1,8 @@
 package com.svetilnik.algorithmization;
 
+import static java.lang.Math.pow;
+import static java.lang.Math.sqrt;
+
 public class Voids {
     public static void Task1(int a, int b) {
         int nok;
@@ -17,6 +20,12 @@ public class Voids {
         Z = nod(K, L);
 
         System.out.println(Z);
+    }
+
+    public static void Task3(int a) {
+        double S;
+        S = 6 * ((pow((double) a, 2) * (sqrt(3) / 4)));
+        System.out.println("Square: " + S);
     }
 
 
