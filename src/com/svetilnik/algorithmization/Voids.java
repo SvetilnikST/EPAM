@@ -48,20 +48,34 @@ public class Voids {
 
     }
 
-    public static void Task7(int n){
-        int sum=0;
+    public static void Task7(int n) {
+        int sum = 0;
         for (int i = 0; i <= n; i++) {
-            if(i%2!=0){
-                sum=sum+factorial(i);
+            if (i % 2 != 0) {
+                sum = sum + factorial(i);
             }
         }
-        System.out.println("Sum = "+sum);
+        System.out.println("Sum = " + sum);
     }
 
-    protected static int factorial(int n){
-        int result =1;
+    public static void Task11(int a, int b) {
+        int devider = 10;
+        while (a != 0 && b != 0) {
+            a = a / devider;
+            b = b / devider;
+            if (a == 0 && b == 0) {
+                System.out.println("Equal.");
+                break;
+            }
+            if (b == 0) System.out.println("In the first.");
+            if (a == 0) System.out.println("In the second.");
+        }
+    }
+
+    protected static int factorial(int n) {
+        int result = 1;
         for (int i = 1; i <= n; i++) {
-            result = result*i;
+            result = result * i;
         }
         return result;
     }
