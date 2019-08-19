@@ -43,6 +43,7 @@ public class StartAlgorithmization {
 //        Voids.Task2(15,30,40,50);
 //        Voids.Task3(5);
 //        Voids.Task4(5);
-        Voids.Task6(10,15,15);
+//        Voids.Task6(10,15,15);
+//        Voids.Task7(9);
     }
 }

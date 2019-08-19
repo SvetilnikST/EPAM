@@ -48,6 +48,24 @@ public class Voids {
 
     }
 
+    public static void Task7(int n){
+        int sum=0;
+        for (int i = 0; i <= n; i++) {
+            if(i%2!=0){
+                sum=sum+factorial(i);
+            }
+        }
+        System.out.println("Sum = "+sum);
+    }
+
+    protected static int factorial(int n){
+        int result =1;
+        for (int i = 1; i <= n; i++) {
+            result = result*i;
+        }
+        return result;
+    }
+
     protected static int secondBySize(int[] A) {
         int max1;
         int max2 = 0;
