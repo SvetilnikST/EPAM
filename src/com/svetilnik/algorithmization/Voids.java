@@ -34,10 +34,21 @@ public class Voids {
         OneDimensionalArrays.fillIntArrayForSort(A);
         OneDimensionalArrays.printInt(A);
 
-        System.out.println("Second by size"+ secondBySize(A));
+        System.out.println("Second by size " + secondBySize(A));
     }
 
-    protected static int secondBySize(int []A){
+    public static void Task6(int a, int b, int c) {
+        int k = nod(a, b);
+        int z = nod(k, c);
+        if (z == 1) {
+            System.out.println(" Mutually Simple");
+        } else {
+            System.out.println("Not Mutually Simple");
+        }
+
+    }
+
+    protected static int secondBySize(int[] A) {
         int max1;
         int max2 = 0;
         for (int i = 2; i < A.length; i++) {
@@ -66,4 +77,6 @@ public class Voids {
         }
         return a;
     }
+
+
 }
