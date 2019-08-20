@@ -64,11 +64,13 @@ public class Voids {
         OneDimensionalArrays.fillIntArray(D);
         OneDimensionalArrays.printInt(D);
         int s1 = 0;
+        int s2=0;
         for (int i = 0; i < n; i++) {
             if (i == k && i < m) {
                 for (int j = k; j < m-k; j++) {
-                    s1 = D[j] + D[j + 1] + D[j + 2];
+                    s1 = D[j+1] + D[j + 2] + D[j + 3];
                     System.out.print(s1+" ");
+                    s1=0;
                 }
 
             }
