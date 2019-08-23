@@ -6,6 +6,8 @@ public class StartStrings {
 //        StringsAsArray.stringsAsArrayTask1();
 //        StringsAsArray.stringsAsArrayTask5("   nkjnj  njknjn njknjkn ");
 //        StringsAsArray.stringsAsArrayTask2();
-        StringsAsArray.stringsAsArrayTask6();
+//        StringsAsArray.stringsAsArrayTask6();
+
+        StringAndStringBuilder.Task1();
     }
 }

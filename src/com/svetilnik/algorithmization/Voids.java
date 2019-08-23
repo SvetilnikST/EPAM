@@ -78,6 +78,17 @@ public class Voids {
 //        System.out.println(s1);
     }
 
+
+    public static void Task9(int X, int Y, int Z, int T){
+
+
+    }
+
+//    protected static void areaTriangle(int X, int Y, int Z ){
+//        double area = (X+Y+Z)/2;
+//        double pl_tr = Math.sqrt(area*(area-X)*(area-Y)*(area-Z));
+//    }
+
     public static void Task11(int a, int b) {
         int devider = 10;
         while (a != 0 && b != 0) {
