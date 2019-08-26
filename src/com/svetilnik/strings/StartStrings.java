@@ -8,6 +8,8 @@ public class StartStrings {
 //        StringsAsArray.stringsAsArrayTask2();
 //        StringsAsArray.stringsAsArrayTask6();
 
-        StringAndStringBuilder.Task1();
+//        StringAndStringBuilder.Task1();
+//        StringAndStringBuilder.Task2();
+        System.out.println(StringAndStringBuilder.Task3("топот"));
     }
 }
