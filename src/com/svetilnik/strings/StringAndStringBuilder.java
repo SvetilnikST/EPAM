@@ -43,4 +43,13 @@ public class StringAndStringBuilder {
         return true;
     }
 
+
+    public static void Task4() {
+        String informatics = "информатика";
+        String t = String.valueOf(informatics.charAt(7));
+        String o = String.valueOf(informatics.charAt(3));
+        String r = String.valueOf(informatics.charAt(4));
+        String tort = t+o+r+t;
+        System.out.println(tort);
+    }
 }

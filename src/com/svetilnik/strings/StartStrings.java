@@ -1,7 +1,7 @@
 package com.svetilnik.strings;
 
 public class StartStrings {
-    public static void startStrings(){
+    public static void startStrings() {
 
 //        StringsAsArray.stringsAsArrayTask1();
 //        StringsAsArray.stringsAsArrayTask5("   nkjnj  njknjn njknjkn ");
@@ -10,6 +10,7 @@ public class StartStrings {
 
 //        StringAndStringBuilder.Task1();
 //        StringAndStringBuilder.Task2();
-        System.out.println(StringAndStringBuilder.Task3("топот"));
+//        System.out.println(StringAndStringBuilder.Task3("топот"));
+        StringAndStringBuilder.Task4();
     }
 }
