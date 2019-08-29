@@ -93,9 +93,31 @@ public class StringsAsArray {
 
     //неправильно. нужно как с массивом символов
     public static void stringsAsArrayTask5(String s) {
+        System.out.println(s);
+        System.out.println("--------");
+//        String str = s.replaceAll("\\s{2,}", " ").trim();
 
-        String str = s.replaceAll("\\s{2,}", " ").trim();
+        String str = s.trim();
+        char[] chars = str.toCharArray();
+
+        int count = 0;
+        for (int i = 0; i < chars.length; i++) {
+            if (chars[i] == ' ') {
+                count++;
+                if (count > 1) {
+                    removeCharAt(str, i);
+                }
+            } else {
+                count = 0;
+            }
+
+        }
+
 
         System.out.println(str);
+    }
+
+    public static String removeCharAt(String s, int pos) {
+        return s.substring(0, pos) + s.substring(pos + 1);
     }
 }

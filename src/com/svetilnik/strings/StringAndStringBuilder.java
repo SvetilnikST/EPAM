@@ -43,7 +43,6 @@ public class StringAndStringBuilder {
         return true;
     }
 
-
     public static void Task4() {
         String informatics = "информатика";
         String t = String.valueOf(informatics.charAt(7));
