@@ -4,7 +4,7 @@ public class StartStrings {
     public static void startStrings() {
 
 //        StringsAsArray.stringsAsArrayTask1();
-        StringsAsArray.stringsAsArrayTask5("   nk       jnj  n    jkn    jn njknjkn ");
+        StringsAsArray.stringsAsArrayTask5(" a b   c    d ");
 //        StringsAsArray.stringsAsArrayTask2();
 //        StringsAsArray.stringsAsArrayTask6();
 
