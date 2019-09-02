@@ -55,39 +55,40 @@ public class StringsAsArray {
 //        System.out.println(str);
 //        System.out.println(str.replace(forReplace, replacementValue));
 
-        String[] strings = new String[]{"Start", "word", "replace", "word", "word"};
-        String forReplace = "word";
-        String replacementValue = "letter";
-        for (int i = 0; i < strings.length; i++) {
-            if (strings[i] == forReplace) {
-                strings[i] = replacementValue;
+//        String[] strings = new String[]{"Start", "word", "replace", "word", "word"};
+//        String forReplace = "word";
+//        String replacementValue = "letter";
+//        for (int i = 0; i < strings.length; i++) {
+//            if (strings[i] == forReplace) {
+//                strings[i] = replacementValue;
+//
+//            }
+//        }
+//
+//        for (int i = 0; i < strings.length; i++) {
+//            System.out.print(strings[i] + " ");
+//        }
 
+        String string = "String word word jkl word";
+
+        System.out.println(string.contains("word"));
+
+        char[] chars = {'w', 'o', 'r', 'd'};
+        char[] latter = {'l', 'a', 't', 't','e','r'};
+        char[] charsString = string.toCharArray();
+
+        int k = 0;
+
+        for (int i = 0; i < charsString.length; i++) {
+            if (charsString[i] == chars[k] && charsString[i + 1] == chars[k + 1] && charsString[i + 2] == chars[k + 2] && charsString[i + 3] == chars[k + 3]) {
+                charsString[i]=latter[k];
             }
         }
 
-        for (int i = 0; i < strings.length; i++) {
-            System.out.print(strings[i] + " ");
+        for (char c: charsString) {
+            System.out.print(c);
         }
 
-    }
-
-    public static void stringsAsArrayTask6() {
-        String[] str = new String[]{"1235648 dvfvdf1245 dl,;ls"};
-        int count = 0;
-
-        for (int i = 0; i < str.length; i++) {
-            char[] chars = str[i].toCharArray();
-            for (int j = 0; j < chars.length; j++) {
-
-                if (chars[j] >= '1' && chars[j] <= '9') {
-                    count++;
-                }
-                System.out.print(chars[j] + " ");
-            }
-            System.out.println();
-        }
-
-        System.out.println("Coutnt number = " + count);
     }
 
     public static void stringsAsArrayTask5(String s) {
@@ -111,12 +112,26 @@ public class StringsAsArray {
                 count = 0;
             }
         }
-
-
         System.out.println(str);
     }
 
-//    public static String removeCharAt(String s, int pos) {
-//        return s.substring(0, pos) + s.substring(pos + 1);
-//    }
+    public static void stringsAsArrayTask6() {
+        String[] str = new String[]{"1235648 dvfvdf1245 dl,;ls"};
+        int count = 0;
+
+        for (int i = 0; i < str.length; i++) {
+            char[] chars = str[i].toCharArray();
+            for (int j = 0; j < chars.length; j++) {
+
+                if (chars[j] >= '1' && chars[j] <= '9') {
+                    count++;
+                }
+                System.out.print(chars[j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println("Coutnt number = " + count);
+    }
+
+
 }
