@@ -81,65 +81,146 @@ public class StringsAsArray {
 //
 //    }
 
+//    public static void stringsAsArrayTask2(String string, String wordS, String replace) {
+//        char[] chars = string.toCharArray();
+//        char[] word = wordS.toCharArray();
+//        char[] letter = replace.toCharArray();
+//
+//        int count = 0;
+//        int k = 0;
+//        int z = 0;
+//
+//        for (int i = 0; i < chars.length; i++) {
+//            if (chars[i] == word[k]) {
+//                for (int j = 0; j < word.length; j++) {
+//                    if (chars[i + j] == word[j]) {
+//                        z++;
+//                    }
+//                    if (z == word.length) {
+//                        z = 0;
+//                        count++;
+//                    }
+//                }
+//
+//            }
+//        }
+//
+//        //вот тут рабоать с массивом
+//        int lengh = chars.length + ((letter.length - word.length) * count);
+//
+//
+//        char[] mass = new char[lengh];
+////        count = 0;
+//        z = 0;
+//
+//        for (int p = 0; p < mass.length; ) {
+//
+//            for (int i = 0; i < chars.length; i++) {
+//
+//                if (chars[i] == word[k]) {
+//                    for (int j = 0; j < word.length; j++) {
+//
+//                        if (chars[i + j] == word[j] && i + j < chars.length) {
+//                            z++;
+//                        }
+//
+//                        if (z == word.length) {
+//                            for (int l = 0; l < letter.length; l++) {
+//                                if (p + l < mass.length - 1) {
+//                                    mass[p + l] = letter[l];
+//                                    z = 0;
+//                                }
+//                            }
+//                            p = p + letter.length;
+//                            i = i + word.length - 1;
+////                            count++;
+//                        }
+//                    }
+//
+//                } else {
+//                    mass[p] = chars[i];
+//                    p++;
+//                }
+//
+//            }
+//        }
+//
+//
+//        for (int i = 0; i < chars.length; i++) {
+//            System.out.print(chars[i]);
+//        }
+//        System.out.println();
+//
+//        for (int i = 0; i < mass.length; i++) {
+//            System.out.print(mass[i]);
+//        }
+//
+//    }
+
+
     public static void stringsAsArrayTask2(String string, String wordS, String replace) {
         char[] chars = string.toCharArray();
         char[] word = wordS.toCharArray();
         char[] letter = replace.toCharArray();
-        int count = 1;
 
+        int count = 0;
         int k = 0;
         int z = 0;
 
-        //вот тут посчитать сколько раз встречается
-
         for (int i = 0; i < chars.length; i++) {
-            if (chars[i] == word[k]) {
+            if (chars[i] == word[k] && i != chars.length - 1) {
+
                 for (int j = 0; j < word.length; j++) {
-                    if (chars[i + j] == word[j]) {
-                        z++;
-                    }
-                    if (z == word.length) {
-                        z = 0;
-                        count++;
+                    if (i + j < chars.length - 1) {
+                        if (chars[i + j] == word[j]) {
+                            z++;
+                            if (z == word.length) {
+                                count++;
+                                z = 0;
+                            } else continue;
+                        } else {
+                            z = 0;
+                            continue;
+                        }
                     }
                 }
-
             }
         }
 
         //вот тут рабоать с массивом
-
-        char[] mass = new char[chars.length + (letter.length - word.length) * count];
-        count = 1;
-        z = 0;
+        int lengh = chars.length + ((letter.length - word.length) * count);
+        char[] mass = new char[lengh];
 
         for (int p = 0; p < mass.length; ) {
 
             for (int i = 0; i < chars.length; i++) {
 
-                if (chars[i] == word[k]) {
+                if (chars[i] == word[k] && i != chars.length - 1) {
                     for (int j = 0; j < word.length; j++) {
 
-                        if (chars[i + j] == word[j]) {
-                            z++;
-                        }
+                        if (i + j < chars.length - 1) {
+                            if (chars[i + j] == word[j]) {
+                                z++;
 
-                        if (z == word.length) {
-                            for (int l = 0; l < letter.length; l++) {
-                                mass[i + l] = letter[l];
-                                z = 0;
-                            }
-                            p = i + letter.length;
-                            i = i + word.length - 1;
-                            count++;
+                                if (z == word.length) {
+                                    for (int l = 0; l < letter.length; l++) {
+                                        if (p + l < mass.length - 1) {
+                                            mass[p + l] = letter[l];
+                                            z = 0;
+                                        }
+                                    }
+                                    p = p + letter.length;
+                                    i = i + word.length - 1;
+                                } else continue;
+                            } else continue;
                         }
                     }
-
                 } else {
-                    mass[p] = chars[i];
-                    p = p + 1;
+                    if (p < mass.length) {
+                        mass[p] = chars[i];
+                        p++;
+                    } else break;
                 }
-
             }
         }
 
