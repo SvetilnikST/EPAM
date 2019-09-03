@@ -74,21 +74,60 @@ public class StringsAsArray {
         System.out.println(string.contains("word"));
 
         char[] chars = {'w', 'o', 'r', 'd'};
-        char[] latter = {'l', 'a', 't', 't','e','r'};
+        char[] latter = {'l', 'a', 't', 't', 'e', 'r'};
         char[] charsString = string.toCharArray();
 
         int k = 0;
 
         for (int i = 0; i < charsString.length; i++) {
             if (charsString[i] == chars[k] && charsString[i + 1] == chars[k + 1] && charsString[i + 2] == chars[k + 2] && charsString[i + 3] == chars[k + 3]) {
-                charsString[i]=latter[k];
+                charsString[i] = latter[k];
             }
         }
 
-        for (char c: charsString) {
+        for (char c : charsString) {
             System.out.print(c);
         }
 
+    }
+
+    public static void stringsAsArrayTask3() {
+        String[] str = new String[]{"1235648 dvfvdf1245 dlls"};
+        int count = 0;
+
+        for (int i = 0; i < str.length; i++) {
+            char[] chars = str[i].toCharArray();
+            for (int j = 0; j < chars.length; j++) {
+
+                if (chars[j] >= '1' && chars[j] <= '9') {
+                    count++;
+                }
+                System.out.print(chars[j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println("Coutnt number = " + count);
+    }
+
+
+    public static void stringsAsArrayTask4() {
+        String s = "b 12 h 5 34 f 652 bd1fg 2";
+
+        char[] chars = s.toCharArray();
+        int count = 0;
+        int k = 0;
+
+        for (int i = 0; i < chars.length; i++) {
+            if (chars[i] >= '1' && chars[i] <= '9') {
+                k = 1;
+            } else {
+                if (k == 1) {
+                    count++;
+                    k = 0;
+                }
+            }
+        }
+        System.out.println("Count numbers = " + count);
     }
 
     public static void stringsAsArrayTask5(String s) {
@@ -113,24 +152,6 @@ public class StringsAsArray {
             }
         }
         System.out.println(str);
-    }
-
-    public static void stringsAsArrayTask6() {
-        String[] str = new String[]{"1235648 dvfvdf1245 dl,;ls"};
-        int count = 0;
-
-        for (int i = 0; i < str.length; i++) {
-            char[] chars = str[i].toCharArray();
-            for (int j = 0; j < chars.length; j++) {
-
-                if (chars[j] >= '1' && chars[j] <= '9') {
-                    count++;
-                }
-                System.out.print(chars[j] + " ");
-            }
-            System.out.println();
-        }
-        System.out.println("Coutnt number = " + count);
     }
 
 
