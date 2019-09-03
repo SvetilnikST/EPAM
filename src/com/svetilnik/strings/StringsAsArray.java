@@ -47,46 +47,110 @@ public class StringsAsArray {
 
     }
 
-
-    public static void stringsAsArrayTask2() {
-//        String str = "Starts word replace word word.";
-//        String forReplace = "word";
-//        String replacementValue = "letter";
-//        System.out.println(str);
-//        System.out.println(str.replace(forReplace, replacementValue));
-
-//        String[] strings = new String[]{"Start", "word", "replace", "word", "word"};
-//        String forReplace = "word";
-//        String replacementValue = "letter";
-//        for (int i = 0; i < strings.length; i++) {
-//            if (strings[i] == forReplace) {
-//                strings[i] = replacementValue;
+//    public static void stringsAsArrayTask2() {
+////        String str = "Starts word replace word word.";
+////        String forReplace = "word";
+////        String replacementValue = "letter";
+////        System.out.println(str);
+////        System.out.println(str.replace(forReplace, replacementValue));
 //
-//            }
+////        String[] strings = new String[]{"Start", "word", "replace", "word", "word"};
+////        String forReplace = "word";
+////        String replacementValue = "letter";
+////        for (int i = 0; i < strings.length; i++) {
+////            if (strings[i] == forReplace) {
+////                strings[i] = replacementValue;
+////
+////            }
+////        }
+////
+////        for (int i = 0; i < strings.length; i++) {
+////            System.out.print(strings[i] + " ");
+////        }
+//
+//        String string = "String word word jkl word";
+//
+//        System.out.println(string.contains("word"));
+//
+////        char[] chars = {'w', 'o', 'r', 'd'};
+////        char[] latter = {'l', 'a', 't', 't', 'e', 'r'};
+//        char[] charsString = string.toCharArray();
+//        for (char c : charsString) {
+//            System.out.print(c);
 //        }
 //
-//        for (int i = 0; i < strings.length; i++) {
-//            System.out.print(strings[i] + " ");
-//        }
+//    }
 
-        String string = "String word word jkl word";
-
-        System.out.println(string.contains("word"));
-
-        char[] chars = {'w', 'o', 'r', 'd'};
-        char[] latter = {'l', 'a', 't', 't', 'e', 'r'};
-        char[] charsString = string.toCharArray();
+    public static void stringsAsArrayTask2(String string, String wordS, String replace) {
+        char[] chars = string.toCharArray();
+        char[] word = wordS.toCharArray();
+        char[] letter = replace.toCharArray();
+        int count = 1;
 
         int k = 0;
+        int z = 0;
 
-        for (int i = 0; i < charsString.length; i++) {
-            if (charsString[i] == chars[k] && charsString[i + 1] == chars[k + 1] && charsString[i + 2] == chars[k + 2] && charsString[i + 3] == chars[k + 3]) {
-                charsString[i] = latter[k];
+        //вот тут посчитать сколько раз встречается
+
+        for (int i = 0; i < chars.length; i++) {
+            if (chars[i] == word[k]) {
+                for (int j = 0; j < word.length; j++) {
+                    if (chars[i + j] == word[j]) {
+                        z++;
+                    }
+                    if (z == word.length) {
+                        z = 0;
+                        count++;
+                    }
+                }
+
             }
         }
 
-        for (char c : charsString) {
-            System.out.print(c);
+        //вот тут рабоать с массивом
+
+        char[] mass = new char[chars.length + (letter.length - word.length) * count];
+        count = 1;
+        z = 0;
+
+        for (int p = 0; p < mass.length; ) {
+
+            for (int i = 0; i < chars.length; i++) {
+
+                if (chars[i] == word[k]) {
+                    for (int j = 0; j < word.length; j++) {
+
+                        if (chars[i + j] == word[j]) {
+                            z++;
+                        }
+
+                        if (z == word.length) {
+                            for (int l = 0; l < letter.length; l++) {
+                                mass[i + l] = letter[l];
+                                z = 0;
+                            }
+                            p = i + letter.length;
+                            i = i + word.length - 1;
+                            count++;
+                        }
+                    }
+
+                } else {
+                    mass[p] = chars[i];
+                    p = p + 1;
+                }
+
+            }
+        }
+
+
+        for (int i = 0; i < chars.length; i++) {
+            System.out.print(chars[i]);
+        }
+        System.out.println();
+
+        for (int i = 0; i < mass.length; i++) {
+            System.out.print(mass[i]);
         }
 
     }
@@ -109,10 +173,7 @@ public class StringsAsArray {
         System.out.println("Coutnt number = " + count);
     }
 
-
-    public static void stringsAsArrayTask4() {
-        String s = "b 12 h 5 34 f 652 bd1fg 2";
-
+    public static void stringsAsArrayTask4(String s) {
         char[] chars = s.toCharArray();
         int count = 0;
         int k = 0;

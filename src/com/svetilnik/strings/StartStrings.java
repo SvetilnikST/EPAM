@@ -5,10 +5,10 @@ public class StartStrings {
 
 //        StringsAsArray.stringsAsArrayTask1();
 
-//        StringsAsArray.stringsAsArrayTask2();
+        StringsAsArray.stringsAsArrayTask2("word2wordXO", "word","letter");
 
 //        StringsAsArray.stringsAsArrayTask3();
-//        StringsAsArray.stringsAsArrayTask4();
+//        StringsAsArray.stringsAsArrayTask4("b 12 h 5 34 f 652 bd1fg 2");
 //        StringsAsArray.stringsAsArrayTask5(" a b   c    d ");
 
 
