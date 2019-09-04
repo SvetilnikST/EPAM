@@ -163,32 +163,71 @@ public class StringsAsArray {
         char[] word = wordS.toCharArray();
         char[] letter = replace.toCharArray();
 
-        int count = 1;
+        int count = 0;
         int k = 0;
         int z = 0;
 
-        for (int i = 0; i < chars.length; i++) {
-            if (chars[i] == word[k] && i != chars.length - 1) {
-
-                for (int j = 0; j < word.length; j++) {
-                    if (i + j < chars.length - 1 && chars[i + j] == word[j]) {
-//                        if (chars[i + j] == word[j]) {
-                        z++;
-                        if (z == word.length) {
-                            count++;
-                            z = 0;
-                        } else {
-                            z = 0;
-                            continue;
-                        }
+//        for (int i = 0; i < chars.length; i++) {
+//            if (chars[i] == word[k] && i != chars.length - 1) {
+//
+//                for (int j = 0; j < word.length; j++) {
+//                    if (i + j < chars.length - 1 && chars[i + j] == word[j]) {
+////                        if (chars[i + j] == word[j]) {
+//                        z++;
+//                        if (z == word.length) {
+//                            count++;
+//                            z = 0;
 //                        } else {
 //                            z = 0;
 //                            continue;
 //                        }
+////                        } else {
+////                            z = 0;
+////                            continue;
+////                        }
+//                    }
+//                }
+//            }
+//        }
+
+        for (int i = 0; i < chars.length; ) {
+
+            //если первый элемент начального массива = w
+            if (chars[i] == word[0] && i != chars.length - 1) {
+
+                //проходим по массиву "word"
+                for (int j = 0; j < word.length; j++) {
+
+                    //если i элемент = j элементу в слове word
+                    if (chars[i + j] == word[j] && i + j < chars.length) {
+                        //считаем количество совпадений
+                        z++;
                     }
+                }
+                //после прохождения по циклу ворд - начинаем проверять сколько раз встречалось
+                //если количество совпадений равно количеству букв в слове word
+                if (z == word.length) {
+                    //обнуляем счетчик
+                    z = 0;
+                    //проходимся по массиву letter
+                    count++;
+                    //переходим к следующему i за словом word
+                    i = i + word.length;
+                } else {
+
+                    if (i < chars.length) {
+                        i++;
+                        z = 0;
+                    }
+                }
+            } else {
+                if (i < chars.length) {
+                    i++;
                 }
             }
         }
+
+
         z = 0;
 
 
@@ -209,7 +248,6 @@ public class StringsAsArray {
 
                         //если i элемент = j элементу в слове word
                         if (chars[i + j] == word[j] && i + j < chars.length) {
-
                             //считаем количество совпадений
                             z++;
                         }
@@ -217,32 +255,18 @@ public class StringsAsArray {
                     //после прохождения по циклу ворд - начинаем проверять сколько раз встречалось
                     //если количество совпадений равно количеству букв в слове word
                     if (z == word.length) {
-
-                        //вот тут в цикле нужно записывать данные
-//                        mass[p] = word[0];
-//                        p++;
                         //обнуляем счетчик
                         z = 0;
-                        //если текущая позиция + количество букв не превышвет размера нового массива
-//                        if (p + letter.length < mass.length-1) {
                         //проходимся по массиву letter
                         for (int l = 0; l < letter.length; l++) {
-                            //если текущая позиция + количество букв не превышвет размера нового массива
                             mass[p + l] = letter[l];
                         }
-
-//                        if (p + letter.length < mass.length) {
-                            //увеличиваем позицию p+количество символов которые записали
-                            p = p + letter.length;
-                            //переходим к следующему i за словом word
-                            i = i + word.length;
-//                        }else break;
-//                        }
+                        p = p + letter.length;
+                        //переходим к следующему i за словом word
+                        i = i + word.length;
                     } else {
 
-                        //вот тут предусмотреть чтобы это не было то слово, которое мы ищем
-                        //вот тут бахнуть проверку когда уже 2 совпадает
-                        if(p<mass.length && i<chars.length) {
+                        if (p < mass.length && i < chars.length) {
                             mass[p] = chars[i];
                             p++;
                             i++;
@@ -250,10 +274,8 @@ public class StringsAsArray {
                         }
 
                     }
-
-
                 } else {
-                    if (p < mass.length && i<chars.length) {
+                    if (p < mass.length && i < chars.length) {
                         mass[p] = chars[i];
                         p++;
                         i++;
