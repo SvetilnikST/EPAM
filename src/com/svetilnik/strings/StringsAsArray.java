@@ -5,9 +5,8 @@ package com.svetilnik.strings;
  */
 public class StringsAsArray {
 
-    public static void stringsAsArrayTask1() {
+    public static void stringsAsArrayTask1(String[] camelCase) {
 
-        String[] camelCase = new String[]{"karaMara", "helloWorld", "lizaMop", "optRew"};
         String[] snake_case = new String[camelCase.length];
 
         int codeSymbol = 95;
@@ -58,16 +57,11 @@ public class StringsAsArray {
         count = countRepeat(chars, word);
         lengh = lengthArray(chars, word, letter, count);
         mass = new char[lengh];
-        replaceWord(chars, word, letter, mass);
-        printChars(chars);
-        printChars(mass);
-    }
 
-    private static void printChars(char[] chars) {
-        for (int i = 0; i < chars.length; i++) {
-            System.out.print(chars[i]);
-        }
-        System.out.println();
+        String result = replaceWord(chars, word, letter, mass);
+
+        System.out.println("Last string: "+string);
+        System.out.println("New  string: "+result);
     }
 
     private static int countRepeat(char[] chars, char[] word) {
@@ -101,7 +95,7 @@ public class StringsAsArray {
         return count;
     }
 
-    private static void replaceWord(char[] chars, char[] word, char[] letter, char[] mass) {
+    private static String replaceWord(char[] chars, char[] word, char[] letter, char[] mass) {
 
         int z = 0;
 
@@ -143,6 +137,9 @@ public class StringsAsArray {
                 }
             }
         }
+
+        String resalt = new String(mass);
+        return resalt;
     }
 
     private static int lengthArray(char[] chars, char[] word, char[] letter, int count) {
@@ -150,8 +147,8 @@ public class StringsAsArray {
         return length = chars.length + (letter.length - word.length) * count;
     }
 
-    public static void stringsAsArrayTask3() {
-        String[] str = new String[]{"1235648 dvfvdf1245 dlls"};
+    public static void stringsAsArrayTask3(String[] str) {
+
         int count = 0;
 
         for (int i = 0; i < str.length; i++) {
