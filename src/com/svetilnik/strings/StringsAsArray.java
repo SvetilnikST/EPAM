@@ -71,7 +71,7 @@ public class StringsAsArray {
 
         for (int i = 0; i < chars.length; ) {
 
-            if (chars[i] == word[0] && i != chars.length - 1) {
+            if (chars[i] == word[0] && i+word.length< chars.length) {
 
                 for (int j = 0; j < word.length; j++) {
 
@@ -102,7 +102,7 @@ public class StringsAsArray {
         for (int p = 0; p < mass.length; ) {
             for (int i = 0; i < chars.length; ) {
 
-                if (chars[i] == word[0] && i != chars.length - 1) {
+                if (chars[i] == word[0] && i+word.length<chars.length) {
 
                     for (int j = 0; j < word.length; j++) {
 
