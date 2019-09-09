@@ -15,5 +15,6 @@ public class StartStrings {
 //        System.out.println(StringAndStringBuilder.Task3("топот"));
 //        StringAndStringBuilder.Task4();
 //        StringAndStringBuilder.Task5(new String("daoa1aaaa2"));
+//        StringAndStringBuilder.Task6(new String("1 2 3 4 5"));
     }
 }

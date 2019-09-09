@@ -60,7 +60,18 @@ public class StringAndStringBuilder {
                 count++;
             }
         }
-        System.out.println("Count 'a' in string = "+count);
+        System.out.println("Count 'a' in string = " + count);
+    }
+
+    public static void Task6(String string) {
+
+        String result = "";
+
+        for (int i = 0; i < string.length(); i++) {
+            result = result.concat(String.valueOf(string.charAt(i))).concat(String.valueOf(string.charAt(i)));
+        }
+        System.out.println("Start string: " + string);
+        System.out.println("Result string: " + result);
     }
 
 }
