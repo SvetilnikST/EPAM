@@ -1,6 +1,7 @@
 package com.svetilnik.strings;
 
 public class StringAndStringBuilder {
+
     public static void Task1() {
         String line = "m jn  fd        ";
         int max = 0;
@@ -31,12 +32,10 @@ public class StringAndStringBuilder {
         System.out.println(stringBuffer);
     }
 
-
-
-   public static boolean Task3(String s){
+    public static boolean Task3(String s) {
         int n = s.length();
         for (int i = 0; i < n / 2; i++) {
-            if(s.charAt(i)!=s.charAt(n-i-1)){
+            if (s.charAt(i) != s.charAt(n - i - 1)) {
                 return false;
             }
         }
@@ -48,7 +47,20 @@ public class StringAndStringBuilder {
         String t = String.valueOf(informatics.charAt(7));
         String o = String.valueOf(informatics.charAt(3));
         String r = String.valueOf(informatics.charAt(4));
-        String tort = t+o+r+t;
+        String tort = t + o + r + t;
         System.out.println(tort);
     }
+
+    public static void Task5(String string) {
+
+        int count = 0;
+
+        for (int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) == 'a') {
+                count++;
+            }
+        }
+        System.out.println("Count 'a' in string = "+count);
+    }
+
 }
