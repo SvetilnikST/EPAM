@@ -97,5 +97,22 @@ public class StringAndStringBuilder {
         System.out.println(string);
     }
 
+    public static void Task8(StringBuffer stringBuffer) {
+        int tmp = 0;
+        int count = 0;
+
+        for (int i = 0; i < stringBuffer.length(); i++) {
+
+            if (stringBuffer.charAt(i) != ' ') count++;
+            else {
+                if (count > tmp) tmp = count;
+                count = 0;
+            }
+        }
+
+        if (count > tmp) tmp = count;
+
+        System.out.println(tmp);
+    }
 
 }
