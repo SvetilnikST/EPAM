@@ -115,4 +115,17 @@ public class StringAndStringBuilder {
         System.out.println(tmp);
     }
 
+    public static void Task9(StringBuffer stringBuffer) {
+        int lit = 0;
+        int str = 0;
+
+        for (int i = 0; i < stringBuffer.length(); i++) {
+            if (stringBuffer.charAt(i) > 65 && stringBuffer.charAt(i) < 91) {
+                lit++;
+            } else if (stringBuffer.charAt(i) > 96 && stringBuffer.charAt(i) < 123) {
+                str++;
+            }
+        }
+        System.out.println("Str = "+str +"  "+"Lit ="+lit);
+    }
 }
