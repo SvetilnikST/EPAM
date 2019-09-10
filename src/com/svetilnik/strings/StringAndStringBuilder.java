@@ -75,21 +75,25 @@ public class StringAndStringBuilder {
     }
 
     public static void Task7(StringBuffer string) {
-        for (int i = 0; i < string.length() - 1; i++) {
-            if (string.charAt(i) == ' ') {
-                string.deleteCharAt(i);
-            }
-            for (int j = 1; j < string.length() - 1; j++) {
 
-                if (string.charAt(j) == string.charAt(i))
-                    if (i != j) {
-                        string.deleteCharAt(j);
-                    }
+        for (int i = 0; i < string.length(); i++) {
 
+            for (int j = 1; j < string.length(); j++) {
+
+                if (string.charAt(i) == string.charAt(j) && i< j) {
+                    string.deleteCharAt(j);
+                    j=j-1;
+                }
             }
+
+
+
+            if (string.charAt(i) == ' ') string.deleteCharAt(i);
 
         }
+
         System.out.println(string);
     }
+
 
 }

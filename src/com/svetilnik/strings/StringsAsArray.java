@@ -137,9 +137,7 @@ public class StringsAsArray {
                 }
             }
         }
-
-        String resalt = new String(mass);
-        return resalt;
+        return new String(mass);
     }
 
     private static int lengthArray(char[] chars, char[] word, char[] letter, int count) {
