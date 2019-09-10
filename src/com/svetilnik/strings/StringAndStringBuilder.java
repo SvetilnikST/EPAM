@@ -1,5 +1,7 @@
 package com.svetilnik.strings;
 
+import java.io.StringReader;
+
 public class StringAndStringBuilder {
 
     public static void Task1() {
@@ -126,6 +128,17 @@ public class StringAndStringBuilder {
                 str++;
             }
         }
-        System.out.println("Str = "+str +"  "+"Lit ="+lit);
+        System.out.println("Str = " + str + "  " + "Lit =" + lit);
+    }
+
+    public static void Task10(StringBuffer stringBuffer) {
+        int count = 0;
+        for (int i = 0; i < stringBuffer.length(); i++) {
+            int s = stringBuffer.charAt(i);
+            if (s == '.' || s == '!' || s == '?') {
+                count++;
+            }
+        }
+        System.out.println(count);
     }
 }
