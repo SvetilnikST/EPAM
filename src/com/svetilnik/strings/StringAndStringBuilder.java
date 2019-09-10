@@ -78,17 +78,19 @@ public class StringAndStringBuilder {
 
         for (int i = 0; i < string.length(); i++) {
 
+            if (string.charAt(i) == ' ') {
+                string.deleteCharAt(i);
+                i--;
+            }
             for (int j = 1; j < string.length(); j++) {
 
-                if (string.charAt(i) == string.charAt(j) && i< j) {
+                if (string.charAt(i) == string.charAt(j) && i < j) {
+
                     string.deleteCharAt(j);
-                    j=j-1;
+                    j--;
                 }
             }
 
-
-
-            if (string.charAt(i) == ' ') string.deleteCharAt(i);
 
         }
 

@@ -16,6 +16,6 @@ public class StartStrings {
 //        StringAndStringBuilder.Task4();
 //        StringAndStringBuilder.Task5(new String("daoa1aaaa2"));
 //        StringAndStringBuilder.Task6(new String("1 2 3 4 5"));
-        StringAndStringBuilder.Task7(new StringBuffer("abc cde def"));
+//        StringAndStringBuilder.Task7(new StringBuffer("abc cde def"));
     }
 }
