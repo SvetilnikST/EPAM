@@ -16,14 +16,14 @@ public class Main {
 
 //        StartBasics.startBasics();
 //        StartAlgorithmization.startAlgorithmization();
-//        StartStrings.startStrings();
+        StartStrings.startStrings();
 
-        Test1 test1 = new Test1();
-        test1.print();
-        test1.setParam(1,2);
-        test1.print();
-        System.out.println("Sum = "+test1.sum());
-        System.out.println("Max = "+test1.ret());
+//        Test1 test1 = new Test1();
+//        test1.print();
+//        test1.setParam(1,2);
+//        test1.print();
+//        System.out.println("Sum = "+test1.sum());
+//        System.out.println("Max = "+test1.ret());
     }
 
 }
