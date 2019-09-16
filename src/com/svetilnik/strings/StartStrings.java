@@ -22,6 +22,7 @@ public class StartStrings {
 //        StringAndStringBuilder.Task8(new StringBuffer("ssss a sss aa ddddd"));
 //        StringAndStringBuilder.Task9(new StringBuffer("sSSS a sJs aa ddddd"));
 //        StringAndStringBuilder.Task10(new StringBuffer("sSSS. a! sJs? aa ddddd."));
-        PatternMatcher.Task2();
+//        PatternMatcher.Task2();
+        StringsTask1.task1();
     }
 }
