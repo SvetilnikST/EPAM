@@ -5,32 +5,38 @@ import java.util.regex.Pattern;
 
 public class StringsTask1 {
 
-    private static final String REGEX = "[.!?]";
-    private static final String R = "^";
-    private static final String INPUT = "1 Думаю, что с технической точки зрения все достаточно понятно." +
-            "2 Но возникает логичный вопрос — зачем это вообще надо? С инкапсуляцией более-менее понятно, с наследованием — в принципе тоже." +
-            "3 Но вот этот механизм зачем, какое преимущество мы получим при использовании этой парадигмы!" +
-            "4 Для первого приближения! Рассмотрим наш пример графического приложения. В котором мы создавали свой компонент OvalComponent. ";
+    private static final String PARAGRAF = "[\n]"; //абзац
+    private static final String ENDOFSENTENSE = "[.!?]";    //знак препинания
+    private static final String INPUT = "" +
+            "1. \n " +
+            "2 Но? С.\n " +
+            "3 1ы!\n " +
+            "4 3я! наш. В.\n"
+            ;
 
     public static void task1() {
-        Pattern p = Pattern.compile(REGEX);
-        Pattern p2 = Pattern.compile(R);
+        Pattern paragraf = Pattern.compile(PARAGRAF);//паттерн нахождения абзаца
+        Pattern endOfSentence = Pattern.compile(ENDOFSENTENSE);
 
-        Matcher m = p.matcher(INPUT);   // получение matcher объекта
-        Matcher m2 = p2.matcher(INPUT); //начало строки
+        Matcher m = paragraf.matcher(INPUT);   // получение matcher объекта Абзац
+//        Matcher m2 = endOfSentence.matcher(INPUT); //знаки препинания
+
         int count = 0;
         int t = 0;
 
-        if (m2.find()) {
-            t++;
             while (m.find()) {
                 count++;
-//                System.out.println("Номер вхождения: " + count);
+                System.out.println("Номер вхождения: " + count);
+                System.out.println(m.start());
+                System.out.println(m.end());
+
+                for (int i = m.start(); i < m.end(); i++) {
+
+                }
+                System.out.println(t);
+
             }
-            System.out.println("Кол-во предложений в " + t + " = " + count);
+            t=0;
             count = 0;
         }
-
-
-    }
 }

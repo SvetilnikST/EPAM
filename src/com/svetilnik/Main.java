@@ -17,8 +17,8 @@ public class Main {
 
 //        StartBasics.startBasics();
 //        StartAlgorithmization.startAlgorithmization();
-//        StartStrings.startStrings();
-        StartTest.startTest();
+        StartStrings.startStrings();
+//        StartTest.startTest();
     }
 
 }
