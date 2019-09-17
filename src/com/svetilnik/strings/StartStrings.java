@@ -1,7 +1,5 @@
 package com.svetilnik.strings;
 
-import java.io.StringReader;
-
 public class StartStrings {
     public static void startStrings() {
 
@@ -23,6 +21,6 @@ public class StartStrings {
 //        StringAndStringBuilder.Task9(new StringBuffer("sSSS a sJs aa ddddd"));
 //        StringAndStringBuilder.Task10(new StringBuffer("sSSS. a! sJs? aa ddddd."));
 //        PatternMatcher.Task2();
-        StringsTask1.task1();
+        StringsTask1.task1SortParagraf();
     }
 }
