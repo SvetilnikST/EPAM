@@ -21,6 +21,6 @@ public class StartStrings {
 //        StringAndStringBuilder.Task9(new StringBuffer("sSSS a sJs aa ddddd"));
 //        StringAndStringBuilder.Task10(new StringBuffer("sSSS. a! sJs? aa ddddd."));
 //        PatternMatcher.Task2();
-        StringsTask1.task1SortParagraf();
+        StringsTask1.start();
     }
 }
