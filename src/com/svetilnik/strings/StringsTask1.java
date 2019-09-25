@@ -26,16 +26,27 @@ public class StringsTask1 {
     private static final String ENDOFSENTENSE = "[.!?]";    //знак препинания
 
 
-    public static void start(){
+    public static void start() {
 //        task1SortParagraf(text);
         task2SortSentense();
     }
 
     private static void task2SortSentense() {
-        Pattern regexp = Pattern.compile("<(.|\\n)+?>");
-        Matcher m = regexp.matcher(xml);
-        while (m.find()) {
-            System.out.println(m.group());
+
+        Pattern regexp = Pattern.compile("(</?[a-z]*>)");
+
+        Matcher matcher = regexp.matcher(xml);
+
+//        while (matcher.find()) {
+//            System.out.println(matcher.group() + matcher.start()+matcher.end());
+//        }
+        while (matcher.find()) {
+            System.out.println(matcher.group());
+//            for (int i = 1; i <= matcher.groupCount(); i++) {
+//                System.out.println(matcher.start() + "    " + matcher.end());
+//            }
+
+
         }
     }
 
