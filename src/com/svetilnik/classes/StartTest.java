@@ -1,14 +1,25 @@
 package com.svetilnik.classes;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class StartTest {
 
-    public static void startTest() {
+    private static final int POINT_NINE = 9;
+    private static final int POINT_TEN = 10;
+
+    public static void startTest()  {
 
 //        task1();
 //        task2();
-//        studentTask3();
+//        task3();
+        try {
+            task4();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 
     private static void task1() {
@@ -30,10 +41,54 @@ public class StartTest {
         System.out.println(test3.getA() + " ; " + test3.getB());
     }
 
-    private static void studentTask3() {
+    private static void task3() {
         int count = 0;
 
         ArrayList<Student> students = new ArrayList<>();
+
+        fillListStudent(students);
+
+        for (int i = 0; i < students.size(); i++) {
+
+            for (int j = 0; j < students.get(i).progress1.length; j++) {
+
+                if (students.get(i).progress1[j] == POINT_NINE || students.get(i).progress1[j] == POINT_TEN) {
+                    count++;
+                }
+            }
+            if (count == 1) {
+                System.out.println(students.get(i).fullName + "  " + students.get(i).groupNumber);
+            }
+            count = 0;
+        }
+    }
+
+    private static void task4() throws ParseException {
+
+        String pattern = "HH:mm:ss";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+        Date date = null;
+        try {
+            date = simpleDateFormat.parse("22:00:03");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        ArrayList<Train> trains = new ArrayList<>();
+        fillTrain(trains);
+
+        for (int i = 0; i < trains.size(); i++) {
+            System.out.println(
+                    trains.get(i).getNameDestination() +
+                            trains.get(i).getNumberTrain()+
+                            trains.get(i).getDepartureTime().toString()
+                    );
+        }
+
+    }
+
+    private static void fillListStudent(ArrayList<Student> students) {
+
         students.add(new Student("1 Ivanov", "P-1", new int[]{5, 6, 7, 10, 9}));
         students.add(new Student("2 Petrov", "P-2", new int[]{5, 6, 7, 8, 4}));
         students.add(new Student("3 Novikov", "P-3", new int[]{5, 6, 7, 8, 9}));
@@ -44,19 +99,17 @@ public class StartTest {
         students.add(new Student("8 Sidorov", "P-3", new int[]{5, 6, 7, 8, 2}));
         students.add(new Student("9 Lionov", "P-3", new int[]{5, 6, 7, 10, 4}));
         students.add(new Student("10 Sidorov", "P-3", new int[]{5, 6, 7, 8, 1}));
+    }
 
-        for (int i = 0; i < students.size(); i++) {
+    private static void fillTrain(ArrayList<Train> trains) throws ParseException {
+        String pattern = "HH:mm:ss";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 
-            for (int j = 0; j < students.get(i).progress1.length; j++) {
+        trains.add(new Train("one", 1, simpleDateFormat.parse("00:00:03")));
+        trains.add(new Train("two", 2, simpleDateFormat.parse("19:00:03")));
+        trains.add(new Train("tree", 3, simpleDateFormat.parse("22:00:03")));
+        trains.add(new Train("four", 4, simpleDateFormat.parse("21:00:03")));
+        trains.add(new Train("five", 5, simpleDateFormat.parse("23:00:03")));
 
-                if (students.get(i).progress1[j] == 9 || students.get(i).progress1[j] == 10) {
-                    count++;
-                }
-            }
-            if (count == 1) {
-                System.out.println(students.get(i).fullName + "  " + students.get(i).groupNumber);
-            }
-            count = 0;
-        }
     }
 }
