@@ -1,6 +1,7 @@
 package com.svetilnik;
 
 import com.svetilnik.classes.StartTest;
+import com.svetilnik.strings.StartStrings;
 
 public class Main {
 
@@ -8,7 +9,7 @@ public class Main {
 
 //        StartBasics.startBasics();
 //        StartAlgorithmization.startAlgorithmization();
-//        StartStrings.startStrings();
-        StartTest.startTest();
+        StartStrings.startStrings();
+//        StartTest.startTest();
     }
 }

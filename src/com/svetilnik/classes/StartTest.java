@@ -3,14 +3,13 @@ package com.svetilnik.classes;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class StartTest {
 
     private static final int POINT_NINE = 9;
     private static final int POINT_TEN = 10;
 
-    public static void startTest()  {
+    public static void startTest() {
 
 //        task1();
 //        task2();
@@ -65,25 +64,11 @@ public class StartTest {
 
     private static void task4() throws ParseException {
 
-        String pattern = "HH:mm:ss";
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-        Date date = null;
-        try {
-            date = simpleDateFormat.parse("22:00:03");
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
         ArrayList<Train> trains = new ArrayList<>();
-        fillTrain(trains);
 
-        for (int i = 0; i < trains.size(); i++) {
-            System.out.println(
-                    trains.get(i).getNameDestination() +
-                            trains.get(i).getNumberTrain()+
-                            trains.get(i).getDepartureTime().toString()
-                    );
-        }
+        fillTrain(trains);
+        printTrain(trains);
+
 
     }
 
@@ -111,5 +96,30 @@ public class StartTest {
         trains.add(new Train("four", 4, simpleDateFormat.parse("21:00:03")));
         trains.add(new Train("five", 5, simpleDateFormat.parse("23:00:03")));
 
+    }
+
+    private static void printTrain(ArrayList<Train> trains) {
+        for (Train train : trains) {
+            System.out.println(
+                    train.getNameDestination() + ":   " +
+                            train.getNumberTrain() + " - " +
+                            train.getDepartureTime().toString()
+            );
+        }
+    }
+
+
+    //some me
+    private static void sortTrainForNumbers(ArrayList<Train> trains) {
+        int max = trains.get(0).getNumberTrain();
+
+        for (int i = 0; i < trains.size(); i++) {
+            if (trains.get(i).getNumberTrain() > max) {
+                int x = trains.get(i).getNumberTrain();
+                max = trains.get(i).getNumberTrain();
+
+
+            }
+        }
     }
 }

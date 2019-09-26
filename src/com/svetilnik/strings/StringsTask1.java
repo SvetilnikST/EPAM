@@ -7,24 +7,12 @@ public class StringsTask1 {
 
     private static final String text = new String("Добро.\nпожаловать! Ya? on.\nна\nProgLang?");
 
-    private static final String xml = new String("<notes>\n" +
-            "    <note id =\"1\">\n" +
-            "        <to>Вася</to>\n" +
-            "        <from>Света</from>\n" +
-            "        <heading>Напоминание</heading>\n" +
-            "        <body>Позвони мне завтра!</body>\n" +
-            "    </note>\n" +
-            "\n" +
-            "    <note id =\"2\">\n" +
-            "        <to>Петя</to>\n" +
-            "        <from>Маша</from>\n" +
-            "        <heading>Важное напоминание</heading>\n" +
-            "        <body/>\n" +
-            "    </note>\n" +
-            "</notes>");
+    private static final String xml = new String("<notes><note id =\"1\"><to>Вася</to><from>Света</from><heading>Напоминание</heading><body>Позвони мне завтра!</body></note><note id =\"2\"><to>Петя</to><from>Маша</from><heading>Важное напоминание</heading><body/></note></notes>");
 
     private static final String ENDOFSENTENSE = "[.!?]";    //знак препинания
 
+
+//    <notes>.+<\/notes>  внутри
 
     public static void start() {
 //        task1SortParagraf(text);
