@@ -10,6 +10,6 @@ public class Main {
 //        StartBasics.startBasics();
 //        StartAlgorithmization.startAlgorithmization();
         StartStrings.startStrings();
-//        StartTest.startTest();
+        StartTest.startTest();
     }
 }

@@ -68,8 +68,9 @@ public class StartTest {
 
         fillTrain(trains);
         printTrain(trains);
-
-
+        sortTrainForNumbers(trains);
+        System.out.println();
+        printTrain(trains);
     }
 
     private static void fillListStudent(ArrayList<Student> students) {

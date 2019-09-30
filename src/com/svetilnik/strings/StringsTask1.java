@@ -9,10 +9,12 @@ public class StringsTask1 {
 
     private static final String xml = new String("<notes><note id =\"1\"><to>Вася</to><from>Света</from><heading>Напоминание</heading><body>Позвони мне завтра!</body></note><note id =\"2\"><to>Петя</to><from>Маша</from><heading>Важное напоминание</heading><body/></note></notes>");
 
+
+//    (<(.|\n)+?>.+){1,} находит содержимое групп
+//    <notes>((<note\s><(.|/n)+?><\/note>){1,})<\/notes> находит группы
+
     private static final String ENDOFSENTENSE = "[.!?]";    //знак препинания
 
-
-//    <notes>.+<\/notes>  внутри
 
     public static void start() {
 //        task1SortParagraf(text);
@@ -21,19 +23,16 @@ public class StringsTask1 {
 
     private static void task2SortSentense() {
 
-        Pattern regexp = Pattern.compile("(</?[a-z]*>)");
+//        Pattern regexp = Pattern.compile("(<(.|/n)+?><\\/(.|\\n)+?>)");
 
+        Pattern regexp = Pattern.compile("<(.|\\n)+?>");
         Matcher matcher = regexp.matcher(xml);
 
-//        while (matcher.find()) {
-//            System.out.println(matcher.group() + matcher.start()+matcher.end());
-//        }
-        while (matcher.find()) {
-            System.out.println(matcher.group());
-//            for (int i = 1; i <= matcher.groupCount(); i++) {
-//                System.out.println(matcher.start() + "    " + matcher.end());
-//            }
 
+        while (matcher.find()) {
+//            System.out.println(matcher.group(0));
+            //вывели узлы
+            System.out.println(xml.substring(matcher.start(), matcher.end()));
 
         }
     }
