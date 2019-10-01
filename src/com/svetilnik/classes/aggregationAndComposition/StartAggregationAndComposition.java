@@ -61,34 +61,45 @@ public class StartAggregationAndComposition {
 
     public static void task3() {
 
-        District districtOne = new District("Витебский");
-        District districtTwo = new District("Полоцкий");
-        District districtThree = new District("Минский");
 
-        //создали города
-        Town townOne = new Town("Витебск", districtOne);
-        Town townTwo = new Town("Полоцк", districtTwo);
-        Town townThree = new Town("Минск", districtThree);
+        //1 создали города
+        Town townOne = new Town("Витебск");
+        Town townTwo = new Town("Полоцк");
+        Town townThree = new Town("Минск");
+
+        ArrayList<District> districtsVit = new ArrayList<>();
+        districtsVit.add(townOne);
+        districtsVit.add(townTwo);
+
+        ArrayList<Town> townsPol = new ArrayList<>();
+        townsPol.add(townTwo);
+
+        ArrayList<Town> townsMin = new ArrayList<>();
+        townsPol.add(townThree);
+
+        //создаем районы
+//        District districtOne = new District("Витебский", districtsVit);
+        District districtTwo = new District("Полоцкий", townsPol);
+        District districtThree = new District("Минский", townsMin);
+
 
         //создаем области Витебскую и добавили 2 города
         Region regionOne = new Region();
         regionOne.setNameRegion("Витебская область");
         regionOne.setAreaRegion(50.0);
-        ArrayList<Town> townsVit = new ArrayList<>();
-        townsVit.add(townOne);
-        townsVit.add(townTwo);
-        regionOne.setTowns(townsVit);
+        ArrayList<Region> regionsVit = new ArrayList<>();
+
 
         //создали Минскую область добавили 1 город Минск
         Region regionTwo = new Region();
         regionTwo.setNameRegion("Минская область");
         regionTwo.setAreaRegion(50.0);
-        ArrayList<Town> townsMin = new ArrayList<>();
-        townsMin.add(townThree);
-        regionTwo.setTowns(townsMin);
+//        ArrayList<Town> townsMin = new ArrayList<>();
+//        townsMin.add(townThree);
+//        regionTwo.setTowns(townsMin);
 
         //создали государство Беларусь и добавили два региона
-        State belarus =  new State();
+        State belarus = new State();
         belarus.setNameState("Belarus");
         belarus.setCapital(townThree);
 
@@ -103,7 +114,6 @@ public class StartAggregationAndComposition {
         countRegion(belarus);
         printAreaState(belarus);
         printRegionsCenter(belarus);
-
 
 
     }

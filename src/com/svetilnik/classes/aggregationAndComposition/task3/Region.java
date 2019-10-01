@@ -7,16 +7,16 @@ public class Region {
     private String nameRegion;
     private Town nameRegonTown;
     private double areaRegion;
-    private ArrayList<Town> towns = new ArrayList<>();
+    private ArrayList<District> districts = new ArrayList<>();
 
     public Region() {
     }
 
-    public Region(String nameRegion,Town nameRegionTown, double areaRegion, ArrayList<Town> towns) {
+    public Region(String nameRegion, Town nameRegionTown, double areaRegion, ArrayList<District> towns) {
         this.nameRegion = nameRegion;
         this.nameRegonTown = nameRegionTown;
         this.areaRegion = areaRegion;
-        this.towns = towns;
+        this.districts = towns;
     }
 
     public String getNameRegion() {
@@ -35,12 +35,12 @@ public class Region {
         this.areaRegion = areaRegion;
     }
 
-    public ArrayList<Town> getTowns() {
-        return towns;
+    public ArrayList<District> getTowns() {
+        return districts;
     }
 
-    public void setTowns(ArrayList<Town> towns) {
-        this.towns = towns;
+    public void setTowns(ArrayList<District> towns) {
+        this.districts = towns;
     }
 
     public Town getNameRegonTown() {

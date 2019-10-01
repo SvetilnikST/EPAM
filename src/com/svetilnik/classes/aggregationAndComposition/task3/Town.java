@@ -1,13 +1,12 @@
 package com.svetilnik.classes.aggregationAndComposition.task3;
 
 //город
-public class Town {
+public class Town extends District {
     private String nameTown;
-    private District district;
 
-    public Town(String nameTown, District district) {
+    public Town(String nameDistrict) {
+        super(nameDistrict);
         this.nameTown = nameTown;
-        this.district = district;
     }
 
     public String getNameTown() {
@@ -18,11 +17,4 @@ public class Town {
         this.nameTown = nameTown;
     }
 
-    public District getDistrict() {
-        return district;
-    }
-
-    public void setDistrict(District district) {
-        this.district = district;
-    }
 }
