@@ -1,6 +1,6 @@
 package com.svetilnik;
 
-import com.svetilnik.classes.aggregationAndComposition.StartAggregationAndComposition;
+import com.svetilnik.d_classes.aggregationAndComposition.StartAggregationAndComposition;
 
 
 public class Main {
