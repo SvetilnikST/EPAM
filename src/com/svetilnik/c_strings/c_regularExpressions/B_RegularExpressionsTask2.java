@@ -3,7 +3,7 @@ package com.svetilnik.c_strings.c_regularExpressions;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class StringsTask1 {
+public class B_RegularExpressionsTask2 {
 
     private static final String text = new String("Добро.\nпожаловать! Ya? on.\nна\nProgLang?");
 

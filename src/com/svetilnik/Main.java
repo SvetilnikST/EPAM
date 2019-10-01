@@ -1,5 +1,6 @@
 package com.svetilnik;
 
+import com.svetilnik.c_strings.StartStrings;
 import com.svetilnik.d_classes.aggregationAndComposition.StartAggregationAndComposition;
 
 
@@ -9,8 +10,8 @@ public class Main {
 
 //        StartBasics.startBasics();
 //        StartAlgorithmization.startAlgorithmization();
-//        StartStrings.startStrings();
+        StartStrings.startStrings();
 //        StartSimpleClasses.startSimpleClasses();
-        StartAggregationAndComposition.start();
+//        StartAggregationAndComposition.start();
     }
 }
