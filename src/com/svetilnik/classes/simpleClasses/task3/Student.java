@@ -1,4 +1,4 @@
-package com.svetilnik.classes;
+package com.svetilnik.classes.simpleClasses.task3;
 
 public class Student {
 

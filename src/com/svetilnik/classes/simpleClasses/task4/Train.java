@@ -1,4 +1,4 @@
-package com.svetilnik.classes;
+package com.svetilnik.classes.simpleClasses.task4;
 
 import java.util.Date;
 

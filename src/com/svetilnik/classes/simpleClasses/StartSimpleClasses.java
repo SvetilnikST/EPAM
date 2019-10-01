@@ -1,24 +1,29 @@
-package com.svetilnik.classes;
+package com.svetilnik.classes.simpleClasses;
+
+import com.svetilnik.classes.simpleClasses.task1.Test1;
+import com.svetilnik.classes.simpleClasses.task2.Test2;
+import com.svetilnik.classes.simpleClasses.task3.Student;
+import com.svetilnik.classes.simpleClasses.task4.Train;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
-public class StartTest {
+public class StartSimpleClasses {
 
     private static final int POINT_NINE = 9;
     private static final int POINT_TEN = 10;
 
-    public static void startTest() {
+    public static void startSimpleClasses() {
 
 //        task1();
 //        task2();
 //        task3();
-        try {
-            task4();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+
+//        task4();
+
+
+
     }
 
     private static void task1() {

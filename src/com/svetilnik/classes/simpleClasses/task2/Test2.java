@@ -1,4 +1,4 @@
-package com.svetilnik.classes;
+package com.svetilnik.classes.simpleClasses.task2;
 
 public class Test2 {
     private int a;
