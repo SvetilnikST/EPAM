@@ -1,20 +1,14 @@
 package com.svetilnik.classes.aggregationAndComposition.task3;
 
-//город
-public class Town extends District {
+public class Town {
     private String nameTown;
 
-    public Town(String nameDistrict) {
-        super(nameDistrict);
+    public Town(String nameTown) {
         this.nameTown = nameTown;
     }
 
     public String getNameTown() {
         return nameTown;
-    }
-
-    public void setNameTown(String nameTown) {
-        this.nameTown = nameTown;
     }
 
 }

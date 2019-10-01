@@ -17,7 +17,7 @@ import static com.svetilnik.classes.aggregationAndComposition.task3.State.*;
 public class StartAggregationAndComposition {
     public static void start() {
 //        task1();
-        task3();
+//        task3();
     }
 
     public static void task1() {
@@ -61,61 +61,47 @@ public class StartAggregationAndComposition {
 
     public static void task3() {
 
+        Town townNovop = new Town("Novopolotsk");
+        Town townPol = new Town("Polotsk");
+        Town townMin = new Town("Minsk");
+        Town townVit = new Town("Vitebsk");
 
-        //1 создали города
-        Town townOne = new Town("Витебск");
-        Town townTwo = new Town("Полоцк");
-        Town townThree = new Town("Минск");
+        ArrayList<Town> townsRegionPol = new ArrayList<>();
+        townsRegionPol.add(townNovop);
+        townsRegionPol.add(townPol);
+
+        ArrayList<Town> townsRegionMin = new ArrayList<>();
+        townsRegionMin.add(townMin);
+
+        ArrayList<Town> townsRegionVit = new ArrayList<>();
+        townsRegionVit.add(townVit);
+
+        District districtPol = new District("Polotsk district",townsRegionPol);
+        District districtMin = new District("Minsk district",townsRegionMin);
+        District districtVit = new District("Vitebsk district",townsRegionVit);
 
         ArrayList<District> districtsVit = new ArrayList<>();
-        districtsVit.add(townOne);
-        districtsVit.add(townTwo);
+        districtsVit.add(districtPol);
+        districtsVit.add(districtVit);
 
-        ArrayList<Town> townsPol = new ArrayList<>();
-        townsPol.add(townTwo);
-
-        ArrayList<Town> townsMin = new ArrayList<>();
-        townsPol.add(townThree);
-
-        //создаем районы
-//        District districtOne = new District("Витебский", districtsVit);
-        District districtTwo = new District("Полоцкий", townsPol);
-        District districtThree = new District("Минский", townsMin);
+        ArrayList<District> districtsMin = new ArrayList<>();
+        districtsMin.add(districtMin);
 
 
-        //создаем области Витебскую и добавили 2 города
-        Region regionOne = new Region();
-        regionOne.setNameRegion("Витебская область");
-        regionOne.setAreaRegion(50.0);
-        ArrayList<Region> regionsVit = new ArrayList<>();
-
-
-        //создали Минскую область добавили 1 город Минск
-        Region regionTwo = new Region();
-        regionTwo.setNameRegion("Минская область");
-        regionTwo.setAreaRegion(50.0);
-//        ArrayList<Town> townsMin = new ArrayList<>();
-//        townsMin.add(townThree);
-//        regionTwo.setTowns(townsMin);
-
-        //создали государство Беларусь и добавили два региона
-        State belarus = new State();
-        belarus.setNameState("Belarus");
-        belarus.setCapital(townThree);
+        Region regionVit = new Region("Vitebsk region",townVit,50.0,districtsVit);
+        Region regionMin = new Region("Minsk region",townMin,100.0,districtsMin);
 
         ArrayList<Region> regionsBel = new ArrayList<>();
-        regionsBel.add(regionOne);
-        regionsBel.add(regionTwo);
+        regionsBel.add(regionVit);
+        regionsBel.add(regionMin);
 
-        belarus.setRegions(regionsBel);
+        State belarus = new State("Belarus",townMin,regionsBel);
 
         printNameState(belarus);
         printCapital(belarus);
         countRegion(belarus);
         printAreaState(belarus);
         printRegionsCenter(belarus);
-
-
     }
 
 }
