@@ -1,6 +1,7 @@
 package com.svetilnik.c_strings;
 
 import com.svetilnik.c_strings.c_regularExpressions.A_RegularExpressionsTask1;
+import com.svetilnik.c_strings.c_regularExpressions.B_RegularExpressionsTask2;
 
 public class StartStrings {
     public static void startStrings() {
@@ -22,7 +23,7 @@ public class StartStrings {
 //        StringOrStringBuilder.Task9(new StringBuffer("sSSS a sJs aa ddddd"));
 //        StringOrStringBuilder.Task10(new StringBuffer("sSSS. a! sJs? aa ddddd."));
 
-        A_RegularExpressionsTask1.task1();
-//        B_RegularExpressionsTask2.task1();
+//        A_RegularExpressionsTask1.task1();
+        B_RegularExpressionsTask2.start();
     }
 }
