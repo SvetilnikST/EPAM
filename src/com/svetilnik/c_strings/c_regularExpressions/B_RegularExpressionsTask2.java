@@ -15,19 +15,16 @@ public class B_RegularExpressionsTask2 {
     }
 
     private static void task2SortSentense() {
-//        Pattern regexp = Pattern.compile("(<(.|/n)+?><\\/(.|\\n)+?>)");
-        Pattern regexp = Pattern.compile("<(.|\\n)+?>");
-        Matcher matcher = regexp.matcher(xml);
+        //проверка на соответствие строки шаблону
+        Pattern pattern = Pattern.compile("(<(.|\\\\n)+?>.+</(.|\\\\n)+?>)");
+        Matcher matcher = pattern.matcher(xml);
+        boolean b  = matcher.matches();
 
-
-
-
-        while (matcher.find()) {
-//            System.out.println(matcher.group(0));
-            //вывели узлы
-            System.out.println(xml.substring(matcher.start(), matcher.end()));
-
+        if(b ==true){
+            System.out.println(b);
+        }else {
+            System.out.println("String not true");
         }
-    }
 
+    }
 }
