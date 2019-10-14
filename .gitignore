@@ -1,9 +1,7 @@
-target
-out
+# IntelliJ
+out/
 .idea
 *.iml
-
-
 
 # Package Files #
 *.jar
