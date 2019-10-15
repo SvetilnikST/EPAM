@@ -2,7 +2,7 @@ package by.svetilnik.epam.d_classes.aggregationAndComposition.task2;
 
 public class Engine {
 
-    private String engine;
+    private String engine ="usual";
 
     public String getEngine() {
         return engine;

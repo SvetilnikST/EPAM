@@ -2,9 +2,10 @@ package by.svetilnik.epam.d_classes.aggregationAndComposition.task2;
 
 public class Car {
     private String mark;
-
     //у машины есть конкретный двигатель - отношение типа "Композиция"
-    private Engine engine;
+    private Engine engineCar;
+
+    private Wheel wheelCar;
 
     public void setMark(String mark) {
         this.mark = mark;
@@ -19,22 +20,32 @@ public class Car {
     }
 
     //установим машине двигатель
-    public void setEngine(Engine engine) {
-        this.engine = engine;
+    public void setEngineCar(Engine engineCar) {
+        this.engineCar = engineCar;
     }
 
-    public static void createCar(Car car) {
-
-        //установили марку машины
-        car.setMark("BMV");
-
-        //создаем обычный двигатель
-        Engine engine = new Engine();
-        engine.setEngine("usual");
-
-        //установили машине двигатель
-        car.setEngine(engine);
-
+    public Engine getEngineCar() {
+        return engineCar;
     }
 
+    public Car(String mark, Engine engine) {
+        this.mark = mark;
+        this.engineCar = engine;
+    }
+
+    public static void runCar(Car car){
+        car.getEngineCar().runEngine();
+    }
+
+    public Wheel getWheelCar() {
+        return wheelCar;
+    }
+
+    public void setWheelCar(Wheel wheelCar) {
+        this.wheelCar = wheelCar;
+    }
+
+    public void setCountWheel(Car car){
+    //вот сюда
+    }
 }

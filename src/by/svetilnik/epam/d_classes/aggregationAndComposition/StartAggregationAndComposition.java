@@ -12,6 +12,8 @@ import by.svetilnik.epam.d_classes.aggregationAndComposition.task3.Town;
 
 import java.util.ArrayList;
 
+import static by.svetilnik.epam.d_classes.aggregationAndComposition.task2.Car.runCar;
+
 public class StartAggregationAndComposition {
     public static void start() {
 //        task1();
@@ -50,14 +52,12 @@ public class StartAggregationAndComposition {
     }
 
     public static void task2() {
-        Car car = new Car();
+        Car car = new Car("BMW", new Engine());
 
-        //создаем машину
-        Car.createCar(car);
-
-        //вывести марку машины
         car.prinMark();
+        System.out.println("Двигатель:" + " " + car.getEngineCar().getEngine());
 
+        runCar(car);
 
     }
 
