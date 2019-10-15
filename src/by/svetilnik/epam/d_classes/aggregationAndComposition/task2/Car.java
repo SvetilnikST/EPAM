@@ -1,38 +1,40 @@
 package by.svetilnik.epam.d_classes.aggregationAndComposition.task2;
 
-public class Car extends Engine {
+public class Car {
     private String mark;
-    private int gaselineVolume;
-    private Wheels wheels;
 
-    public Car() {
-    }
-
-    public Car(String mark, int gaselineVolume, Wheels wheels) {
-        this.mark = mark;
-        this.gaselineVolume = gaselineVolume;
-        this.wheels = wheels;
-    }
-
-    //ехать
-    private void go() {
-
-    }
-
-    //заправлять машину
-    private void fuelTheCar() {
-
-    }
+    //у машины есть конкретный двигатель
+    private Engine engine;
 
     public void setMark(String mark) {
         this.mark = mark;
     }
 
-    public void setGaselineVolume(int gaselineVolume) {
-        this.gaselineVolume = gaselineVolume;
+    public String getMark() {
+        return mark;
     }
 
-    public void setWheels(Wheels wheels) {
-        this.wheels = wheels;
+    public void prinMark() {
+        System.out.println("Марка" + " " + this.getMark());
     }
+
+    //установим машине двигатель
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+
+    public static void createCar(Car car) {
+
+        //установили марку машины
+        car.setMark("BMV");
+
+        //создаем обычный двигатель
+        Engine engine = new Engine();
+        engine.setEngine("usual");
+
+        //установили машине двигатель
+        car.setEngine(engine);
+
+    }
+
 }

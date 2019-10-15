@@ -4,7 +4,7 @@ import by.svetilnik.epam.d_classes.aggregationAndComposition.task1.Sentense;
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task1.Text;
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task1.Word;
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task2.Car;
-import by.svetilnik.epam.d_classes.aggregationAndComposition.task2.Wheels;
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task2.Engine;
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task3.District;
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task3.Region;
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task3.State;
@@ -15,6 +15,8 @@ import java.util.ArrayList;
 public class StartAggregationAndComposition {
     public static void start() {
 //        task1();
+
+        task2();
 //        task3();
     }
 
@@ -48,13 +50,15 @@ public class StartAggregationAndComposition {
     }
 
     public static void task2() {
-
-        Wheels wheels = new Wheels();
-
         Car car = new Car();
-        car.setMark("Opel");
-        car.setGaselineVolume(40);
-        car.setWheels(wheels);
+
+        //создаем машину
+        Car.createCar(car);
+
+        //вывести марку машины
+        car.prinMark();
+
+
     }
 
     public static void task3() {
@@ -74,9 +78,9 @@ public class StartAggregationAndComposition {
         ArrayList<Town> townsRegionVit = new ArrayList<>();
         townsRegionVit.add(townVit);
 
-        District districtPol = new District("Polotsk district",townsRegionPol);
-        District districtMin = new District("Minsk district",townsRegionMin);
-        District districtVit = new District("Vitebsk district",townsRegionVit);
+        District districtPol = new District("Polotsk district", townsRegionPol);
+        District districtMin = new District("Minsk district", townsRegionMin);
+        District districtVit = new District("Vitebsk district", townsRegionVit);
 
         ArrayList<District> districtsVit = new ArrayList<>();
         districtsVit.add(districtPol);
@@ -86,14 +90,14 @@ public class StartAggregationAndComposition {
         districtsMin.add(districtMin);
 
 
-        Region regionVit = new Region("Vitebsk region",townVit,50.0,districtsVit);
-        Region regionMin = new Region("Minsk region",townMin,100.0,districtsMin);
+        Region regionVit = new Region("Vitebsk region", townVit, 50.0, districtsVit);
+        Region regionMin = new Region("Minsk region", townMin, 100.0, districtsMin);
 
         ArrayList<Region> regionsBel = new ArrayList<>();
         regionsBel.add(regionVit);
         regionsBel.add(regionMin);
 
-        State belarus = new State("Belarus",townMin,regionsBel);
+        State belarus = new State("Belarus", townMin, regionsBel);
 
         State.printNameState(belarus);
         State.printCapital(belarus);
