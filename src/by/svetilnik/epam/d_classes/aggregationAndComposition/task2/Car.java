@@ -3,7 +3,7 @@ package by.svetilnik.epam.d_classes.aggregationAndComposition.task2;
 public class Car {
     private String mark;
 
-    //у машины есть конкретный двигатель
+    //у машины есть конкретный двигатель - отношение типа "Композиция"
     private Engine engine;
 
     public void setMark(String mark) {
