@@ -1,17 +1,20 @@
 package by.svetilnik.epam.d_classes.aggregationAndComposition.task2;
 
 public class Wheel {
-    private int [] whel;
+    private String mark;
+    private int diameter;
 
-    public Wheel(int[] whel) {
-        this.whel = whel;
+    public Wheel(String mark, int diameter) {
+        this.mark = mark;
+        this.diameter = diameter;
     }
 
-    public int[] getWhel() {
-        return whel;
+    public String getMark() {
+        return mark;
     }
 
-    public void setWhel(int[] whel) {
-        this.whel = whel;
+    public int getDiameter() {
+        return diameter;
     }
+
 }

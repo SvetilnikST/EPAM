@@ -5,6 +5,7 @@ import by.svetilnik.epam.d_classes.aggregationAndComposition.task1.Text;
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task1.Word;
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task2.Car;
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task2.Engine;
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task2.Wheel;
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task3.District;
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task3.Region;
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task3.State;
@@ -12,7 +13,6 @@ import by.svetilnik.epam.d_classes.aggregationAndComposition.task3.Town;
 
 import java.util.ArrayList;
 
-import static by.svetilnik.epam.d_classes.aggregationAndComposition.task2.Car.runCar;
 
 public class StartAggregationAndComposition {
     public static void start() {
@@ -52,13 +52,31 @@ public class StartAggregationAndComposition {
     }
 
     public static void task2() {
-        Car car = new Car("BMW", new Engine());
+
+        Engine engine = new Engine("Super");
+        Wheel wheel = new Wheel("Michelin", 13);
+        Wheel wheelM = new Wheel("Bridgestone", 14);
+
+        ArrayList<Wheel> wheels = new ArrayList<>();
+        wheels.add(wheel);
+        wheels.add(wheel);
+        wheels.add(wheel);
+        wheels.add(wheel);
+
+        int counteGas = 30;
+
+        Car car = new Car("BMW", engine, wheels, 30, 0);
+
+        car.runCar();
+
+        car.fillTheCar(car, counteGas);
+
+        car.runCar();
+
+        int numberWheel = 2;
+        car.replaceWheel(numberWheel, wheelM);
 
         car.prinMark();
-        System.out.println("Двигатель:" + " " + car.getEngineCar().getEngine());
-
-        runCar(car);
-
     }
 
     public static void task3() {
