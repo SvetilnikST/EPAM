@@ -17,9 +17,9 @@ import java.util.ArrayList;
 public class StartAggregationAndComposition {
     public static void start() {
 //        task1();
-
-        task2();
+//        task2();
 //        task3();
+
     }
 
     public static void task1() {

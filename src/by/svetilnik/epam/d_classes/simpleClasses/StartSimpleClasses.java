@@ -4,6 +4,7 @@ import by.svetilnik.epam.d_classes.simpleClasses.task1.Test1;
 import by.svetilnik.epam.d_classes.simpleClasses.task2.Test2;
 import by.svetilnik.epam.d_classes.simpleClasses.task3.Student;
 import by.svetilnik.epam.d_classes.simpleClasses.task4.Train;
+import by.svetilnik.epam.d_classes.simpleClasses.task5.Counter;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -22,8 +23,7 @@ public class StartSimpleClasses {
 
 //        task4();
 
-
-
+        task5();
     }
 
     private static void task1() {
@@ -67,7 +67,7 @@ public class StartSimpleClasses {
         }
     }
 
-    private static void task4() throws ParseException {
+    private static void task4() {
 
         ArrayList<Train> trains = new ArrayList<>();
 
@@ -76,6 +76,22 @@ public class StartSimpleClasses {
         sortTrainForNumbers(trains);
         System.out.println();
         printTrain(trains);
+    }
+
+
+    public static void task5(){
+
+        Counter counter = new Counter(5);
+
+        for (int i = 0; i < 6; i++) {
+            counter.add();
+            System.out.println(counter.getCurrent());
+        }
+
+        for (int i = 0; i < 10; i++) {
+            counter.reduce();
+            System.out.println(counter.getCurrent());
+        }
     }
 
     private static void fillListStudent(ArrayList<Student> students) {
@@ -92,15 +108,15 @@ public class StartSimpleClasses {
         students.add(new Student("10 Sidorov", "P-3", new int[]{5, 6, 7, 8, 1}));
     }
 
-    private static void fillTrain(ArrayList<Train> trains) throws ParseException {
+    private static void fillTrain(ArrayList<Train> trains) {
         String pattern = "HH:mm:ss";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 
-        trains.add(new Train("one", 1, simpleDateFormat.parse("00:00:03")));
-        trains.add(new Train("two", 2, simpleDateFormat.parse("19:00:03")));
-        trains.add(new Train("tree", 3, simpleDateFormat.parse("22:00:03")));
-        trains.add(new Train("four", 4, simpleDateFormat.parse("21:00:03")));
-        trains.add(new Train("five", 5, simpleDateFormat.parse("23:00:03")));
+//        trains.add(new Train("one", 1, simpleDateFormat.parse("00:00:03")));
+//        trains.add(new Train("two", 2, simpleDateFormat.parse("19:00:03")));
+//        trains.add(new Train("tree", 3, simpleDateFormat.parse("22:00:03")));
+//        trains.add(new Train("four", 4, simpleDateFormat.parse("21:00:03")));
+//        trains.add(new Train("five", 5, simpleDateFormat.parse("23:00:03")));
 
     }
 
