@@ -1,16 +1,16 @@
 package by.svetilnik.epam.d_classes.simpleClasses.task4;
 
-import java.util.Date;
+import java.time.LocalTime;
 
 public class Train {
     private String nameDestination;
     private int numberTrain;
-    private Date departureTime;
+    private LocalTime departureTime;
 
     public Train() {
     }
 
-    public Train(String nameDestination, int numberTrain, Date departureTime) {
+    public Train(String nameDestination, int numberTrain, LocalTime departureTime) {
         this.nameDestination = nameDestination;
         this.numberTrain = numberTrain;
         this.departureTime = departureTime;
@@ -32,11 +32,12 @@ public class Train {
         this.numberTrain = numberTrain;
     }
 
-    public Date getDepartureTime() {
+    public LocalTime getDepartureTime() {
         return departureTime;
     }
 
-    public void setDepartureTime(Date departureTime) {
+    public void setDepartureTime(LocalTime departureTime) {
         this.departureTime = departureTime;
     }
+
 }

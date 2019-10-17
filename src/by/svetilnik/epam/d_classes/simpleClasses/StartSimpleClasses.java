@@ -5,10 +5,12 @@ import by.svetilnik.epam.d_classes.simpleClasses.task2.Test2;
 import by.svetilnik.epam.d_classes.simpleClasses.task3.Student;
 import by.svetilnik.epam.d_classes.simpleClasses.task4.Train;
 import by.svetilnik.epam.d_classes.simpleClasses.task5.Counter;
+import by.svetilnik.epam.d_classes.simpleClasses.task7.Triangel;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
+import java.time.LocalTime;
+import java.util.*;
 
 public class StartSimpleClasses {
 
@@ -23,7 +25,10 @@ public class StartSimpleClasses {
 
 //        task4();
 
-        task5();
+//        task5();
+
+        task7();
+
     }
 
     private static void task1() {
@@ -69,17 +74,22 @@ public class StartSimpleClasses {
 
     private static void task4() {
 
-        ArrayList<Train> trains = new ArrayList<>();
 
+        //Prints 04 hour 45 minutes
+//        LocalTime date4 = LocalTime.of(4, 45);
+//        System.out.println("Date : " + date4);
+
+        List<Train> trains = new ArrayList<>();
         fillTrain(trains);
         printTrain(trains);
+
         sortTrainForNumbers(trains);
         System.out.println();
         printTrain(trains);
     }
 
 
-    public static void task5(){
+    public static void task5() {
 
         Counter counter = new Counter(5);
 
@@ -92,6 +102,14 @@ public class StartSimpleClasses {
             counter.reduce();
             System.out.println(counter.getCurrent());
         }
+    }
+
+
+    public static void task7() {
+        Triangel triangel = new Triangel();
+
+        System.out.println("Area:" +  triangel.area());
+
     }
 
     private static void fillListStudent(ArrayList<Student> students) {
@@ -108,22 +126,20 @@ public class StartSimpleClasses {
         students.add(new Student("10 Sidorov", "P-3", new int[]{5, 6, 7, 8, 1}));
     }
 
-    private static void fillTrain(ArrayList<Train> trains) {
-        String pattern = "HH:mm:ss";
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+    private static void fillTrain(List<Train> trains) {
+        trains.add(new Train("five", 5, LocalTime.of(5, 0)));
+        trains.add(new Train("one", 1, LocalTime.of(4, 50)));
+        trains.add(new Train("tree", 3, LocalTime.of(10, 35)));
+        trains.add(new Train("two", 2, LocalTime.of(7, 30)));
+        trains.add(new Train("four", 4, LocalTime.of(1, 30)));
 
-//        trains.add(new Train("one", 1, simpleDateFormat.parse("00:00:03")));
-//        trains.add(new Train("two", 2, simpleDateFormat.parse("19:00:03")));
-//        trains.add(new Train("tree", 3, simpleDateFormat.parse("22:00:03")));
-//        trains.add(new Train("four", 4, simpleDateFormat.parse("21:00:03")));
-//        trains.add(new Train("five", 5, simpleDateFormat.parse("23:00:03")));
 
     }
 
-    private static void printTrain(ArrayList<Train> trains) {
+    private static void printTrain(List<Train> trains) {
         for (Train train : trains) {
             System.out.println(
-                    train.getNameDestination() + ":   " +
+                    train.getNameDestination() + ":" +
                             train.getNumberTrain() + " - " +
                             train.getDepartureTime().toString()
             );
@@ -132,16 +148,8 @@ public class StartSimpleClasses {
 
 
     //some me
-    private static void sortTrainForNumbers(ArrayList<Train> trains) {
-        int max = trains.get(0).getNumberTrain();
-
-        for (int i = 0; i < trains.size(); i++) {
-            if (trains.get(i).getNumberTrain() > max) {
-                int x = trains.get(i).getNumberTrain();
-                max = trains.get(i).getNumberTrain();
+    private static void sortTrainForNumbers(List<Train> trains) {
 
 
-            }
-        }
     }
 }
