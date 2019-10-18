@@ -2,27 +2,22 @@ package by.svetilnik.epam.d_classes.simpleClasses.task7;
 
 import java.util.ArrayList;
 
-
-
 public class Triangel {
-
-    public static final int countTop = 3;
 
     private int a;
     private int b;
     private int c;
     private int height;
-    private ArrayList<Top> tops = new ArrayList<>(countTop);
 
     public Triangel() {
         this.a = 3;
-        this.b = 3;
-        this.c = 4;
+        this.b = 4;
+        this.c = 5;
         this.height = 4;
+        ArrayList<Top> tops = new ArrayList<>();
         tops.add(new Top(1,1));
         tops.add(new Top(2,2));
         tops.add(new Top(3,3));
-
     }
 
     public Triangel(int a, int b, int c, int height) {
@@ -62,9 +57,5 @@ public class Triangel {
 
     public void setHeight(int height) {
         this.height = height;
-    }
-
-    public double area() {
-        return (this.getA() * this.getHeight()) / 2;
     }
 }

@@ -5,6 +5,7 @@ import by.svetilnik.epam.d_classes.simpleClasses.task2.Test2;
 import by.svetilnik.epam.d_classes.simpleClasses.task3.Student;
 import by.svetilnik.epam.d_classes.simpleClasses.task3.StudentLogic;
 import by.svetilnik.epam.d_classes.simpleClasses.task4.Train;
+import by.svetilnik.epam.d_classes.simpleClasses.task4.TrainLogic;
 import by.svetilnik.epam.d_classes.simpleClasses.task5.Counter;
 import by.svetilnik.epam.d_classes.simpleClasses.task7.Triangel;
 
@@ -16,6 +17,10 @@ import static by.svetilnik.epam.d_classes.simpleClasses.task2.Test2View.printTes
 import static by.svetilnik.epam.d_classes.simpleClasses.task3.StudentLogic.findExcellentStudents;
 import static by.svetilnik.epam.d_classes.simpleClasses.task3.StudentView.printAllInfoStudent;
 import static by.svetilnik.epam.d_classes.simpleClasses.task3.StudentView.printStudents;
+import static by.svetilnik.epam.d_classes.simpleClasses.task4.TrainLogic.fillTrains;
+import static by.svetilnik.epam.d_classes.simpleClasses.task4.TrainLogic.sortTrainForNumbers;
+import static by.svetilnik.epam.d_classes.simpleClasses.task4.TrainView.printTrain;
+import static by.svetilnik.epam.d_classes.simpleClasses.task7.TriangelLogic.*;
 
 public class StartSimpleClasses {
 
@@ -26,11 +31,11 @@ public class StartSimpleClasses {
 //        task2();
 //        task3();
 
-        task4();
+//        task4();
 
 //        task5();
 
-//        task7();
+        task7();
 
     }
 
@@ -61,13 +66,8 @@ public class StartSimpleClasses {
 
     private static void task4() {
 
-
-        //Prints 04 hour 45 minutes
-//        LocalTime date4 = LocalTime.of(4, 45);
-//        System.out.println("Date : " + date4);
-
-        List<Train> trains = new ArrayList<>();
-        fillTrain(trains);
+        ArrayList<Train> trains = new ArrayList<>();
+        fillTrains(trains);
         printTrain(trains);
 
         sortTrainForNumbers(trains);
@@ -94,35 +94,10 @@ public class StartSimpleClasses {
     public static void task7() {
         Triangel triangel = new Triangel();
 
-        System.out.println("Area:" + triangel.area());
-
-    }
-
-
-    private static void fillTrain(List<Train> trains) {
-        trains.add(new Train("five", 5, LocalTime.of(5, 0)));
-        trains.add(new Train("one", 1, LocalTime.of(4, 50)));
-        trains.add(new Train("tree", 3, LocalTime.of(10, 35)));
-        trains.add(new Train("two", 2, LocalTime.of(7, 30)));
-        trains.add(new Train("four", 4, LocalTime.of(1, 30)));
-
-
-    }
-
-    private static void printTrain(List<Train> trains) {
-        for (Train train : trains) {
-            System.out.println(
-                    train.getNameDestination() + ":" +
-                            train.getNumberTrain() + " - " +
-                            train.getDepartureTime().toString()
-            );
-        }
-    }
-
-
-    //some me
-    private static void sortTrainForNumbers(List<Train> trains) {
-
+        System.out.println("Area:" + area(triangel));
+        System.out.println("Area:" + areaAcrossSide(triangel));
+        System.out.println("Area Geron:" + areaGeron(triangel));
+        System.out.println("Area Equilateral:" + areaEquilateral(triangel));
 
     }
 }
