@@ -7,14 +7,6 @@ public class Test1 {
     public Test1() {
     }
 
-    public int getT1() {
-        return t1;
-    }
-
-    public int getT2() {
-        return t2;
-    }
-
     public void setParam(int t1, int t2) {
         this.t1 = t1;
         this.t2 = t2;
