@@ -2,19 +2,14 @@ package by.svetilnik.epam.d_classes.simpleClasses.task3;
 
 public class Student {
 
-    public static final int SIZE =5;
-
     public String fullName;
     public String groupNumber;
-    public int[] progress1 = new int[SIZE];
+    public int[] progress;
 
-    public Student() {
-    }
-
-    public Student(String fullName, String groupNumber, int[] progress1) {
+    public Student(String fullName, String groupNumber, int[] progress) {
         this.fullName = fullName;
         this.groupNumber = groupNumber;
-        this.progress1 = progress1;
+        this.progress = progress;
     }
 
     public String getFullName() {
@@ -33,11 +28,11 @@ public class Student {
         this.groupNumber = groupNumber;
     }
 
-    public int[] getProgress1() {
-        return progress1;
+    public int[] getProgress() {
+        return progress;
     }
 
-    public void setProgress1(int[] progress1) {
-        this.progress1 = progress1;
+    public void setProgress(int[] progress) {
+        this.progress = progress;
     }
 }

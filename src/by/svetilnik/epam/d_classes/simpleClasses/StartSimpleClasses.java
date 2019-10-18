@@ -2,32 +2,34 @@ package by.svetilnik.epam.d_classes.simpleClasses;
 
 import by.svetilnik.epam.d_classes.simpleClasses.task1.Test1;
 import by.svetilnik.epam.d_classes.simpleClasses.task2.Test2;
+import by.svetilnik.epam.d_classes.simpleClasses.task3.StudentLogic;
 import by.svetilnik.epam.d_classes.simpleClasses.task3.Student;
 import by.svetilnik.epam.d_classes.simpleClasses.task4.Train;
 import by.svetilnik.epam.d_classes.simpleClasses.task5.Counter;
 import by.svetilnik.epam.d_classes.simpleClasses.task7.Triangel;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.util.*;
 
+import static by.svetilnik.epam.d_classes.simpleClasses.task3.StudentLogic.findExcellentStudents;
+import static by.svetilnik.epam.d_classes.simpleClasses.task3.StudentLogic.printAllInfoStudent;
+import static by.svetilnik.epam.d_classes.simpleClasses.task3.StudentLogic.printStudents;
+
 public class StartSimpleClasses {
 
-    private static final int POINT_NINE = 9;
-    private static final int POINT_TEN = 10;
+
 
     public static void startSimpleClasses() {
 
 //        task1();
 //        task2();
-//        task3();
+        task3();
 
 //        task4();
 
 //        task5();
 
-        task7();
+//        task7();
 
     }
 
@@ -37,7 +39,7 @@ public class StartSimpleClasses {
         test1.setParam(1, 2);
         test1.print();
         System.out.println("Sum = " + test1.sum());
-        System.out.println("Max = " + test1.ret());
+        System.out.println("Max = " + test1.max());
     }
 
     private static void task2() {
@@ -51,25 +53,12 @@ public class StartSimpleClasses {
     }
 
     private static void task3() {
-        int count = 0;
+        ArrayList<Student> students = StudentLogic.fillListStudent() ;
 
-        ArrayList<Student> students = new ArrayList<>();
+        printAllInfoStudent(students);
 
-        fillListStudent(students);
+        printStudents(findExcellentStudents(students));
 
-        for (int i = 0; i < students.size(); i++) {
-
-            for (int j = 0; j < students.get(i).progress1.length; j++) {
-
-                if (students.get(i).progress1[j] == POINT_NINE || students.get(i).progress1[j] == POINT_TEN) {
-                    count++;
-                }
-            }
-            if (count == 1) {
-                System.out.println(students.get(i).fullName + "  " + students.get(i).groupNumber);
-            }
-            count = 0;
-        }
     }
 
     private static void task4() {
@@ -112,19 +101,7 @@ public class StartSimpleClasses {
 
     }
 
-    private static void fillListStudent(ArrayList<Student> students) {
 
-        students.add(new Student("1 Ivanov", "P-1", new int[]{5, 6, 7, 10, 9}));
-        students.add(new Student("2 Petrov", "P-2", new int[]{5, 6, 7, 8, 4}));
-        students.add(new Student("3 Novikov", "P-3", new int[]{5, 6, 7, 8, 9}));
-        students.add(new Student("4 Sidorov", "P-3", new int[]{5, 6, 7, 8, 9}));
-        students.add(new Student("5 Sidorov", "P-3", new int[]{5, 6, 7, 8, 1}));
-        students.add(new Student("6 Novikov", "P-3", new int[]{5, 6, 7, 8, 2}));
-        students.add(new Student("7 Sidorov", "P-3", new int[]{5, 6, 7, 8, 9}));
-        students.add(new Student("8 Sidorov", "P-3", new int[]{5, 6, 7, 8, 2}));
-        students.add(new Student("9 Lionov", "P-3", new int[]{5, 6, 7, 10, 4}));
-        students.add(new Student("10 Sidorov", "P-3", new int[]{5, 6, 7, 8, 1}));
-    }
 
     private static void fillTrain(List<Train> trains) {
         trains.add(new Train("five", 5, LocalTime.of(5, 0)));

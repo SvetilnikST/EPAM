@@ -7,8 +7,12 @@ public class Test1 {
     public Test1() {
     }
 
-    public void print() {
-        System.out.println("t1 = " + t1 + " t2 = " + t2);
+    public int getT1() {
+        return t1;
+    }
+
+    public int getT2() {
+        return t2;
     }
 
     public void setParam(int t1, int t2) {
@@ -20,13 +24,14 @@ public class Test1 {
         return t1 + t2;
     }
 
-    public int ret() {
-        if (t1 > t2) return t1;
-        else return t2;
+    public int max() {
+        if (t1 > t2) {
+            return t1;
+        }
+        return t2;
     }
 
+    public void print() {
+        System.out.println("t1 = " + t1 + " t2 = " + t2);
+    }
 };
-
-
-
-

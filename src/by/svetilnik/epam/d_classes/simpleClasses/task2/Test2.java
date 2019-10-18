@@ -10,8 +10,8 @@ public class Test2 {
     }
 
     public Test2() {
-        a=1;
-        b=2;
+        a = 1;
+        b = 2;
     }
 
     public int getA() {
