@@ -33,4 +33,13 @@ public class TriangelLogic {
         }
         return 0;
     }
+
+    public static double median(Triangel triangel){
+
+        //находим  координаты середины сторон для АС и АВ
+
+        double kAC1 = triangel.getTops().size();
+
+        return 0;
+    }
 }

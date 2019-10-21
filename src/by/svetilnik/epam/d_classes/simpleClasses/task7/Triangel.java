@@ -8,6 +8,7 @@ public class Triangel {
     private int b;
     private int c;
     private int height;
+    private ArrayList<Top> tops;
 
     public Triangel() {
         this.a = 3;
@@ -17,7 +18,7 @@ public class Triangel {
         ArrayList<Top> tops = new ArrayList<>();
         tops.add(new Top(1,1));
         tops.add(new Top(2,2));
-        tops.add(new Top(3,3));
+        tops.add(new Top(3,2));
     }
 
     public Triangel(int a, int b, int c, int height) {
@@ -57,5 +58,13 @@ public class Triangel {
 
     public void setHeight(int height) {
         this.height = height;
+    }
+
+    public ArrayList<Top> getTops() {
+        return tops;
+    }
+
+    public void setTops(ArrayList<Top> tops) {
+        this.tops = tops;
     }
 }
