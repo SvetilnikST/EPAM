@@ -18,7 +18,6 @@ public class Triangel {
         tops.add(0, new Top(1, 2));
         tops.add(1, new Top(2, 3));
         tops.add(2, new Top(3, 2));
-
     }
 
     public Triangel(int a, int b, int c, int height) {

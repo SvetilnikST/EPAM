@@ -8,6 +8,7 @@ import by.svetilnik.epam.d_classes.simpleClasses.task4.Train;
 import by.svetilnik.epam.d_classes.simpleClasses.task5.Counter;
 import by.svetilnik.epam.d_classes.simpleClasses.task6.Time;
 import by.svetilnik.epam.d_classes.simpleClasses.task7.Triangel;
+import by.svetilnik.epam.d_classes.simpleClasses.task8.CustomerList;
 
 import java.util.ArrayList;
 
@@ -20,24 +21,24 @@ import static by.svetilnik.epam.d_classes.simpleClasses.task4.TrainLogic.sortTra
 import static by.svetilnik.epam.d_classes.simpleClasses.task4.TrainView.printTrain;
 import static by.svetilnik.epam.d_classes.simpleClasses.task6.Time.printTime;
 import static by.svetilnik.epam.d_classes.simpleClasses.task7.TriangelLogic.*;
+import static by.svetilnik.epam.d_classes.simpleClasses.task8.CustomersListLogic.findForNumberCreditCard;
+import static by.svetilnik.epam.d_classes.simpleClasses.task8.CustomersListView.printCustomer;
+import static by.svetilnik.epam.d_classes.simpleClasses.task8.CustomersListLogic.fillCustomersList;
 
 public class StartSimpleClasses {
-
 
     public static void startSimpleClasses() {
 
 //        task1();
 //        task2();
 //        task3();
-
-//        task4();
-
-        task6();
-
-//        task5();
-
 //        task7();
 
+
+        task4();
+        task5();
+        task6();
+        task8();
     }
 
 
@@ -82,7 +83,7 @@ public class StartSimpleClasses {
         Counter counter = new Counter(5);
 
         for (int i = 0; i < 6; i++) {
-            counter.add();
+            counter.add(i);
             System.out.println(counter.getCurrent());
         }
 
@@ -100,7 +101,6 @@ public class StartSimpleClasses {
         printTime(time);
     }
 
-
     public static void task7() {
 
         Triangel triangel = new Triangel();
@@ -109,5 +109,19 @@ public class StartSimpleClasses {
         System.out.println("Area Geron:" + areaGeron(triangel));
         System.out.println("Area Equilateral:" + areaEquilateral(triangel));
         median(triangel);
+    }
+
+    public static void task8() {
+
+        //создали объект класса списка
+        CustomerList customerAggregation = new CustomerList();
+        //заполнили список
+        fillCustomersList(customerAggregation);
+        //вывели на печать
+        printCustomer(customerAggregation);
+
+        System.out.println("Find:");
+        //вывеод от номера одного до другого
+        printCustomer(findForNumberCreditCard(customerAggregation, 2, 5));
     }
 }

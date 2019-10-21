@@ -14,15 +14,15 @@ public class Counter {
         this.current = current;
     }
 
-    public boolean add() {
-        if (this.current < max) {
+    public boolean add(int step) {
+        if (this.current <= max) {
             this.current += step;
         } else return false;
         return true;
     }
 
     public boolean reduce() {
-        if (this.current > min) {
+        if (this.current >=min ) {
             this.current -= step;
         } else return false;
         return true;
