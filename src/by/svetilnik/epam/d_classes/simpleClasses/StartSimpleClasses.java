@@ -9,6 +9,7 @@ import by.svetilnik.epam.d_classes.simpleClasses.task5.Counter;
 import by.svetilnik.epam.d_classes.simpleClasses.task6.Time;
 import by.svetilnik.epam.d_classes.simpleClasses.task7.Triangel;
 import by.svetilnik.epam.d_classes.simpleClasses.task8.CustomerList;
+import by.svetilnik.epam.d_classes.simpleClasses.task9.Book;
 
 import java.util.ArrayList;
 
@@ -24,6 +25,7 @@ import static by.svetilnik.epam.d_classes.simpleClasses.task7.TriangelLogic.*;
 import static by.svetilnik.epam.d_classes.simpleClasses.task8.CustomersListLogic.findForNumberCreditCard;
 import static by.svetilnik.epam.d_classes.simpleClasses.task8.CustomersListView.printCustomer;
 import static by.svetilnik.epam.d_classes.simpleClasses.task8.CustomersListLogic.fillCustomersList;
+import static by.svetilnik.epam.d_classes.simpleClasses.task9.BookLogic.fillBooks;
 
 public class StartSimpleClasses {
 
@@ -35,10 +37,11 @@ public class StartSimpleClasses {
 //        task7();
 
 
-        task4();
-        task5();
-        task6();
-        task8();
+//        task4();
+//        task5();
+//        task6();
+//        task8();
+        task9();
     }
 
 
@@ -123,5 +126,10 @@ public class StartSimpleClasses {
         System.out.println("Find:");
         //вывеод от номера одного до другого
         printCustomer(findForNumberCreditCard(customerAggregation, 2, 5));
+    }
+
+    public static void task9(){
+        ArrayList<Book> books = new ArrayList<>();
+        fillBooks(books);
     }
 }
