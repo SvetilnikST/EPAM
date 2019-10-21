@@ -5,13 +5,11 @@ import by.svetilnik.epam.d_classes.simpleClasses.task2.Test2;
 import by.svetilnik.epam.d_classes.simpleClasses.task3.Student;
 import by.svetilnik.epam.d_classes.simpleClasses.task3.StudentLogic;
 import by.svetilnik.epam.d_classes.simpleClasses.task4.Train;
-import by.svetilnik.epam.d_classes.simpleClasses.task4.TrainLogic;
 import by.svetilnik.epam.d_classes.simpleClasses.task5.Counter;
+import by.svetilnik.epam.d_classes.simpleClasses.task6.Time;
 import by.svetilnik.epam.d_classes.simpleClasses.task7.Triangel;
 
-import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.List;
 
 import static by.svetilnik.epam.d_classes.simpleClasses.task2.Test2View.printTest2;
 import static by.svetilnik.epam.d_classes.simpleClasses.task3.StudentLogic.findExcellentStudents;
@@ -20,6 +18,7 @@ import static by.svetilnik.epam.d_classes.simpleClasses.task3.StudentView.printS
 import static by.svetilnik.epam.d_classes.simpleClasses.task4.TrainLogic.fillTrains;
 import static by.svetilnik.epam.d_classes.simpleClasses.task4.TrainLogic.sortTrainForNumbers;
 import static by.svetilnik.epam.d_classes.simpleClasses.task4.TrainView.printTrain;
+import static by.svetilnik.epam.d_classes.simpleClasses.task6.Time.printTime;
 import static by.svetilnik.epam.d_classes.simpleClasses.task7.TriangelLogic.*;
 
 public class StartSimpleClasses {
@@ -33,11 +32,14 @@ public class StartSimpleClasses {
 
 //        task4();
 
+        task6();
+
 //        task5();
 
-        task7();
+//        task7();
 
     }
+
 
     private static void task1() {
         Test1 test1 = new Test1();
@@ -90,14 +92,22 @@ public class StartSimpleClasses {
         }
     }
 
+    private static void task6() {
+        Time time = new Time();
+        time.setHour(145);
+        time.setMinutes(10);
+        time.setSecond(122);
+        printTime(time);
+    }
+
 
     public static void task7() {
-        Triangel triangel = new Triangel();
 
+        Triangel triangel = new Triangel();
         System.out.println("Area:" + area(triangel));
         System.out.println("Area:" + areaAcrossSide(triangel));
         System.out.println("Area Geron:" + areaGeron(triangel));
         System.out.println("Area Equilateral:" + areaEquilateral(triangel));
-
+        median(triangel);
     }
 }

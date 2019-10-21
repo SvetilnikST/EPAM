@@ -8,17 +8,17 @@ public class Triangel {
     private int b;
     private int c;
     private int height;
-    private ArrayList<Top> tops;
+    private ArrayList<Top> tops = new ArrayList<>();
 
     public Triangel() {
         this.a = 3;
         this.b = 4;
         this.c = 5;
         this.height = 4;
-        ArrayList<Top> tops = new ArrayList<>();
-        tops.add(new Top(1,1));
-        tops.add(new Top(2,2));
-        tops.add(new Top(3,2));
+        tops.add(0, new Top(1, 2));
+        tops.add(1, new Top(2, 3));
+        tops.add(2, new Top(3, 2));
+
     }
 
     public Triangel(int a, int b, int c, int height) {
