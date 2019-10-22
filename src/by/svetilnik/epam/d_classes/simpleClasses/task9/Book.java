@@ -89,4 +89,17 @@ public class Book {
         this.bookBinding = bookBinding;
     }
 
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", authors=" + authors +
+                ", publishingHouse=" + publishingHouse +
+                ", yearOfPublishing=" + yearOfPublishing +
+                ", countPage=" + countPage +
+                ", price=" + price +
+                ", bookBinding=" + bookBinding +
+                '}';
+    }
 }

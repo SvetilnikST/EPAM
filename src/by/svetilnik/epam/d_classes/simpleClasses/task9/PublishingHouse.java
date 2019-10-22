@@ -24,4 +24,12 @@ public class PublishingHouse {
     public String getNamePublishingHouse() {
         return namePublishingHouse;
     }
+
+    @Override
+    public String toString() {
+        return "PublishingHouse{" +
+                "id=" + id +
+                ", namePublishingHouse='" + namePublishingHouse + '\'' +
+                '}';
+    }
 }

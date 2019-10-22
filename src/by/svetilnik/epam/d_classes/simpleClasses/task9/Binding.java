@@ -25,5 +25,11 @@ public class Binding {
         return name;
    }
 
-
+    @Override
+    public String toString() {
+        return "Binding{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
