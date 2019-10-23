@@ -1,18 +1,17 @@
 package by.svetilnik.epam.d_classes.simpleClasses.task8;
 
+import by.svetilnik.epam.d_classes.simpleClasses.task8.logic.Adress;
+
 public class Customer {
     private int id;
     private String surname;
     private String name;
     private String patronymic;
-    private String adress;
+    private Adress adress;
     private int numberCreditCard;
     private int numberBunkAccount;
 
-    public Customer() {
-    }
-
-    public Customer(int id, String surname, String name, String patronymic, String adress, int numberCreditCard, int numberBunkAccount) {
+    public Customer(int id, String surname, String name, String patronymic, Adress adress, int numberCreditCard, int numberBunkAccount) {
         this.id = id;
         this.surname = surname;
         this.name = name;
@@ -54,11 +53,11 @@ public class Customer {
         this.patronymic = patronymic;
     }
 
-    public String getAdress() {
+    public Adress getAdress() {
         return adress;
     }
 
-    public void setAdress(String adress) {
+    public void setAdress(Adress adress) {
         this.adress = adress;
     }
 
@@ -85,7 +84,7 @@ public class Customer {
                 ", surname='" + surname + '\'' +
                 ", name='" + name + '\'' +
                 ", patronymic='" + patronymic + '\'' +
-                ", adress='" + adress + '\'' +
+                ", adress=" + adress +
                 ", numberCreditCard=" + numberCreditCard +
                 ", numberBunkAccount=" + numberBunkAccount +
                 '}';

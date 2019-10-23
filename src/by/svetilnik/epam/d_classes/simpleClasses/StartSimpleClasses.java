@@ -1,6 +1,8 @@
 package by.svetilnik.epam.d_classes.simpleClasses;
 
 import by.svetilnik.epam.d_classes.simpleClasses.task1.Test1;
+import by.svetilnik.epam.d_classes.simpleClasses.task10.AirlinesList;
+import by.svetilnik.epam.d_classes.simpleClasses.task10.DayOfTheWeek;
 import by.svetilnik.epam.d_classes.simpleClasses.task2.Test2;
 import by.svetilnik.epam.d_classes.simpleClasses.task3.Student;
 import by.svetilnik.epam.d_classes.simpleClasses.task3.StudentLogic;
@@ -15,6 +17,9 @@ import by.svetilnik.epam.d_classes.simpleClasses.task9.logic.PublishingHouse;
 
 import java.util.ArrayList;
 
+import static by.svetilnik.epam.d_classes.simpleClasses.task10.AirlinesListLogic.fillAirlinesList;
+import static by.svetilnik.epam.d_classes.simpleClasses.task10.AirlinesListLogic.findDay;
+import static by.svetilnik.epam.d_classes.simpleClasses.task10.AirlinesView.printAirlines;
 import static by.svetilnik.epam.d_classes.simpleClasses.task2.Test2View.printTest2;
 import static by.svetilnik.epam.d_classes.simpleClasses.task3.StudentLogic.findExcellentStudents;
 import static by.svetilnik.epam.d_classes.simpleClasses.task3.StudentView.printAllInfoStudent;
@@ -45,8 +50,16 @@ public class StartSimpleClasses {
 //        task6();
 //        task8();
 
+        task10();
     }
 
+    private static void task10() {
+        AirlinesList airlinesList = new AirlinesList();
+        fillAirlinesList(airlinesList);
+        printAirlines(airlinesList);
+
+        printAirlines(findDay(airlinesList, DayOfTheWeek.FRIDAY));
+    }
 
 
     private static void task1() {
@@ -128,20 +141,20 @@ public class StartSimpleClasses {
         printCustomer(customerAggregation);
 
         System.out.println("Find:");
-        //вывеод от номера одного до другого
+//        //вывеод от номера одного до другого
         printCustomer(findForNumberCreditCard(customerAggregation, 2, 5));
     }
 
-    public static void task9(){
+    public static void task9() {
         BooksList booksList = new BooksList();
 
         fillBooks(booksList);
-        printBooksList(findBookForAuthor(booksList, new Author(1,"Mark", "Tven")));
+        printBooksList(findBookForAuthor(booksList, new Author(1, "Mark", "Tven")));
 
         fillBooks(booksList);
-        printBooksList(findBookForPublishing(booksList, new PublishingHouse(1,"House1")));
+        printBooksList(findBookForPublishing(booksList, new PublishingHouse(1, "House1")));
 
         fillBooks(booksList);
-        printBooksList(printBookAfterYear(booksList,2005));
+        printBooksList(printBookAfterYear(booksList, 2005));
     }
 }
