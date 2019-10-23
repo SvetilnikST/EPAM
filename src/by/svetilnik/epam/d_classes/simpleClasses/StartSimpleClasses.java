@@ -3,6 +3,7 @@ package by.svetilnik.epam.d_classes.simpleClasses;
 import by.svetilnik.epam.d_classes.simpleClasses.task1.Test1;
 import by.svetilnik.epam.d_classes.simpleClasses.task10.AirlinesList;
 import by.svetilnik.epam.d_classes.simpleClasses.task10.DayOfTheWeek;
+import by.svetilnik.epam.d_classes.simpleClasses.task10.Destination;
 import by.svetilnik.epam.d_classes.simpleClasses.task2.Test2;
 import by.svetilnik.epam.d_classes.simpleClasses.task3.Student;
 import by.svetilnik.epam.d_classes.simpleClasses.task3.StudentLogic;
@@ -17,8 +18,7 @@ import by.svetilnik.epam.d_classes.simpleClasses.task9.logic.PublishingHouse;
 
 import java.util.ArrayList;
 
-import static by.svetilnik.epam.d_classes.simpleClasses.task10.AirlinesListLogic.fillAirlinesList;
-import static by.svetilnik.epam.d_classes.simpleClasses.task10.AirlinesListLogic.findDay;
+import static by.svetilnik.epam.d_classes.simpleClasses.task10.AirlinesListLogic.*;
 import static by.svetilnik.epam.d_classes.simpleClasses.task10.AirlinesView.printAirlines;
 import static by.svetilnik.epam.d_classes.simpleClasses.task2.Test2View.printTest2;
 import static by.svetilnik.epam.d_classes.simpleClasses.task3.StudentLogic.findExcellentStudents;
@@ -55,10 +55,15 @@ public class StartSimpleClasses {
 
     private static void task10() {
         AirlinesList airlinesList = new AirlinesList();
+
         fillAirlinesList(airlinesList);
         printAirlines(airlinesList);
 
         printAirlines(findDay(airlinesList, DayOfTheWeek.FRIDAY));
+        System.out.println("---------");
+
+        fillAirlinesList(airlinesList);
+        printAirlines(findDestination(airlinesList, new Destination(1,"Paris")));
     }
 
 
