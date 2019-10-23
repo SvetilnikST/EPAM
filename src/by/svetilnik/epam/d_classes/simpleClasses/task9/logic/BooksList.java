@@ -1,11 +1,11 @@
-package by.svetilnik.epam.d_classes.simpleClasses.task9;
+package by.svetilnik.epam.d_classes.simpleClasses.task9.logic;
 
 import java.util.ArrayList;
 
 public class BooksList {
     private ArrayList<Book> books;
 
-    public BooksList(){
+    public BooksList() {
         this.books = books;
     }
 
@@ -16,4 +16,5 @@ public class BooksList {
     public void setBooks(ArrayList<Book> books) {
         this.books = books;
     }
+
 }

@@ -9,9 +9,9 @@ import by.svetilnik.epam.d_classes.simpleClasses.task5.Counter;
 import by.svetilnik.epam.d_classes.simpleClasses.task6.Time;
 import by.svetilnik.epam.d_classes.simpleClasses.task7.Triangel;
 import by.svetilnik.epam.d_classes.simpleClasses.task8.CustomerList;
-import by.svetilnik.epam.d_classes.simpleClasses.task9.Author;
-import by.svetilnik.epam.d_classes.simpleClasses.task9.BooksList;
-import by.svetilnik.epam.d_classes.simpleClasses.task9.PublishingHouse;
+import by.svetilnik.epam.d_classes.simpleClasses.task9.logic.Author;
+import by.svetilnik.epam.d_classes.simpleClasses.task9.logic.BooksList;
+import by.svetilnik.epam.d_classes.simpleClasses.task9.logic.PublishingHouse;
 
 import java.util.ArrayList;
 
@@ -24,13 +24,11 @@ import static by.svetilnik.epam.d_classes.simpleClasses.task4.TrainLogic.sortTra
 import static by.svetilnik.epam.d_classes.simpleClasses.task4.TrainView.printTrain;
 import static by.svetilnik.epam.d_classes.simpleClasses.task6.Time.printTime;
 import static by.svetilnik.epam.d_classes.simpleClasses.task7.TriangelLogic.*;
+import static by.svetilnik.epam.d_classes.simpleClasses.task8.CustomersListLogic.fillCustomersList;
 import static by.svetilnik.epam.d_classes.simpleClasses.task8.CustomersListLogic.findForNumberCreditCard;
 import static by.svetilnik.epam.d_classes.simpleClasses.task8.CustomersListView.printCustomer;
-import static by.svetilnik.epam.d_classes.simpleClasses.task8.CustomersListLogic.fillCustomersList;
-import static by.svetilnik.epam.d_classes.simpleClasses.task9.BookLogic.fillBooks;
-import static by.svetilnik.epam.d_classes.simpleClasses.task9.BookView.printBookAfterYear;
-import static by.svetilnik.epam.d_classes.simpleClasses.task9.BookView.printBookForAuthor;
-import static by.svetilnik.epam.d_classes.simpleClasses.task9.BookView.printBookForPublishing;
+import static by.svetilnik.epam.d_classes.simpleClasses.task9.BooksListLogic.*;
+import static by.svetilnik.epam.d_classes.simpleClasses.task9.BooksListView.printBooksList;
 
 public class StartSimpleClasses {
 
@@ -40,13 +38,13 @@ public class StartSimpleClasses {
 //        task2();
 //        task3();
 //        task7();
-
+//        task9();
 
 //        task4();
 //        task5();
 //        task6();
 //        task8();
-        task9();
+
     }
 
 
@@ -135,10 +133,15 @@ public class StartSimpleClasses {
     }
 
     public static void task9(){
-        BooksList booksList = fillBooks();
+        BooksList booksList = new BooksList();
 
-        printBookForAuthor(booksList, new Author(1,"Mark", "Tven"));
-        printBookForPublishing(booksList, new PublishingHouse(1,"House1"));
-        printBookAfterYear(booksList,2005);
+        fillBooks(booksList);
+        printBooksList(findBookForAuthor(booksList, new Author(1,"Mark", "Tven")));
+
+        fillBooks(booksList);
+        printBooksList(findBookForPublishing(booksList, new PublishingHouse(1,"House1")));
+
+        fillBooks(booksList);
+        printBooksList(printBookAfterYear(booksList,2005));
     }
 }

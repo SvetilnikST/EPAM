@@ -1,4 +1,4 @@
-package by.svetilnik.epam.d_classes.simpleClasses.task9;
+package by.svetilnik.epam.d_classes.simpleClasses.task9.logic;
 
 public class PublishingHouse {
     private int id;

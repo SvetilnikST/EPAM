@@ -1,4 +1,4 @@
-package by.svetilnik.epam.d_classes.simpleClasses.task9;
+package by.svetilnik.epam.d_classes.simpleClasses.task9.logic;
 
 import java.util.ArrayList;
 
@@ -12,7 +12,6 @@ public class Book {
     private double price;
     private Binding bookBinding;
 
-
     public Book(int id, String name, ArrayList<Author> authors, PublishingHouse publishingHouse, int yearOfPublishing, int countPage, double price, Binding bookBinding) {
         this.id = id;
         this.name = name;
@@ -23,7 +22,6 @@ public class Book {
         this.price = price;
         this.bookBinding = bookBinding;
     }
-
 
     public int getId() {
         return id;
