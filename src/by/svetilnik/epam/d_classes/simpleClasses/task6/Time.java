@@ -62,4 +62,13 @@ public class Time {
                 ", second=" + time.getSecond() +
                 '}';
     }
+
+    @Override
+    public String toString() {
+        return "Time{" +
+                "hour=" + hour +
+                ", minutes=" + minutes +
+                ", second=" + second +
+                '}';
+    }
 }

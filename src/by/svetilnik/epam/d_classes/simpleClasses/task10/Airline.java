@@ -1,14 +1,16 @@
 package by.svetilnik.epam.d_classes.simpleClasses.task10;
 
+import by.svetilnik.epam.d_classes.simpleClasses.task6.Time;
+
 public class Airline {
     private int id;
     private Destination destination;
     private int numberFlight;
     private TypeOfAircraft typeOfAircraft;
-    private String time;
+    private Time time;
     private DayOfTheWeek dayOfTheWeek;
 
-    public Airline(int id, Destination destination, int numberFlight, TypeOfAircraft typeOfAircraft, String time, DayOfTheWeek dayOfTheWeek) {
+    public Airline(int id, Destination destination, int numberFlight, TypeOfAircraft typeOfAircraft, Time time, DayOfTheWeek dayOfTheWeek) {
         this.id = id;
         this.destination = destination;
         this.numberFlight = numberFlight;
@@ -49,11 +51,11 @@ public class Airline {
         this.typeOfAircraft = typeOfAircraft;
     }
 
-    public String getTime() {
+    public Time getTime() {
         return time;
     }
 
-    public void setTime(String time) {
+    public void setTime(Time time) {
         this.time = time;
     }
 
@@ -65,6 +67,7 @@ public class Airline {
         this.dayOfTheWeek = dayOfTheWeek;
     }
 
+
     @Override
     public String toString() {
         return "Airline{" +
@@ -72,7 +75,7 @@ public class Airline {
                 ", destination=" + destination +
                 ", numberFlight=" + numberFlight +
                 ", typeOfAircraft=" + typeOfAircraft +
-                ", time='" + time + '\'' +
+                ", time=" + time +
                 ", dayOfTheWeek=" + dayOfTheWeek +
                 '}';
     }

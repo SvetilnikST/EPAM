@@ -44,13 +44,13 @@ public class StartSimpleClasses {
 //        task3();
 //        task7();
 //        task9();
+//        task10();
+
 
 //        task4();
 //        task5();
 //        task6();
 //        task8();
-
-        task10();
     }
 
     private static void task10() {
@@ -60,10 +60,12 @@ public class StartSimpleClasses {
         printAirlines(airlinesList);
 
         printAirlines(findDay(airlinesList, DayOfTheWeek.FRIDAY));
-        System.out.println("---------");
 
         fillAirlinesList(airlinesList);
         printAirlines(findDestination(airlinesList, new Destination(1,"Paris")));
+
+        fillAirlinesList(airlinesList);
+        printAirlines(findDayTime(airlinesList, DayOfTheWeek.FRIDAY, new Time(1,30,0)));
     }
 
 
