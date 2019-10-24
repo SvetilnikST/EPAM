@@ -40,7 +40,7 @@ public class ArraysSort {
 
         for (int i = 0; i < a.length - 1; ) {
             for (int j = 0; j < b.length - 1; ) {
-                for (int k = 0; k < c.length - 1; ) {
+                for (int k = 0; k < c.length-1; ) {
 
                     if (a[i] == b[j]) {
                         c[k] = a[i];
@@ -53,30 +53,29 @@ public class ArraysSort {
                         i++;
                         k++;
                     } else {
-
-
-                        if (j < b.length && i!=a.length-1 ) {
-                            c[k] = b[j];
-                            k++;
-                            if (j < b.length - 1) {
-                                j++;
-                            }
+                        c[k] = b[j];
+                        k++;
+                        if (j < b.length - 1) {
+                            j++;
                         }
 
-                        if (j == b.length - 1 && i<a.length) {
+                        if (j == b.length - 1) {
                             c[k] = a[i];
                             k++;
                             if (i < a.length - 1) {
                                 i++;
                             }
                         }
+                        if(j==b.length-1 && i==a.length-1){
+                            c[k]=a[i];
+                        }
                     }
                 }
             }
         }
 
-        for (int i = 0; i < c.length - 1; i++) {
-            System.out.print(c[i] + " ");
+        for (int value : c) {
+            System.out.print(value + " ");
         }
 
 
