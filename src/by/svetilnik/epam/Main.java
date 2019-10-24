@@ -10,9 +10,9 @@ public class Main {
 
     public static void main(String[] args) {
 //        StartBasics.startBasics();
-//        StartAlgorithmization.startAlgorithmization();
+        StartAlgorithmization.startAlgorithmization();
 //        StartStrings.startStrings();
-        StartSimpleClasses.startSimpleClasses();
+//        StartSimpleClasses.startSimpleClasses();
 //        StartAggregationAndComposition.start();
     }
 }

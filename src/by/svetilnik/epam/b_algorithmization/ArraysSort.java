@@ -33,14 +33,49 @@ public class ArraysSort {
     }
 
     public static void ArraysSort2() {
-        int[] a = new int[]{1, 3, 5, 7};
-        int[] b = new int[]{2, 4, 6};
+
+        int[] a = new int[]{1, 3, 7, 10};
+        int[] b = new int[]{2, 3, 6};
         int[] c = new int[a.length + b.length];
 
+        for (int i = 0; i < a.length - 1; ) {
+            for (int j = 0; j < b.length - 1; ) {
+                for (int k = 0; k < c.length - 1; ) {
+
+                    if (a[i] == b[j]) {
+                        c[k] = a[i];
+                        c[k + 1] = b[j];
+                        k = k + 2;
+                        i++;
+                        j++;
+                    } else if (a[i] < b[j]) {
+                        c[k] = a[i];
+                        i++;
+                        k++;
+                    } else {
 
 
+                        if (j < b.length && i!=a.length-1 ) {
+                            c[k] = b[j];
+                            k++;
+                            if (j < b.length - 1) {
+                                j++;
+                            }
+                        }
 
-        for (int i = 0; i < c.length; i++) {
+                        if (j == b.length - 1 && i<a.length) {
+                            c[k] = a[i];
+                            k++;
+                            if (i < a.length - 1) {
+                                i++;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        for (int i = 0; i < c.length - 1; i++) {
             System.out.print(c[i] + " ");
         }
 
