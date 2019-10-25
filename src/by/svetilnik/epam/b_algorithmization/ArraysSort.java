@@ -1,5 +1,7 @@
 package by.svetilnik.epam.b_algorithmization;
 
+import java.util.Arrays;
+
 /**
  * Задачи одномерные массивы. Сортировки
  */
@@ -38,41 +40,60 @@ public class ArraysSort {
         int[] b = new int[]{2, 3, 6};
         int[] c = new int[a.length + b.length];
 
-        for (int i = 0; i < a.length - 1; ) {
-            for (int j = 0; j < b.length - 1; ) {
-                for (int k = 0; k < c.length-1; ) {
+//        for (int i = 0; i < a.length - 1; ) {
+//            for (int j = 0; j < b.length - 1; ) {
+//                for (int k = 0; k < c.length-1; ) {
+//
+//                    if (a[i] == b[j]) {
+//                        c[k] = a[i];
+//                        c[k + 1] = b[j];
+//                        k = k + 2;
+//                        i++;
+//                        j++;
+//                    } else if (a[i] < b[j]) {
+//                        c[k] = a[i];
+//                        i++;
+//                        k++;
+//                    } else {
+//                        c[k] = b[j];
+//                        k++;
+//                        if (j < b.length - 1) {
+//                            j++;
+//                        }
+//
+//                        if (j == b.length - 1) {
+//                            c[k] = a[i];
+//                            k++;
+//                            if (i < a.length - 1) {
+//                                i++;
+//                            }
+//                        }
+//                        if(j==b.length-1 && i==a.length-1){
+//                            c[k]=a[i];
+//                        }
+//                    }
+//                }
+//            }
+//        }
 
-                    if (a[i] == b[j]) {
-                        c[k] = a[i];
-                        c[k + 1] = b[j];
-                        k = k + 2;
-                        i++;
-                        j++;
-                    } else if (a[i] < b[j]) {
-                        c[k] = a[i];
-                        i++;
-                        k++;
-                    } else {
-                        c[k] = b[j];
-                        k++;
-                        if (j < b.length - 1) {
-                            j++;
-                        }
 
-                        if (j == b.length - 1) {
-                            c[k] = a[i];
-                            k++;
-                            if (i < a.length - 1) {
-                                i++;
-                            }
-                        }
-                        if(j==b.length-1 && i==a.length-1){
-                            c[k]=a[i];
-                        }
-                    }
-                }
-            }
+        int positionA = 0;
+        int positionB = 0;
+
+        for (int i = 0; i < c.length; i++) {
+            if (positionA == a.length) {
+                c[i] = b[positionB];
+                positionB++;
+            } else if (positionB == b.length) {
+                c[i] = a[positionA];
+                positionA++;
+            } else if (a[positionA] < b[positionB]) {
+                c[i] = a[positionA];
+                positionA++;
+            } else c[i] = b[positionB];
+            positionB++;
         }
+
 
         for (int value : c) {
             System.out.print(value + " ");
@@ -103,30 +124,30 @@ public class ArraysSort {
 
     }
 
-    //Сортировка обменами
+    //сортировка обмена
     public static void ArraysSort4(int n) {
-        int[] a = new int[n];
+        int[] array = new int[n];
+        boolean sorted = false;
         int count = 0;
 
-        OneDimensionalArrays.fillIntArrayForSort(a);
-        OneDimensionalArrays.printInt(a);
-        System.out.println("Sort array:");
+        OneDimensionalArrays.fillIntArrayForSort(array);
+        System.out.println(Arrays.toString(array));
 
-        for (int i = a.length - 1; i > 0; i--) {
-            for (int j = 0; j < i; j++) {
-                if (a[j] > a[j + 1]) {
-                    int tmp = a[j];
-                    a[j] = a[j + 1];
-                    a[j + 1] = tmp;
+        while (!sorted) {
+            sorted = true;
+            for (int i = 0; i < array.length - 1; i++) {
+                if (array[i] > array[i + 1]) {
+                    int temp = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = temp;
                     count++;
+                    sorted = false;
                 }
             }
         }
-
-        OneDimensionalArrays.printInt(a);
-        System.out.println("Count swap = " + count);
+        System.out.println("Count: " + count);
+        System.out.println(Arrays.toString(array));
     }
-
 
     /*
     metods for task
@@ -138,4 +159,19 @@ public class ArraysSort {
     }
 
 
+    //сортировка вставками
+    public static void test() {
+        int[] array = {10, 2, 10, 3, 1, 2, 5};
+        System.out.println(Arrays.toString(array));
+
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i; j >0 && array[j-1]>array[j] ; j--) {
+                int tmp = array[j-1];
+                array[j-1] = array[j];
+                array[j]= tmp;
+            }
+        }
+
+        System.out.println(Arrays.toString(array));
+    }
 }

@@ -35,10 +35,12 @@ public class StartAlgorithmization {
 
 
 //        ArraysSort.ArraysSort1(2);
-        ArraysSort.ArraysSort2();
+//        ArraysSort.ArraysSort2();
 //        ArraysSort.ArraysSort3(9);
 //        ArraysSort.ArraysSort4(5);
 
+
+        ArraysSort.test();
 
 //        Voids.Task1(365,478);
 //        Voids.Task2(15,30,40,50);
