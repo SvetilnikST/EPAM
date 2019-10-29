@@ -40,66 +40,34 @@ public class ArraysSort {
         int[] b = new int[]{2, 3, 6};
         int[] c = new int[a.length + b.length];
 
-//        for (int i = 0; i < a.length - 1; ) {
-//            for (int j = 0; j < b.length - 1; ) {
-//                for (int k = 0; k < c.length-1; ) {
-//
-//                    if (a[i] == b[j]) {
-//                        c[k] = a[i];
-//                        c[k + 1] = b[j];
-//                        k = k + 2;
-//                        i++;
-//                        j++;
-//                    } else if (a[i] < b[j]) {
-//                        c[k] = a[i];
-//                        i++;
-//                        k++;
-//                    } else {
-//                        c[k] = b[j];
-//                        k++;
-//                        if (j < b.length - 1) {
-//                            j++;
-//                        }
-//
-//                        if (j == b.length - 1) {
-//                            c[k] = a[i];
-//                            k++;
-//                            if (i < a.length - 1) {
-//                                i++;
-//                            }
-//                        }
-//                        if(j==b.length-1 && i==a.length-1){
-//                            c[k]=a[i];
-//                        }
-//                    }
-//                }
-//            }
-//        }
+        int i = 0;
+        int j = 0;
 
+        for (int k = 0; k < c.length; k++) {
 
-        int positionA = 0;
-        int positionB = 0;
-
-        for (int i = 0; i < c.length; i++) {
-            if (positionA == a.length) {
-                c[i] = b[positionB];
-                positionB++;
-            } else if (positionB == b.length) {
-                c[i] = a[positionA];
-                positionA++;
-            } else if (a[positionA] < b[positionB]) {
-                c[i] = a[positionA];
-                positionA++;
-            } else c[i] = b[positionB];
-            positionB++;
+            if(i>a.length-1){
+                int tmp = b[j];
+                c[k]=tmp;
+                j++;
+            }
+            else if(j>b.length-1){
+                int tmp = a[i];
+                c[k] = tmp;
+                i++;
+            }
+            else if(a[i]<b[j]){
+                int tmp = a[i];
+                c[k]=tmp;
+                i++;
+            }else {
+                int p = b[j];
+                c[k]=p;
+                j++;
+            }
         }
-
-
-        for (int value : c) {
-            System.out.print(value + " ");
-        }
-
-
+        System.out.println(Arrays.toString(a));
+        System.out.println(Arrays.toString(b));
+        System.out.println(Arrays.toString(c));
     }
 
     //Сортировка выбором
@@ -122,6 +90,12 @@ public class ArraysSort {
             System.out.print(a[left] + "  ");
         }
 
+    }
+
+    private static void swap(int[] array, int ind1, int ind2) {
+        int tmp = array[ind1];
+        array[ind1] = array[ind2];
+        array[ind2] = tmp;
     }
 
     //сортировка обмена
@@ -152,11 +126,6 @@ public class ArraysSort {
     /*
     metods for task
      */
-    private static void swap(int[] array, int ind1, int ind2) {
-        int tmp = array[ind1];
-        array[ind1] = array[ind2];
-        array[ind2] = tmp;
-    }
 
 
     //сортировка вставками
@@ -165,13 +134,51 @@ public class ArraysSort {
         System.out.println(Arrays.toString(array));
 
         for (int i = 0; i < array.length; i++) {
-            for (int j = i; j >0 && array[j-1]>array[j] ; j--) {
-                int tmp = array[j-1];
-                array[j-1] = array[j];
-                array[j]= tmp;
+            for (int j = i; j > 0 && array[j - 1] > array[j]; j--) {
+                int tmp = array[j - 1];
+                array[j - 1] = array[j];
+                array[j] = tmp;
             }
         }
 
         System.out.println(Arrays.toString(array));
     }
+
+
+    public static void test1() {
+        int[] array = new int[]{1, 4, 6};
+        int[] newArray = crateArray(array);
+
+        System.out.println(Arrays.toString(newArray));
+
+        sort(array, 5);
+
+
+    }
+
+    private static void sort(int[] array, int n) {
+        int counter = 0;
+
+        for (int i = 1; i < n; i++) {
+            for (int j = i; j > 0 && array[j - 1] > array[j]; j--) {
+                counter++;
+                int tmp = array[j - 1];
+                array[j - 1] = array[j];
+                array[j] = tmp;
+            }
+
+        }
+        System.out.println(Arrays.toString(array));
+    }
+
+    private static int[] crateArray(int[] array) {
+        int[] newArray = new int[array.length];
+
+        for (int i = 0; i < array.length; i++) {
+            newArray[i] = array[i] + 1;
+        }
+        return newArray;
+    }
+
+
 }
