@@ -31,16 +31,16 @@ public class e_StartAlgorithmization {
 //        b_MultidimensionalArrays.MultidimensionalArrays13(3,1,10);
 //        b_MultidimensionalArrays.MultidimensionalArrays14(5,5);
 //        b_MultidimensionalArrays.MultidimensionalArrays15(3,3,1,10);
+
 //        b_MultidimensionalArrays.MultidimensionalArrays16(3);
 
 
 //        c_ArraysSort.ArraysSort1(2);
-        c_ArraysSort.ArraysSort2();
+//        c_ArraysSort.ArraysSort2();
 //        c_ArraysSort.ArraysSort3(9);
 //        c_ArraysSort.ArraysSort4(5);
+//        c_ArraysSort.task5();
 
-
-//        c_ArraysSort.test();
 
 //        d_Voids.Task1(365,478);
 //        d_Voids.Task2(15,30,40,50);
