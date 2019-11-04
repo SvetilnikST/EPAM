@@ -4,7 +4,7 @@ package by.svetilnik.epam.b_algorithmization;
  * Одномерные массивы
  */
 
-public class OneDimensionalArrays {
+public class a_OneDimensionalArrays {
     public static void OneArraysTask1(int N, int K) {
 
         int sum = 0;

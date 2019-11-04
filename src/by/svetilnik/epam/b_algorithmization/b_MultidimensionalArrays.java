@@ -7,7 +7,7 @@ import static java.lang.Math.pow;
  * Задачи. Массивы массивов
  */
 
-public class MultidimensionalArrays {
+public class b_MultidimensionalArrays {
 
     public static void MultidimensionalArrays1(int n, int m, int min, int max) {
 

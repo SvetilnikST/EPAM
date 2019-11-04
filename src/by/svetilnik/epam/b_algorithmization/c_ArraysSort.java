@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * Задачи одномерные массивы. Сортировки
  */
-public class ArraysSort {
+public class c_ArraysSort {
 
     public static void ArraysSort1(int k) {
         int[] a = new int[]{1, 2, 3, 4, 5};
@@ -31,7 +31,7 @@ public class ArraysSort {
             }
         }
 
-        OneDimensionalArrays.printInt(c);
+        a_OneDimensionalArrays.printInt(c);
     }
 
     public static void ArraysSort2() {
@@ -74,8 +74,8 @@ public class ArraysSort {
     public static void ArraysSort3(int n) {
         int[] a = new int[n];
 
-        OneDimensionalArrays.fillIntArray(a);
-        OneDimensionalArrays.printInt(a);
+        a_OneDimensionalArrays.fillIntArray(a);
+        a_OneDimensionalArrays.printInt(a);
 
         System.out.println();
         System.out.println("Sort array:");
@@ -104,7 +104,7 @@ public class ArraysSort {
         boolean sorted = false;
         int count = 0;
 
-        OneDimensionalArrays.fillIntArrayForSort(array);
+        a_OneDimensionalArrays.fillIntArrayForSort(array);
         System.out.println(Arrays.toString(array));
 
         while (!sorted) {

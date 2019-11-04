@@ -3,7 +3,7 @@ package by.svetilnik.epam.b_algorithmization;
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
 
-public class Voids {
+public class d_Voids {
     public static void Task1(int a, int b) {
         int nok;
         nok = a * b / (nod(a, b));
@@ -31,8 +31,8 @@ public class Voids {
     public static void Task4(int n) {
         int[] A = new int[n];
 
-        OneDimensionalArrays.fillIntArrayForSort(A);
-        OneDimensionalArrays.printInt(A);
+        a_OneDimensionalArrays.fillIntArrayForSort(A);
+        a_OneDimensionalArrays.printInt(A);
 
         System.out.println("Second by size " + secondBySize(A));
     }
@@ -61,8 +61,8 @@ public class Voids {
     //TODO проверь
     public static void Task8(int n, int k, int m) {
         int[] D = new int[n];
-        OneDimensionalArrays.fillIntArray(D);
-        OneDimensionalArrays.printInt(D);
+        a_OneDimensionalArrays.fillIntArray(D);
+        a_OneDimensionalArrays.printInt(D);
         int s1 = 0;
         int s2=0;
         for (int i = 0; i < n; i++) {
