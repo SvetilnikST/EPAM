@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * Задачи одномерные массивы. Сортировки
  */
-public class ArraysSort {
+public class c_ArraysSort {
 
     public static void ArraysSort1(int k) {
         int[] a = new int[]{1, 2, 3, 4, 5};
@@ -31,7 +31,7 @@ public class ArraysSort {
             }
         }
 
-        OneDimensionalArrays.printInt(c);
+        a_OneDimensionalArrays.printInt(c);
     }
 
     public static void ArraysSort2() {
@@ -45,23 +45,21 @@ public class ArraysSort {
 
         for (int k = 0; k < c.length; k++) {
 
-            if(i>a.length-1){
+            if (i > a.length - 1) {
                 int tmp = b[j];
-                c[k]=tmp;
+                c[k] = tmp;
                 j++;
-            }
-            else if(j>b.length-1){
+            } else if (j > b.length - 1) {
                 int tmp = a[i];
                 c[k] = tmp;
                 i++;
-            }
-            else if(a[i]<b[j]){
+            } else if (a[i] < b[j]) {
                 int tmp = a[i];
-                c[k]=tmp;
+                c[k] = tmp;
                 i++;
-            }else {
+            } else {
                 int p = b[j];
-                c[k]=p;
+                c[k] = p;
                 j++;
             }
         }
@@ -74,8 +72,8 @@ public class ArraysSort {
     public static void ArraysSort3(int n) {
         int[] a = new int[n];
 
-        OneDimensionalArrays.fillIntArray(a);
-        OneDimensionalArrays.printInt(a);
+        a_OneDimensionalArrays.fillIntArray(a);
+        a_OneDimensionalArrays.printInt(a);
 
         System.out.println();
         System.out.println("Sort array:");
@@ -104,7 +102,7 @@ public class ArraysSort {
         boolean sorted = false;
         int count = 0;
 
-        OneDimensionalArrays.fillIntArrayForSort(array);
+        a_OneDimensionalArrays.fillIntArrayForSort(array);
         System.out.println(Arrays.toString(array));
 
         while (!sorted) {
@@ -123,33 +121,39 @@ public class ArraysSort {
         System.out.println(Arrays.toString(array));
     }
 
+
     //сортировка вставками
-    public static void test() {
+    public static void task5() {
         int[] array = {10, 2, 10, 3, 1, 2, 5};
+        int[] rezult = insertSort(array);
         System.out.println(Arrays.toString(array));
+        System.out.println(Arrays.toString(rezult));
+    }
 
-        for (int i = 0; i < array.length; i++) {
-            for (int j = i; j > 0 && array[j - 1] > array[j]; j--) {
-                int tmp = array[j - 1];
-                array[j - 1] = array[j];
-                array[j] = tmp;
+    private static int[] insertSort(int[] array) {
+        int[] destinationArray = new int[array.length];
+        int destinationSize = 0;
+        for (int n = 0; n < array.length; n++) {
+
+            // Ищем место для вставки
+            // Мы просто просматриваем все элементы
+            int insertIndex = 0;
+            if (destinationSize > 0) {
+                while (insertIndex < destinationSize
+                        && destinationArray[insertIndex] < array[n]) {
+                    insertIndex++;
+                }
             }
+            // Вставка
+            for (int m = destinationSize - 1; m >= insertIndex; m--) {
+                destinationArray[m + 1] = destinationArray[m];
+            }
+            destinationArray[insertIndex] = array[n];
+            destinationSize++;
         }
-
-        System.out.println(Arrays.toString(array));
+        return destinationArray;
     }
 
-
-    public static void test1() {
-        int[] array = new int[]{1, 4, 6};
-        int[] newArray = crateArray(array);
-
-        System.out.println(Arrays.toString(newArray));
-
-        sort(array, 5);
-
-
-    }
 
     private static void sort(int[] array, int n) {
         int counter = 0;
@@ -173,6 +177,23 @@ public class ArraysSort {
             newArray[i] = array[i] + 1;
         }
         return newArray;
+    }
+
+
+    private static int binarySearth(int arr[], int firstElement, int lastElement, int elementToSearth) {
+
+        if (lastElement >= firstElement) {
+            int mid = firstElement + (lastElement - lastElement) / 2;
+
+            if (arr[mid] == elementToSearth) {
+                return mid;
+            }
+
+            if (arr[mid] > elementToSearth)
+                return binarySearth(arr, firstElement, mid - 1, elementToSearth);
+            return binarySearth(arr, mid + 1, lastElement, elementToSearth);
+        }
+        return -1;
     }
 
 
