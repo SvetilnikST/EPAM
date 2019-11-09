@@ -1,5 +1,7 @@
 package by.svetilnik.epam.b_algorithmization;
 
+import java.util.Arrays;
+
 import static java.lang.Math.max;
 import static java.lang.Math.pow;
 
@@ -121,22 +123,30 @@ public class MultidimensionalArrays {
         printArrayInt(array);
     }
 
-    //TODO не решено
     public static void MultidimensionalArrays6(int n) {
         int[][] array = new int[n][n];
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 array[i][j] = 1;
-
             }
         }
 
         int k = 0;
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = n - i; j < n; j++) {
-                array[i][j] = 0;
-
+        for (int i = 1; i < n - 1; i++) {
+            for (int j = 0; j < n; j++) {
+                if (i > j && i < n / 2) {
+                    k++;
+                }
+            }
+            if (k > 0) {
+                for (int m = 0; m < k; m++) {
+                    array[i][m] = 0;
+                    array[i][n - m - 1] = 0;
+                    array[n - i - 1][m] = 0;
+                    array[n - i - 1][n - m - 1] = 0;
+                }
+                k = 0;
             }
         }
         printArrayInt(array);

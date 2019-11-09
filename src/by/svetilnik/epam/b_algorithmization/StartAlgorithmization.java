@@ -20,7 +20,7 @@ public class StartAlgorithmization {
 //        MultidimensionalArrays.MultidimensionalArrays4(6);
 //        MultidimensionalArrays.MultidimensionalArrays5(6);
 
-//        MultidimensionalArrays.MultidimensionalArrays6(6);
+        MultidimensionalArrays.MultidimensionalArrays6(6);
 
 //        MultidimensionalArrays.MultidimensionalArrays7(3);
 //        MultidimensionalArrays.MultidimensionalArrays8(3, 0, 2, 2,30);
@@ -31,11 +31,13 @@ public class StartAlgorithmization {
 //        MultidimensionalArrays.MultidimensionalArrays13(3,1,10);
 //        MultidimensionalArrays.MultidimensionalArrays14(5,5);
 //        MultidimensionalArrays.MultidimensionalArrays15(3,3,1,10);
+
+
 //        MultidimensionalArrays.MultidimensionalArrays16(3);
 
 
 //        ArraysSort.ArraysSort1(2);
-        ArraysSort.ArraysSort2();
+//        ArraysSort.ArraysSort2();
 //        ArraysSort.ArraysSort3(9);
 //        ArraysSort.ArraysSort4(5);
 

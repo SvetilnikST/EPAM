@@ -123,11 +123,6 @@ public class ArraysSort {
         System.out.println(Arrays.toString(array));
     }
 
-    /*
-    metods for task
-     */
-
-
     //сортировка вставками
     public static void test() {
         int[] array = {10, 2, 10, 3, 1, 2, 5};
