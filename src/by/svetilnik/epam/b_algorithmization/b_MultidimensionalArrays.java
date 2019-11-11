@@ -515,4 +515,43 @@ public class b_MultidimensionalArrays {
     }
 
 
+    public static void MultidimensionalArrays16test(int n) {
+
+        int [][] array = new int[n][n];
+
+        //ищем магическую сумму
+        int magic = 15;
+
+        //цикл прохождения по главной диаганали
+        int sumGeneral =0;
+        for (int i = 0; i < n; i++) {
+            sumGeneral += array[i][i];
+        }
+
+        if(sumGeneral == magic){
+
+            //переходим к проходу по строкам
+            int sumUnGeneral = 0;
+            for (int i = 0; i < n; i++) {
+
+                for (int j = 0; j < n; j++) {
+                    sumUnGeneral += array[i][j];
+                }
+
+                if(sumUnGeneral == magic){
+                    //вот тут идем дальше, иначе нужно делать перестановку
+                }
+            }
+        }else
+            System.out.println("делаем перестановку по главной диаганали");
+
+
+
+
+
+
+    }
+
+
+
 }
