@@ -266,6 +266,17 @@ public class c_ArraysSort {
         System.out.println(Arrays.toString(a));
         System.out.println(Arrays.toString(b));
         System.out.println(Arrays.toString(c));
-        System.out.println("Places: "+Arrays.toString(place));
+        System.out.println("Places: " + Arrays.toString(place));
     }
+
+    //Алгоритм Евклида по нахождени общего делители НОД
+    public static int gcd(int a, int b) {
+        while (b != 0) {
+            int tmp = a % b;
+            a = b;
+            b = tmp;
+        }
+        return a;
+    }
+
 }
