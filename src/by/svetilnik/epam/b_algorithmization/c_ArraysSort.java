@@ -199,7 +199,7 @@ public class c_ArraysSort {
 
     public static void ArraysSort6() {
 
-        int[] array = {32,95,16,82,24,66,35,19};
+        int[] array = {32, 95, 16, 82, 24, 66, 35, 19};
         System.out.println(Arrays.toString(array));
         shellSort(array);
         System.out.println(Arrays.toString(array));
@@ -224,5 +224,48 @@ public class c_ArraysSort {
         }
 
         return array;
+    }
+
+    public static void ArraysSort7() {
+
+        int[] a = new int[]{2, 3, 7, 10};
+        int[] b = new int[]{1, 6};
+        int[] c = new int[a.length + b.length];
+
+        int[] place = new int[b.length];
+
+        int i = 0;
+        int j = 0;
+        int z = 0;
+
+        for (int k = 0; k < c.length; k++) {
+
+            if (i > a.length - 1) {
+                int tmp = b[j];
+                c[k] = tmp;
+                j++;
+                place[z] = k;
+                z++;
+            } else if (j > b.length - 1) {
+                int tmp = a[i];
+                c[k] = tmp;
+                i++;
+            } else if (a[i] < b[j]) {
+                int tmp = a[i];
+                c[k] = tmp;
+                i++;
+            } else {
+                int p = b[j];
+                c[k] = p;
+                j++;
+                place[z] = k;
+                z++;
+            }
+        }
+
+        System.out.println(Arrays.toString(a));
+        System.out.println(Arrays.toString(b));
+        System.out.println(Arrays.toString(c));
+        System.out.println("Places: "+Arrays.toString(place));
     }
 }

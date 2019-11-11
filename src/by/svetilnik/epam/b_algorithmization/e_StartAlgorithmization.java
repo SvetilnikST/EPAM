@@ -37,8 +37,9 @@ public class e_StartAlgorithmization {
 //        c_ArraysSort.ArraysSort3(9);
 //        c_ArraysSort.ArraysSort4(5);
 //        c_ArraysSort.ArraysSort5();
+//        c_ArraysSort.ArraysSort6();
 
-        c_ArraysSort.ArraysSort6();
+        c_ArraysSort.ArraysSort7();
 
 //        d_Voids.Task1(365,478);
 //        d_Voids.Task2(15,30,40,50);
