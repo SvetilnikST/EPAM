@@ -10,7 +10,7 @@ public class StartStrings {
 //        StringsAsArray.task2("wordwowo", "word","letter");
 //        StringsAsArray.task3(new String[]{"1235648 dvfvdf1245 dlls"});
 //        StringsAsArray.task4("b 12 h 5 34 f 652 bd1fg 2");
-//        StringsAsArray.task5(" a b   c    d ");
+//        StringsAsArray.ArraysSort5(" a b   c    d ");
 
 //        StringOrStringBuilder.Task1();
 //        StringOrStringBuilder.Task2();

@@ -123,7 +123,7 @@ public class c_ArraysSort {
 
 
     //сортировка вставками
-    public static void task5() {
+    public static void ArraysSort5() {
         int[] array = {10, 2, 10, 3, 1, 2, 5};
         int[] rezult = insertSort(array);
         System.out.println(Arrays.toString(array));
@@ -197,4 +197,32 @@ public class c_ArraysSort {
     }
 
 
+    public static void ArraysSort6() {
+
+        int[] array = {32,95,16,82,24,66,35,19};
+        System.out.println(Arrays.toString(array));
+        shellSort(array);
+        System.out.println(Arrays.toString(array));
+    }
+
+    public static int[] shellSort(int[] array) {
+
+        int h = 1;
+        int n = array.length;
+        while (h < n / 3)
+            h = (3 * h) + 1;
+
+        while (h >= 1) {
+            for (int i = h; i < array.length; i++) {
+                for (int j = i; j >= h && array[j] < array[j - h]; j -= h) {
+                    int tmp = array[j];
+                    array[j] = array[j - h];
+                    array[j - h] = tmp;
+                }
+            }
+            h = h / 3;
+        }
+
+        return array;
+    }
 }
