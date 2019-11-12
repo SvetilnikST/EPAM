@@ -39,7 +39,6 @@ public class e_StartAlgorithmization {
 //        c_ArraysSort.ArraysSort5();
 //        c_ArraysSort.ArraysSort6();
 //        c_ArraysSort.ArraysSort7();
-
 //        c_ArraysSort.ArraysSort8(2);
 
 

@@ -283,38 +283,41 @@ public class c_ArraysSort {
 
     public static void ArraysSort8(int n) {
 
-        int[] numerators = {3, 5};
-        int[] denominators = {14, 18};
-        int[] dopMn = new int[numerators.length];
-        int[][] rez = new int[n][n];
+        int[] numerators = new int[n];
+        int[] denominators = new int[n];
+        int nok;
 
-        //находим НОК для знаменателей
+        generateFraction(n, numerators, denominators);
+
+        nok = findNok(denominators);
+
+        findNumerators(numerators, findAdditionalFactor(nok, denominators));
+
+        shellSort(numerators);
+
+        printArrayInt(returnFractions(nok, numerators));
+    }
+
+    public static void generateFraction(int n, int[] numerators, int[] denominators) {
+        int a = 1;
+        int b = 100;
+        for (int i = 0; i < n; ++i) {
+            numerators[i] = a + (int) (Math.random() * b);
+            denominators[i] = a + (int) (Math.random() * b);
+        }
+        System.out.println(Arrays.toString(numerators));
+        System.out.println(Arrays.toString(denominators));
+    }
+
+    public static int findNok(int[] denominators) {
         int m = 0;
         for (int i = 0; i < denominators.length - 1; i++) {
             int k = nok(denominators[i], denominators[i + 1]);
             if (k > m || k == m) {
                 m = k;
-            } else System.out.println("Not found.");
+            } else return 0;
         }
-
-        //находим дополнительные множетили
-        for (int i = 0; i < numerators.length; i++) {
-            dopMn[i] = m / denominators[i];
-        }
-
-        //умножаем числитеть на дополнительные множетели
-        for (int i = 0; i < numerators.length; i++) {
-            numerators[i] = numerators[i] * dopMn[i];
-        }
-
-        shellSort(numerators);
-
-        for (int j = 0; j < n; j++) {
-            rez[0][j] = numerators[j];
-            rez[1][j] = m;
-        }
-
-        printArrayInt(rez);
+        return m;
     }
 
     public static int nok(int a, int b) {
@@ -331,4 +334,30 @@ public class c_ArraysSort {
         }
         return a;
     }
+
+    public static int[] findAdditionalFactor(int nok, int[] denominators) {
+
+        int[] additionalFactors = new int[denominators.length];
+        for (int i = 0; i < denominators.length; i++) {
+            additionalFactors[i] = nok / denominators[i];
+        }
+        return additionalFactors;
+    }
+
+    public static void findNumerators(int[] numerators, int[] additionalFactors) {
+        for (int i = 0; i < numerators.length; i++) {
+            numerators[i] = numerators[i] * additionalFactors[i];
+        }
+    }
+
+    public static int[][] returnFractions(int nok, int[] numerators) {
+        int[][] rez = new int[numerators.length][numerators.length];
+        for (int i = 0; i < numerators.length; i++) {
+            rez[0][i] = numerators[i];
+            rez[1][i] = nok;
+        }
+        return rez;
+    }
+
+
 }
