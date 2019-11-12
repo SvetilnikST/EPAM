@@ -432,6 +432,8 @@ public class b_MultidimensionalArrays {
 
     }
 
+
+
     public static void fillInt(int[][] array) {
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[0].length; j++) {

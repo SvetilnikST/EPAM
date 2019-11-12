@@ -1,7 +1,7 @@
 package by.svetilnik.epam.b_algorithmization;
 
-import static java.lang.Math.pow;
-import static java.lang.Math.sqrt;
+import static by.svetilnik.epam.b_algorithmization.b_MultidimensionalArrays.printArrayInt;
+import static java.lang.Math.*;
 
 public class d_Voids {
     public static void Task1(int a, int b) {
@@ -29,6 +29,76 @@ public class d_Voids {
     }
 
     public static void Task4() {
+
+//        double[] a = {-1, 6};
+//        double[] b = {3, 2};
+
+        double[] a = new double[2];
+        double[] b = new double[2];
+
+        double[] c = {-1, 6, 7};
+        double[] d = {3, 2, 10};
+
+
+        for (int i = 0; i < c.length; i++) {
+
+            int max = 0;
+
+            for (int j = 0; j < a.length; j++) {
+                a[j]=c[i];
+                b[j]=d[i];
+            }
+
+            double dist = findDistance(a, b);
+
+        }
+
+
+        //найдем расстояние между двумя точками
+//        printArrayInt(findDistance(a, b));
+
+
+    }
+
+    private static double findDistance(double[] a, double[] b) {
+        double max = 0;
+        double[][] rez = new double[2][2];
+
+
+        int k = 1;
+        for (int i = 0; i < a.length - 1; i++) {
+            for (int j = 0; j < b.length - 1; j++) {
+
+                double z = sqrt(
+                        ((b[j] - a[i]) * (b[j] - a[i])) +
+                                ((b[j + 1] - a[i + 1]) * (b[j + 1] - a[i + 1]))
+
+                );
+
+                if (z > max) {
+                    max = z;
+
+                    rez[0][0] = a[i];
+                    rez[0][1] = a[i + 1];
+                    rez[1][0] = b[j];
+                    rez[1][1] = b[j + 1];
+                    System.out.println("Max=" + max);
+                }
+
+            }
+        }
+        return max;
+    }
+
+    public static void printArrayInt(double[][] array) {
+
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[0].length; j++) {
+                System.out.print(array[i][j] + "\t");
+            }
+            System.out.println();
+        }
+        System.out.println();
 
     }
 
