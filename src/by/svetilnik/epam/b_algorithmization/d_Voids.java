@@ -28,14 +28,18 @@ public class d_Voids {
         System.out.println("Square: " + S);
     }
 
-    public static void Task4(int n) {
-        int[] A = new int[n];
+    public static void Task4() {
 
+    }
+
+    public static void Task5(int n) {
+        int[] A = new int[n];
         a_OneDimensionalArrays.fillIntArrayForSort(A);
         a_OneDimensionalArrays.printInt(A);
 
         System.out.println("Second by size " + secondBySize(A));
     }
+
 
     public static void Task6(int a, int b, int c) {
         int k = nod(a, b);
@@ -64,13 +68,13 @@ public class d_Voids {
         a_OneDimensionalArrays.fillIntArray(D);
         a_OneDimensionalArrays.printInt(D);
         int s1 = 0;
-        int s2=0;
+        int s2 = 0;
         for (int i = 0; i < n; i++) {
             if (i == k && i < m) {
-                for (int j = k; j < m-k; j++) {
-                    s1 = D[j+1] + D[j + 2] + D[j + 3];
-                    System.out.print(s1+" ");
-                    s1=0;
+                for (int j = k; j < m - k; j++) {
+                    s1 = D[j + 1] + D[j + 2] + D[j + 3];
+                    System.out.print(s1 + " ");
+                    s1 = 0;
                 }
 
             }
@@ -79,7 +83,7 @@ public class d_Voids {
     }
 
 
-    public static void Task9(int X, int Y, int Z, int T){
+    public static void Task9(int X, int Y, int Z, int T) {
 
 
     }

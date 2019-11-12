@@ -40,15 +40,17 @@ public class e_StartAlgorithmization {
 //        c_ArraysSort.ArraysSort6();
 //        c_ArraysSort.ArraysSort7();
 
-        c_ArraysSort.ArraysSort8(2);
+//        c_ArraysSort.ArraysSort8(2);
 
 
 //        d_Voids.Task1(365,478);
 //        d_Voids.Task2(15,30,40,50);
 //        d_Voids.Task3(5);
-//        d_Voids.Task4(5);
+//        d_Voids.Task5(5);
+
 //        d_Voids.Task6(10,15,15);
 //        d_Voids.Task7(9);
+
 //        d_Voids.Task8(10, 0, 6);
 //        d_Voids.Task9();
 
