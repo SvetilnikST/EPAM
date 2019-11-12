@@ -2,6 +2,8 @@ package by.svetilnik.epam.b_algorithmization;
 
 import java.util.Arrays;
 
+import static by.svetilnik.epam.b_algorithmization.b_MultidimensionalArrays.printArrayInt;
+
 /**
  * Задачи одномерные массивы. Сортировки
  */
@@ -279,4 +281,54 @@ public class c_ArraysSort {
         return a;
     }
 
+    public static void ArraysSort8(int n) {
+
+        int[] numerators = {3, 5};
+        int[] denominators = {14, 18};
+        int[] dopMn = new int[numerators.length];
+        int[][] rez = new int[n][n];
+
+        //находим НОК для знаменателей
+        int m = 0;
+        for (int i = 0; i < denominators.length - 1; i++) {
+            int k = nok(denominators[i], denominators[i + 1]);
+            if (k > m || k == m) {
+                m = k;
+            } else System.out.println("Not found.");
+        }
+
+        //находим дополнительные множетили
+        for (int i = 0; i < numerators.length; i++) {
+            dopMn[i] = m / denominators[i];
+        }
+
+        //умножаем числитеть на дополнительные множетели
+        for (int i = 0; i < numerators.length; i++) {
+            numerators[i] = numerators[i] * dopMn[i];
+        }
+
+        shellSort(numerators);
+
+        for (int j = 0; j < n; j++) {
+            rez[0][j] = numerators[j];
+            rez[1][j] = m;
+        }
+
+        printArrayInt(rez);
+    }
+
+    public static int nok(int a, int b) {
+        return a * b / (nod(a, b));
+    }
+
+    protected static int nod(int a, int b) {
+        while (a != b) {
+            if (a > b) {
+                a = a - b;
+            } else {
+                b = b - a;
+            }
+        }
+        return a;
+    }
 }

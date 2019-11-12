@@ -420,7 +420,7 @@ public class b_MultidimensionalArrays {
      * methods called in tasks
      */
 
-    private static void printArrayInt(int[][] array) {
+    public static void printArrayInt(int[][] array) {
 
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[0].length; j++) {
@@ -544,14 +544,7 @@ public class b_MultidimensionalArrays {
             }
         }else
             System.out.println("делаем перестановку по главной диаганали");
-
-
-
-
-
-
     }
-
 
 
 }
