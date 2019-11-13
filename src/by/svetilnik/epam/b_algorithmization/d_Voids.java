@@ -135,7 +135,7 @@ public class d_Voids {
 
     public static void Task8(int n, int k, int m) {
         int[] D = new int[n];
-        int [] sums = new int[3];
+        int[] sums = new int[3];
 
         a_OneDimensionalArrays.fillIntArray(D);
         System.out.println(Arrays.toString(D));
@@ -145,10 +145,10 @@ public class d_Voids {
                 sums[0] = sum(D, i);
             }
             if (i == k + 2) {
-                sums[1] =sum(D, i);
+                sums[1] = sum(D, i);
             }
             if (i == k + 3) {
-                sums[2] =sum(D, i);
+                sums[2] = sum(D, i);
             }
         }
         System.out.println(Arrays.toString(sums));
@@ -158,15 +158,63 @@ public class d_Voids {
         return D[i] + D[i + 1] + D[i + 2];
     }
 
-    public static void Task9(int X, int Y, int Z, int T) {
+    public static void Task10(int n, int m) {
+
+        int[] rez = getNumbers(n);
+        int[] array = new int[m];
+        int [] fin = new int[array.length];
+
+        System.out.println(Arrays.toString(rez));
 
 
+        fin = fillArrayWithNumbers(rez, array);
+
+        System.out.println(Arrays.toString(fin));
     }
 
-//    protected static void areaTriangle(int X, int Y, int Z ){
-//        double area = (X+Y+Z)/2;
-//        double pl_tr = Math.sqrt(area*(area-X)*(area-Y)*(area-Z));
-//    }
+    public static int[] getNumbers(int n) {
+        int[] rez = new int[getCount(n)];
+
+        for (int i = 0; i < rez.length; i++) {
+            rez[i] = n % 10;
+            n = n / 10;
+        }
+        return rez;
+    }
+
+    public static int getCount(int n) {
+        int count = 0;
+        while (n != 0) {
+            n = n / 10;
+            count++;
+        }
+        return count;
+    }
+
+    //не работает
+    public static int[] fillArrayWithNumbers(int[] rez, int[] array) {
+//        for (int i = 0; i < array.length-rez.length; i++) {
+//            for (int j = 0; j < rez.length; j++) {
+//                array[i + j] = rez[j];
+//            }
+//            i = i + (rez.length - 1);
+//        }
+
+        for (int i = 0; i < array.length; ) {
+            for (int j = 0; j < rez.length; j++) {
+
+                array[i] = rez[j];
+                if (i < array.length-1) {
+                    i++;
+                } else{
+                    j = rez.length-1;
+//                    break;
+                }
+            }
+
+        }
+        return array;
+    }
 
     public static void Task11(int a, int b) {
         int devider = 10;
