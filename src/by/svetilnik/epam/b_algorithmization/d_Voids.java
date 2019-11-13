@@ -1,6 +1,7 @@
 package by.svetilnik.epam.b_algorithmization;
 
-import static by.svetilnik.epam.b_algorithmization.b_MultidimensionalArrays.printArrayInt;
+import java.util.Arrays;
+
 import static java.lang.Math.*;
 
 public class d_Voids {
@@ -45,8 +46,8 @@ public class d_Voids {
             int max = 0;
 
             for (int j = 0; j < a.length; j++) {
-                a[j]=c[i];
-                b[j]=d[i];
+                a[j] = c[i];
+                b[j] = d[i];
             }
 
             double dist = findDistance(a, b);
@@ -132,26 +133,30 @@ public class d_Voids {
         System.out.println("Sum = " + sum);
     }
 
-    //TODO проверь
     public static void Task8(int n, int k, int m) {
         int[] D = new int[n];
-        a_OneDimensionalArrays.fillIntArray(D);
-        a_OneDimensionalArrays.printInt(D);
-        int s1 = 0;
-        int s2 = 0;
-        for (int i = 0; i < n; i++) {
-            if (i == k && i < m) {
-                for (int j = k; j < m - k; j++) {
-                    s1 = D[j + 1] + D[j + 2] + D[j + 3];
-                    System.out.print(s1 + " ");
-                    s1 = 0;
-                }
+        int [] sums = new int[3];
 
+        a_OneDimensionalArrays.fillIntArray(D);
+        System.out.println(Arrays.toString(D));
+
+        for (int i = k; i < m; i++) {
+            if (i == k) {
+                sums[0] = sum(D, i);
+            }
+            if (i == k + 2) {
+                sums[1] =sum(D, i);
+            }
+            if (i == k + 3) {
+                sums[2] =sum(D, i);
             }
         }
-//        System.out.println(s1);
+        System.out.println(Arrays.toString(sums));
     }
 
+    public static int sum(int[] D, int i) {
+        return D[i] + D[i + 1] + D[i + 2];
+    }
 
     public static void Task9(int X, int Y, int Z, int T) {
 
