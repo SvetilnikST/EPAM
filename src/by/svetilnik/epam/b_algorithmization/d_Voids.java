@@ -162,14 +162,13 @@ public class d_Voids {
 
         int[] rez = getNumbers(n);
         int[] array = new int[m];
-        int [] fin = new int[array.length];
 
+        System.out.println("Number: " + n);
         System.out.println(Arrays.toString(rez));
 
+        fillArrayWithNumbers(rez, array);
 
-        fin = fillArrayWithNumbers(rez, array);
-
-        System.out.println(Arrays.toString(fin));
+        System.out.println(Arrays.toString(array));
     }
 
     public static int[] getNumbers(int n) {
@@ -191,25 +190,20 @@ public class d_Voids {
         return count;
     }
 
-    //не работает
     public static int[] fillArrayWithNumbers(int[] rez, int[] array) {
-//        for (int i = 0; i < array.length-rez.length; i++) {
-//            for (int j = 0; j < rez.length; j++) {
-//                array[i + j] = rez[j];
-//            }
-//            i = i + (rez.length - 1);
-//        }
 
         for (int i = 0; i < array.length; ) {
             for (int j = 0; j < rez.length; j++) {
 
                 array[i] = rez[j];
-                if (i < array.length-1) {
+                if (i < array.length - 1) {
                     i++;
-                } else{
-                    j = rez.length-1;
-//                    break;
+                } else {
+                    break;
                 }
+            }
+            if (i == array.length - 1) {
+                break;
             }
 
         }
