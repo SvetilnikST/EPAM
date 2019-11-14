@@ -210,18 +210,16 @@ public class d_Voids {
         return array;
     }
 
-    public static void Task11(int a, int b) {
-        int devider = 10;
-        while (a != 0 && b != 0) {
-            a = a / devider;
-            b = b / devider;
-            if (a == 0 && b == 0) {
-                System.out.println("Equal.");
-                break;
-            }
-            if (b == 0) System.out.println("In the first.");
-            if (a == 0) System.out.println("In the second.");
+    public static int Task11(int a, int b) {
+
+        if (getCount(a) > getCount(b)) {
+            System.out.println(a);
+            return a;
+        } else {
+            System.out.println(b);
+            return b;
         }
+
     }
 
     protected static int factorial(int n) {
@@ -263,4 +261,7 @@ public class d_Voids {
     }
 
 
+    public static void Task9() {
+
+    }
 }
