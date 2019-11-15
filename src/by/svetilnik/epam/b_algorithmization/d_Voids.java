@@ -190,6 +190,17 @@ public class d_Voids {
         return count;
     }
 
+
+    public static int getSum(int[] rez) {
+        int sum = 0;
+
+        for (int i = 0; i < rez.length; i++) {
+            sum = sum + rez[i];
+        }
+        return sum;
+    }
+
+
     public static int[] fillArrayWithNumbers(int[] rez, int[] array) {
 
         for (int i = 0; i < array.length; ) {
@@ -261,7 +272,54 @@ public class d_Voids {
     }
 
 
-    public static void Task9() {
+    public static void Task12(int k, int n, int c) {
 
+        int[] array = new int[c];
+
+
+        int getCountNumbers = getCountNumbers(k, n, 11);
+        int[] rez = new int[getCountNumbers];
+
+
+
+
+        System.out.println(getCountNumbers);
+
+
+
+
+//        System.out.println(Arrays.toString(array));
+    }
+
+
+    public static int getCountNumbers(int k, int n, int m) {
+//        int[] array = new int[c];
+        int[] rez;
+        int sum;
+        int count = 0;
+        int countNumbers = 0;
+//        int m = 11;
+        for (int i = m; i < 120; i++) {
+
+            rez = getNumbers(i);
+            sum = getSum(rez);
+
+            if (sum == k) {
+                for (int aRez : rez) {
+                    if (aRez <= n) {
+                        count++;
+                    }
+                }
+                if (count == rez.length) {
+//                        array[z] = i;
+                    m = i;
+                    countNumbers++;
+                    count = 0;
+//                        z++;
+//                    }
+                }
+            }
+        }
+        return countNumbers;
     }
 }
