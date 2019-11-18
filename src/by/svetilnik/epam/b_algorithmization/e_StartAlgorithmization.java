@@ -46,6 +46,7 @@ public class e_StartAlgorithmization {
 //        d_Voids.Task2(15,30,40,50);
 //        d_Voids.Task3(5);
 //        d_Voids.Task5(5);
+//        d_Voids.Task6(8,15,49);
 //        d_Voids.Task7(9);
 //        d_Voids.Task8(10, 1, 7);
 //        d_Voids.Task10(26985,7);
@@ -53,8 +54,10 @@ public class e_StartAlgorithmization {
 //        d_Voids.Task12(8, 9, 11, 120);
 
 //        d_Voids.Task4();
-//        d_Voids.Task6(10,15,15);
 
+//        d_Voids.Task9();
+//        d_Voids.Task13();
+//        d_Voids.Task14();
 
     }
 }

@@ -113,15 +113,18 @@ public class d_Voids {
 
 
     public static void Task6(int a, int b, int c) {
-        int k = nod(a, b);
-        int z = nod(k, c);
-        if (z == 1) {
-            System.out.println(" Mutually Simple");
-        } else {
-            System.out.println("Not Mutually Simple");
-        }
+        if (comprimeNumbers(a, b, c)) {
+            System.out.println("true");
+        } else System.out.println("false");
 
     }
+
+    private static boolean comprimeNumbers(int a, int b, int c) {
+        int k = nod(a, b);
+        int z = nod(k, c);
+        return z == 1;
+    }
+
 
     public static void Task7(int n) {
         int sum = 0;
@@ -339,4 +342,15 @@ public class d_Voids {
     }
 
 
+    public static void Task9() {
+
+    }
+
+    public static void Task13() {
+
+    }
+
+    public static void Task14() {
+
+    }
 }
