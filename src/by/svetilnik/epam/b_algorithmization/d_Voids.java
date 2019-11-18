@@ -346,8 +346,41 @@ public class d_Voids {
 
     }
 
-    public static void Task13() {
+    public static void Task13(int n) {
 
+        int[] array = fillArrayInt(n);
+
+
+        System.out.println(Arrays.toString(array));
+        System.out.println(Arrays.toString(findPair(array)));
+
+    }
+
+    private static int[] findPair(int[] array) {
+
+        int[] rez = new int[array.length+1];
+
+        int k = 2;
+
+        for (int i = 0; i < rez.length; i+=2) {
+
+            rez[i] = array[i];
+            rez[i+1] = array[i + k];
+
+
+        }
+        return rez;
+    }
+
+    private static int[] fillArrayInt(int n) {
+
+        int count = (2 * n) - n;
+        int[] array = new int[count];
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = n + i;
+        }
+        return array;
     }
 
     public static void Task14() {
