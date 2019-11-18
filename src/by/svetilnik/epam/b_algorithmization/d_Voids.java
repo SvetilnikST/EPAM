@@ -272,34 +272,25 @@ public class d_Voids {
     }
 
 
-    public static void Task12(int k, int n, int c) {
+    public static void Task12(int k, int n, int from, int to) {
 
-        int[] array = new int[c];
-
-
-        int getCountNumbers = getCountNumbers(k, n, 11);
+        int getCountNumbers = getCountNumbers(k, n, from, to);
         int[] rez = new int[getCountNumbers];
 
+        fillArrayNumbers(rez, k, n, from, to);
 
-
-
-        System.out.println(getCountNumbers);
-
-
-
-
-//        System.out.println(Arrays.toString(array));
+        System.out.println(Arrays.toString(rez));
     }
 
 
-    public static int getCountNumbers(int k, int n, int m) {
-//        int[] array = new int[c];
+    public static int getCountNumbers(int k, int n, int from, int to) {
+
         int[] rez;
         int sum;
         int count = 0;
         int countNumbers = 0;
-//        int m = 11;
-        for (int i = m; i < 120; i++) {
+
+        for (int i = from; i < to; i++) {
 
             rez = getNumbers(i);
             sum = getSum(rez);
@@ -311,15 +302,41 @@ public class d_Voids {
                     }
                 }
                 if (count == rez.length) {
-//                        array[z] = i;
-                    m = i;
                     countNumbers++;
                     count = 0;
-//                        z++;
-//                    }
                 }
             }
         }
         return countNumbers;
     }
+
+
+    public static void fillArrayNumbers(int[] array, int k, int n, int from, int to) {
+
+        int sum;
+        int[] rez;
+        int variable = 0;
+        int count = 0;
+
+        for (int i = from; i < to; i++) {
+
+            rez = getNumbers(i);
+            sum = getSum(rez);
+
+            if (sum == k) {
+                for (int aRez : rez) {
+                    if (aRez <= n) {
+                        variable = i;
+                    }
+                }
+            }
+
+            if (variable == i && variable != 0) {
+                array[count] = i;
+                count++;
+            }
+        }
+    }
+
+
 }

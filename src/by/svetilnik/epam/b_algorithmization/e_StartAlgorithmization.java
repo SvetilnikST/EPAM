@@ -50,11 +50,11 @@ public class e_StartAlgorithmization {
 //        d_Voids.Task8(10, 1, 7);
 //        d_Voids.Task10(26985,7);
 //        d_Voids.Task11(1121231322,11312);
-
+//        d_Voids.Task12(8, 9, 11, 120);
 
 //        d_Voids.Task4();
 //        d_Voids.Task6(10,15,15);
-        d_Voids.Task12(8, 9, 5);
+
 
     }
 }
