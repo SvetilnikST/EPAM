@@ -388,7 +388,7 @@ public class d_Voids {
         int[] numerals;
         int count;
 
-        fillArrayForArmstrong(k, array);
+        fillArrayForArmstrong(array, k);
 
         for (int anArray : array) {
             numerals = getNumbers(anArray);
@@ -401,7 +401,7 @@ public class d_Voids {
 
     }
 
-    private static void fillArrayForArmstrong(int k, int[] array) {
+    private static void fillArrayForArmstrong( int[] array ,int k) {
         for (int i = 0; i < k; i++) {
             array[i] = i + 1;
         }
@@ -425,5 +425,13 @@ public class d_Voids {
         }
 
         return result;
+    }
+
+    public static void Task15(int n, int from, int to) {
+
+        int[] array = new int[to];
+
+        fillArrayForArmstrong(array,to);
+
     }
 }
