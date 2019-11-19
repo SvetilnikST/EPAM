@@ -358,16 +358,16 @@ public class d_Voids {
 
     private static int[] findPair(int[] array) {
 
-        int[] rez = new int[array.length+1];
+        int len = ((array.length - 1) * 2) - 2;
 
-        int k = 2;
+        int[] rez = new int[len];
 
-        for (int i = 0; i < rez.length; i+=2) {
+        int k = 0;
 
-            rez[i] = array[i];
-            rez[i+1] = array[i + k];
-
-
+        for (int i = 0; i < rez.length - 1; i += 2) {
+            rez[i] = array[k];
+            rez[i + 1] = array[k + 2];
+            k++;
         }
         return rez;
     }
