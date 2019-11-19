@@ -401,7 +401,7 @@ public class d_Voids {
 
     }
 
-    private static void fillArrayForArmstrong( int[] array ,int k) {
+    private static void fillArrayForArmstrong(int[] array, int k) {
         for (int i = 0; i < k; i++) {
             array[i] = i + 1;
         }
@@ -427,11 +427,46 @@ public class d_Voids {
         return result;
     }
 
+    //TODO
     public static void Task15(int n, int from, int to) {
 
-        int[] array = new int[to];
+        int[] array = new int[to - from - 1];
 
-        fillArrayForArmstrong(array,to);
+        fillArrayFor15(array, from);
+
+        System.out.println(Arrays.toString(array));
+
+        for (int i = 0; i < array.length; i++) {
+            int[] rez = getNumbers(array[i]);
+            int count = getCount(array[i]);
+
+            int t = 1;
+            for (int j = 0; j < rez.length - 1; j++) {
+                int k = rez[j] + t;
+                if (k == rez[j + t] && rez[j]<rez[j+t]&& rez[j]!=0) {
+                    t++;
+                }
+                if (t == count) {
+//                    System.out.println(array[i]);
+                    System.out.println(Arrays.toString(rez));
+                    System.out.println(array[i]);
+                    t = 1;
+                }
+            }
+
+        }
+
+        int a = 0;
 
     }
+
+
+    private static void fillArrayFor15(int[] array, int from) {
+        for (int i = 0; i < array.length; i++) {
+            array[i] = from + i;
+        }
+    }
+
+
+
 }
