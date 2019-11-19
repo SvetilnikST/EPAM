@@ -174,7 +174,7 @@ public class d_Voids {
         System.out.println(Arrays.toString(array));
     }
 
-    public static int[] getNumbers(int n) {
+    private static int[] getNumbers(int n) {
         int[] rez = new int[getCount(n)];
 
         for (int i = 0; i < rez.length; i++) {
@@ -184,7 +184,7 @@ public class d_Voids {
         return rez;
     }
 
-    public static int getCount(int n) {
+    private static int getCount(int n) {
         int count = 0;
         while (n != 0) {
             n = n / 10;
@@ -194,22 +194,21 @@ public class d_Voids {
     }
 
 
-    public static int getSum(int[] rez) {
+    private static int getSum(int[] rez) {
         int sum = 0;
 
-        for (int i = 0; i < rez.length; i++) {
-            sum = sum + rez[i];
+        for (int aRez : rez) {
+            sum = sum + aRez;
         }
         return sum;
     }
 
 
-    public static int[] fillArrayWithNumbers(int[] rez, int[] array) {
+    private static int[] fillArrayWithNumbers(int[] rez, int[] array) {
 
         for (int i = 0; i < array.length; ) {
-            for (int j = 0; j < rez.length; j++) {
-
-                array[i] = rez[j];
+            for (int aRez : rez) {
+                array[i] = aRez;
                 if (i < array.length - 1) {
                     i++;
                 } else {
@@ -236,7 +235,7 @@ public class d_Voids {
 
     }
 
-    protected static int factorial(int n) {
+    private static int factorial(int n) {
         int result = 1;
         for (int i = 1; i <= n; i++) {
             result = result * i;
@@ -373,8 +372,8 @@ public class d_Voids {
     }
 
     private static int[] fillArrayInt(int n) {
-
         int count = (2 * n) - n;
+
         int[] array = new int[count];
 
         for (int i = 0; i < array.length; i++) {
@@ -383,7 +382,48 @@ public class d_Voids {
         return array;
     }
 
-    public static void Task14() {
+    public static void Task14(int k) {
 
+        int[] array = new int[k];
+        int[] numerals;
+        int count;
+
+        fillArrayForArmstrong(k, array);
+
+        for (int anArray : array) {
+            numerals = getNumbers(anArray);
+            count = getCount(anArray);
+
+            if (armstrong(numerals, count) == anArray) {
+                System.out.print(anArray + " ");
+            }
+        }
+
+    }
+
+    private static void fillArrayForArmstrong(int k, int[] array) {
+        for (int i = 0; i < k; i++) {
+            array[i] = i + 1;
+        }
+    }
+
+    private static int armstrong(int[] array, int count) {
+
+        int sum = 0;
+        for (int anArray : array) {
+            sum = sum + power(anArray, count);
+        }
+        return sum;
+    }
+
+
+    private static int power(int a, int b) {
+
+        int result = 1;
+        for (int i = 1; i <= b; i++) {
+            result = result * a;
+        }
+
+        return result;
     }
 }
