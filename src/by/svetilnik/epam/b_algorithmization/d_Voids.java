@@ -484,7 +484,6 @@ public class d_Voids {
             int count = getCount(anArray);
             int t = 0;
 
-
             for (int aRez : rez) {
                 if (aRez % 2 == 0) {
                     t++;
@@ -495,7 +494,6 @@ public class d_Voids {
                 }
             }
         }
-
         countInSum = getCountEvensNumberInSum(sum);
         System.out.print("Sum: " + sum + ";");
         System.out.println("The number evens in sum: " + countInSum);
@@ -511,5 +509,22 @@ public class d_Voids {
             }
         }
         return countSum;
+    }
+
+    public static void Task17(int k) {
+        int[] rez = getNumbersInc(k);
+
+        getSumArray(rez);
+
+    }
+
+
+    public static int getSumArray(int[] rez) {
+        int sum = 0;
+
+        for (int anRez : rez) {
+            sum = sum + anRez;
+        }
+        return sum;
     }
 }
