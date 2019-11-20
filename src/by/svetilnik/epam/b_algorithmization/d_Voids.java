@@ -428,14 +428,12 @@ public class d_Voids {
     }
 
     public static void Task15(int n) {
-
-
-        int to = power(10,n);
-        int from =to/10;
+        int to = power(10, n);
+        int from = to / 10;
 
         int[] array = new int[to - from - 1];
 
-        fillArrayFor15(array, from);
+        fillArrayForInc(array, from);
 
         for (int anArray : array) {
             int[] rez = getNumbersInc(anArray);
@@ -455,7 +453,7 @@ public class d_Voids {
     }
 
 
-    private static void fillArrayFor15(int[] array, int from) {
+    private static void fillArrayForInc(int[] array, int from) {
         for (int i = 0; i < array.length; i++) {
             array[i] = from + i;
         }
@@ -471,4 +469,47 @@ public class d_Voids {
         return rez;
     }
 
+
+    public static void Task16(int n) {
+        int to = power(10, n);
+        int from = to / 10;
+        int[] array = new int[to - from - 1];
+        int sum = 0;
+        int countInSum;
+
+        fillArrayForInc(array, from);
+
+        for (int anArray : array) {
+            int[] rez = getNumbersInc(anArray);
+            int count = getCount(anArray);
+            int t = 0;
+
+
+            for (int aRez : rez) {
+                if (aRez % 2 == 0) {
+                    t++;
+                }
+                if (t == count) {
+                    sum = sum + anArray;
+                    t = 1;
+                }
+            }
+        }
+
+        countInSum = getCountEvensNumberInSum(sum);
+        System.out.print("Sum: " + sum + ";");
+        System.out.println("The number evens in sum: " + countInSum);
+    }
+
+    private static int getCountEvensNumberInSum(int sum) {
+        int countSum = 0;
+        int[] rez = getNumbersInc(sum);
+
+        for (int aRez : rez) {
+            if (aRez % 2 == 0 && aRez != 0) {
+                countSum++;
+            }
+        }
+        return countSum;
+    }
 }
