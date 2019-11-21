@@ -514,7 +514,14 @@ public class d_Voids {
     public static void Task17(int k) {
         int[] rez = getNumbersInc(k);
 
-        getSumArray(rez);
+        int sumEl = getSumArray(rez);
+
+        int count = 1;
+
+        while (k > sumEl) {
+            k = k - sumEl;
+            count++;
+        }
 
     }
 
