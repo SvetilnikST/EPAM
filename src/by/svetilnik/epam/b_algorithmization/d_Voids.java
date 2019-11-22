@@ -341,15 +341,19 @@ public class d_Voids {
     }
 
 
-    public static void Task9() {
+    public static void Task9(double X, double Y, double Z, double T) {
+        double S, S1, S2;
+        double c;
 
+        c = sqrt(pow(Z, 2) + pow(T, 2));
+        S1 = (X + Y) / 2;
+        S2 = (c + Z + T) / 2;
+        S = S1 + S2;
+        System.out.format("%.3f%n", S);
     }
 
     public static void Task13(int n) {
-
         int[] array = fillArrayInt(n);
-
-
         System.out.println(Arrays.toString(array));
         System.out.println(Arrays.toString(findPair(array)));
 
