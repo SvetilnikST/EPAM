@@ -60,6 +60,6 @@ public class e_StartAlgorithmization {
 //        d_Voids.Task17(25);
 
 
-        d_Voids.Task4();
+        d_Voids.Task();
     }
 }

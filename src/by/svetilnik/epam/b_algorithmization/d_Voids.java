@@ -29,67 +29,44 @@ public class d_Voids {
         System.out.println("Square: " + S);
     }
 
-    public static void Task4() {
 
-//        double[] a = {-1, 6};
-//        double[] b = {3, 2};
+    public static void Task() {
 
+        //записываем сюда результат
         double[] a = new double[2];
         double[] b = new double[2];
 
-        double[] c = {-1, 6, 7};
-        double[] d = {3, 2, 10};
+        //исходные данные
+        double[] c = {-1, 40, 6, 7};
+        double[] d = {3, 20, 2, 10};
 
-
-        for (int i = 0; i < c.length; i++) {
-
-            int max = 0;
-
-            for (int j = 0; j < a.length; j++) {
-                a[j] = c[i];
-                b[j] = d[i];
-            }
-
-            double dist = findDistance(a, b);
-
-        }
-
-
-        //найдем расстояние между двумя точками
-//        printArrayInt(findDistance(a, b));
-
-
-    }
-
-    private static double findDistance(double[] a, double[] b) {
         double max = 0;
-        double[][] rez = new double[2][2];
-
-
-        int k = 1;
-        for (int i = 0; i < a.length - 1; i++) {
-            for (int j = 0; j < b.length - 1; j++) {
-
-                double z = sqrt(
-                        ((b[j] - a[i]) * (b[j] - a[i])) +
-                                ((b[j + 1] - a[i + 1]) * (b[j + 1] - a[i + 1]))
-
-                );
-
-                if (z > max) {
-                    max = z;
-
-                    rez[0][0] = a[i];
-                    rez[0][1] = a[i + 1];
-                    rez[1][0] = b[j];
-                    rez[1][1] = b[j + 1];
-                    System.out.println("Max=" + max);
+        //проходим по изначальным массивам и в
+        for (int i = 0; i < c.length; i++) {
+            for (int j = 0; j < d.length; j++) {
+                double dist = findDistance(c[i], d[i], c[j], d[j]);
+                if (max < dist) {
+                    max = dist;
+                    a[0] = c[i];
+                    b[0] = d[i];
+                    a[1] = c[j];
+                    b[1] = d[j];
                 }
-
             }
         }
-        return max;
+
+        System.out.println("Max = " + max);
+        System.out.println(Arrays.toString(a));
+        System.out.println(Arrays.toString(b));
     }
+
+    private static double findDistance(double x1, double y1, double x2, double y2) {
+        double z = sqrt(
+                ((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1))
+        );
+        return z;
+    }
+
 
     public static void printArrayInt(double[][] array) {
 
