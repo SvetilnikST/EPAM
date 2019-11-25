@@ -28,9 +28,7 @@ public class e_StartAlgorithmization {
 //        b_MultidimensionalArrays.MultidimensionalArrays13(3,1,10);
 //        b_MultidimensionalArrays.MultidimensionalArrays14(5,5);
 //        b_MultidimensionalArrays.MultidimensionalArrays15(3,3,1,10);
-
-
-        b_MultidimensionalArrays.MultidimensionalArrays16();
+//        b_MultidimensionalArrays.MultidimensionalArrays16(5);
 
 
 //        c_ArraysSort.ArraysSort1(2);

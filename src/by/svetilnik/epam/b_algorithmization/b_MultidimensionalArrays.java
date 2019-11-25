@@ -443,88 +443,48 @@ public class b_MultidimensionalArrays {
         }
     }
 
+    public static void MultidimensionalArrays16(int n) {
 
-    public static void MultidimensionalArrays16() {
+        int[][] rez = new int[n][n];
 
-//        int max_Size = 27;
+        int[][] array = new int[n + 1][n + 1];
 
-        int n = 3;
-        int[][] array = new int[n][n];
-
-        int row = 0;
-        int col = n / 2;
+        int row = 1;
+        int col = (n + 1) / 2;
 
         for (int i = 1; i <= n * n; i++) {
 
-            if (i == 1) {
-                //установили первый элемент в 0,1 = 1
-                array[row][col] = i;
-            }
-//            if (i % n == 0) {
-//                row++;
-//            } else {
-//                if (row == 1) {
-//                    row = n;
-//                } else row--;
-//                if (col == n) {
-//                    col = 1;
-//                } else col++;
-//            }
-        }
-
-//        printArrayInt(array);
-
-    }
+            array[row][col] = i;
 
 
-    //only 3,5,7
-    static void generateSquare(int n) {
-        int[][] magicSquare = new int[n][n];
-
-        // Initialize position for 1
-        int i = n / 2;
-        int j = n - 1;
-
-        // One by one put all values in magic square
-        for (int num = 1; num <= n * n; ) {
-            if (i == -1 && j == n) //3rd condition
-            {
-                j = n - 2;
-                i = 0;
+            if (i % n == 0) {
+                row++;
             } else {
-                //1st condition helper if next number
-                // goes to out of square's right side
-                if (j == n)
-                    j = 0;
+                if (row == 1) {
 
-                //1st condition helper if next number is
-                // goes to out of square's upper side
-                if (i < 0)
-                    i = n - 1;
+                    row = n;
+                } else {
+
+                    row--;
+                }
+                if (col == n) {
+
+                    col = 1;
+                } else {
+                    col++;
+                }
             }
-
-            //2nd condition
-            if (magicSquare[i][j] != 0) {
-                j -= 2;
-                i++;
-                continue;
-            } else
-                //set number
-                magicSquare[i][j] = num++;
-
-            //1st condition
-            j++;
-            i--;
         }
 
-        // print magic square
-        System.out.println("The Magic Square for " + n + ":");
-        System.out.println("Sum of each row or column " + n * (n * n + 1) / 2 + ":");
-        for (i = 0; i < n; i++) {
-            for (j = 0; j < n; j++)
-                System.out.print(magicSquare[i][j] + " ");
-            System.out.println();
+
+        for (int i = 1; i < array.length; i++) {
+            for (int j = 1; j < array.length; j++) {
+                rez[i - 1][j - 1] = array[i][j];
+            }
         }
+
+        printArrayInt(rez);
+
     }
 
 }
