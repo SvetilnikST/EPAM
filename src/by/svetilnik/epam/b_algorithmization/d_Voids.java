@@ -30,18 +30,17 @@ public class d_Voids {
     }
 
 
-    public static void Task() {
+    public static void Task4() {
+        //исходные данные
+        double[] c = {-1, 6, 7};
+        double[] d = {3, 2, 10};
 
         //записываем сюда результат
         double[] a = new double[2];
         double[] b = new double[2];
 
-        //исходные данные
-        double[] c = {-1, 40, 6, 7};
-        double[] d = {3, 20, 2, 10};
-
         double max = 0;
-        //проходим по изначальным массивам и в
+
         for (int i = 0; i < c.length; i++) {
             for (int j = 0; j < d.length; j++) {
                 double dist = findDistance(c[i], d[i], c[j], d[j]);
@@ -54,19 +53,15 @@ public class d_Voids {
                 }
             }
         }
-
-        System.out.println("Max = " + max);
+        System.out.print("Max = ");
+        System.out.format("%.3f%n", max);
         System.out.println(Arrays.toString(a));
         System.out.println(Arrays.toString(b));
     }
 
     private static double findDistance(double x1, double y1, double x2, double y2) {
-        double z = sqrt(
-                ((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1))
-        );
-        return z;
+        return sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)));
     }
-
 
     public static void printArrayInt(double[][] array) {
 

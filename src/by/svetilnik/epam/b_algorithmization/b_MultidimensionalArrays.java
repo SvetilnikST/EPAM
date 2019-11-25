@@ -332,86 +332,14 @@ public class b_MultidimensionalArrays {
         printArrayInt(array);
     }
 
-    //TODO Think about it
-    public static void MultidimensionalArrays16(int n) {
-        int[][] arr = new int[n][n];
 
-        System.out.println("Ishodniy massiv: ");
-        GenerateArray(arr);
-        PrintArray(arr);
-        System.out.println("Magicheskiy kvadrat: ");
-        ReverseArray1(arr);
-        ReverseArray2(arr);
-
-//        //сумма в строке
-//        System.out.println(sumInStr(arr));
-//        int sumInStr = sumInStr(arr);
-//        int s = 0;
-//
-//        for (int i = 0; i < arr.length; i++) {
-//            s = s + arr[0][i];
-//        }
-//        if (s == sumInStr) {
-//            System.out.println("true");
-//        } else System.out.println("false");
-//
-
-        PrintArray(arr);
-    }
-
-//    private static int sumInStr(int[][] arr) {
-//        return sum(arr) / arr.length;
-//    }
-//
-//    private static int sum(int[][] arr) {
-//        int sum = 0;
-//        for (int i = 0; i < arr.length; i++) {
-//            for (int j = 0; j < arr.length; j++) {
-//                sum = sum + arr[i][i];
-//            }
-//        }
-//        return sum;
-//    }
-
-
+    //for print magic square
     public static void PrintArray(int a[][]) {
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < a.length; j++) {
                 System.out.print(a[i][j] + "\t");
             }
             System.out.println();
-        }
-    }
-
-    public static void GenerateArray(int a[][]) {
-        int k = 1;
-        for (int i = 0; i < a.length; i++) {
-            for (int j = 0; j < a.length; j++) {
-                a[i][j] = k;
-                k++;
-            }
-        }
-    }
-
-    public static void ReverseArray1(int a[][]) {
-        int t;
-        for (int i = 0; i < a.length / 2; i++) {
-            for (int j = 0; j < a.length / 2; j++) {
-                if (i == j) {
-                    t = a[i][j];
-                    a[i][j] = a[a.length - 1 - i][a.length - 1 - j];
-                    a[a.length - 1 - i][a.length - 1 - j] = t;
-                }
-            }
-        }
-    }
-
-    public static void ReverseArray2(int a[][]) {
-        int t;
-        for (int i = 0, j = a.length - 1 - i; i <= (a.length / 2) - 1; ++i, --j) {
-            t = a[i][j];
-            a[i][j] = a[j][i];
-            a[j][i] = t;
         }
     }
 
@@ -431,7 +359,6 @@ public class b_MultidimensionalArrays {
         System.out.println();
 
     }
-
 
 
     public static void fillInt(int[][] array) {
@@ -517,36 +444,87 @@ public class b_MultidimensionalArrays {
     }
 
 
-    public static void MultidimensionalArrays16test(int n) {
+    public static void MultidimensionalArrays16() {
 
-        int [][] array = new int[n][n];
+//        int max_Size = 27;
 
-        //ищем магическую сумму
-        int magic = 15;
+        int n = 3;
+        int[][] array = new int[n][n];
 
-        //цикл прохождения по главной диаганали
-        int sumGeneral =0;
-        for (int i = 0; i < n; i++) {
-            sumGeneral += array[i][i];
+        int row = 0;
+        int col = n / 2;
+
+        for (int i = 1; i <= n * n; i++) {
+
+            if (i == 1) {
+                //установили первый элемент в 0,1 = 1
+                array[row][col] = i;
+            }
+//            if (i % n == 0) {
+//                row++;
+//            } else {
+//                if (row == 1) {
+//                    row = n;
+//                } else row--;
+//                if (col == n) {
+//                    col = 1;
+//                } else col++;
+//            }
         }
 
-        if(sumGeneral == magic){
+//        printArrayInt(array);
 
-            //переходим к проходу по строкам
-            int sumUnGeneral = 0;
-            for (int i = 0; i < n; i++) {
-
-                for (int j = 0; j < n; j++) {
-                    sumUnGeneral += array[i][j];
-                }
-
-                if(sumUnGeneral == magic){
-                    //вот тут идем дальше, иначе нужно делать перестановку
-                }
-            }
-        }else
-            System.out.println("делаем перестановку по главной диаганали");
     }
 
+
+    //only 3,5,7
+    static void generateSquare(int n) {
+        int[][] magicSquare = new int[n][n];
+
+        // Initialize position for 1
+        int i = n / 2;
+        int j = n - 1;
+
+        // One by one put all values in magic square
+        for (int num = 1; num <= n * n; ) {
+            if (i == -1 && j == n) //3rd condition
+            {
+                j = n - 2;
+                i = 0;
+            } else {
+                //1st condition helper if next number
+                // goes to out of square's right side
+                if (j == n)
+                    j = 0;
+
+                //1st condition helper if next number is
+                // goes to out of square's upper side
+                if (i < 0)
+                    i = n - 1;
+            }
+
+            //2nd condition
+            if (magicSquare[i][j] != 0) {
+                j -= 2;
+                i++;
+                continue;
+            } else
+                //set number
+                magicSquare[i][j] = num++;
+
+            //1st condition
+            j++;
+            i--;
+        }
+
+        // print magic square
+        System.out.println("The Magic Square for " + n + ":");
+        System.out.println("Sum of each row or column " + n * (n * n + 1) / 2 + ":");
+        for (i = 0; i < n; i++) {
+            for (j = 0; j < n; j++)
+                System.out.print(magicSquare[i][j] + " ");
+            System.out.println();
+        }
+    }
 
 }
