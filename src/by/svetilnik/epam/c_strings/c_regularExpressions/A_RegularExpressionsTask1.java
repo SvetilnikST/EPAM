@@ -1,60 +1,58 @@
 package by.svetilnik.epam.c_strings.c_regularExpressions;
 
-import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class A_RegularExpressionsTask1 {
 
-    //    private static final String text = new String("Добро Аня.\nпожаловать тебе! К нам? ух.\nдавно пора на.\nProg Lang?");
-    private static final String text = new String("Регулярные выражения — задает шаблон для строк. Если у программиста стоит задача обработать большой набор строк. Отыскать в нем нужную или проверить соответствует ли входящая строка определенному правилу. Регулярные выражения появляются очень к стати.");
-    private static final String ENDOFSENTENSE = "[.!?]";
+    private static final String text = new String("Регулярные выражения — задает шаблон для строк.\n Если у программиста стоит задача. Обработать большой набор строк. Отыскать в нем нужную или проверить соответствует ли входящая строка определенному правилу.\n Регулярные выражения появляются очень к стати.");
+    private static final String text2 = new String("av aaav aaaaa ghgjghgh ewa");
+    private static final String endOfSentence = "[.!?]";
+    private static final String space = "\\s";
 
-    private static final String ENDOFWORD = "a-z";
-    private static final String SYMBOL = "\\s";
 
     public static void task1() {
 //        task1SortParagraf(text);
-        task1SortSentence(text);
+//        System.out.println();
+//        task1SortSentence(text);
+        task1SortWords(text, "a");
+    }
 
+    private static void task1SortWords(String text2, String a) {
+        Pattern pattern = Pattern.compile(endOfSentence);
+        Pattern patternWord = Pattern.compile(space);
+        String[] sentenses = pattern.split(text);
+
+        String pat = a+"*";
+
+        Pattern patternA = Pattern.compile(pat);
+
+        for (int k = 0; k < sentenses.length; k++) {
+            String[] words = patternWord.split(sentenses[k]);
+
+            //добавить паттерн на нахождение символа в строке
+
+            sentenses[k] = sortWord(words, patternA);
+        }
+        printArrayString(sentenses);
 
     }
 
     private static void task1SortSentence(String text) {
-        //разбили текст на предложения и поместили в массив
-        Pattern pattern = Pattern.compile(ENDOFSENTENSE);
+        Pattern pattern = Pattern.compile(endOfSentence);
+        Pattern patternWord = Pattern.compile(space);
+
         String[] sentenses = pattern.split(text);
 
-        Pattern patternWord = Pattern.compile(SYMBOL);
-
-        // сортировать в предложении слова по длинне
         for (int k = 0; k < sentenses.length; k++) {
-            //вот тут нужно разбить на массив в котором будем хранить слова
             String[] words = patternWord.split(sentenses[k]);
-
-
-//            for (int i = words.length - 1; i > 0; i--) {
-//                for (int j = 0; j < i; j++) {
-//                    if (words[j].length() > words[j + 1].length()) {
-//                        String tmp = words[j];
-//                        words[j] = words[j + 1];
-//                        words[j + 1] = tmp;
-//                    }
-//                }
-//            }
-
-            String s = sort(words).toString();
-//            sentenses[k] = s;
-            int b = 0;
+            sentenses[k] = sort(words);
         }
-
-
-        System.out.print(Arrays.toString(sentenses));
-        int a = 0;
-//        System.out.print(Arrays.toString(sentenses));
+        printArrayString(sentenses);
     }
 
-    public static String[] sort(String[] words) {
+    public static String sort(String[] words) {
+        String str = "";
         for (int i = words.length - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
                 if (words[j].length() > words[j + 1].length()) {
@@ -63,14 +61,49 @@ public class A_RegularExpressionsTask1 {
                     words[j + 1] = tmp;
                 }
             }
+
         }
-        return words;
+
+        for (String word : words) {
+            str = str + word + " ";
+        }
+        return str;
+    }
+
+    public static String sortWord(String[] words, Pattern pattern) {
+        String str = "";
+
+        Matcher matcher;
+
+        int[] rez = new int[words.length];
+
+        for (int i = words.length - 1; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+
+                //cчитаем кол-во вхождений
+                int count = 0;
+                matcher = pattern.matcher(words[j]);
+
+                while (matcher.find()) {
+                    count++;
+                }
+
+                rez[j] = count;
+                count = 0;
+                int a = 0;
+            }
+        }
+
+        for (String word : words) {
+            str = str + word + " ";
+        }
+        return str;
     }
 
 
     private static void task1SortParagraf(String text) {
 
-        Pattern pattern = Pattern.compile(ENDOFSENTENSE);
+        Pattern pattern = Pattern.compile(endOfSentence);
         Matcher matcher;
 
         int countSentense = 0;
@@ -112,28 +145,6 @@ public class A_RegularExpressionsTask1 {
         }
     }
 
-
-    private static void task2() {
-
-    }
-
-    public static void sortArray2(int[] mass, String[] strings) {
-        for (int i = mass.length - 1; i > 0; i--) {
-            for (int j = 0; j < i; j++) {
-                if (mass[j] > mass[j + 1]) {
-                    int tmp = mass[j];
-                    mass[j] = mass[j + 1];
-                    mass[j + 1] = tmp;
-
-                    String t = strings[j];
-                    strings[j] = strings[j + 1];
-                    strings[j + 1] = t;
-                }
-            }
-        }
-    }
-
-
     public static void sortArray(int[] mass, String[] strings) {
         for (int i = mass.length - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
@@ -151,5 +162,11 @@ public class A_RegularExpressionsTask1 {
         }
     }
 
+
+    public static void printArrayString(String[] strings) {
+        for (String s : strings) {
+            System.out.println(s);
+        }
+    }
 
 }
