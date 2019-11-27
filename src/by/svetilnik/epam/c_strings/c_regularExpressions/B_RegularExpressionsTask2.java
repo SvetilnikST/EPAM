@@ -5,72 +5,51 @@ import java.util.regex.Pattern;
 
 public class B_RegularExpressionsTask2 {
 
-    private static final String xml = new String("<notes><note id =\"1\"><to>Вася</to><from>Света</from><heading>Напоминание</heading><body>Позвони мне завтра!</body></note><note id =\"2\"><to>Петя</to><from>Маша</from><heading>Важное напоминание</heading><body/></note></notes>");
+    private static final String xml = new String("<notes>\n" +
+            "    <note id =\"1\">\n" +
+            "        <to>Вася</to>\n" +
+            "        <from>Света</from>\n" +
+            "        <heading>Напоминание</heading>\n" +
+            "        <body>Позвони мне завтра!</body>\n" +
+            "    </note>\n" +
+            "\n" +
+            "    <note id =\"2\">\n" +
+            "        <to>Петя</to>\n" +
+            "        <from>Маша</from>\n" +
+            "        <heading>Важное напоминание</heading>\n" +
+            "        <body/>\n" +
+            "    </note>\n" +
+            "</notes>");
 
-//    (<(.|\n)+?>.+){1,} находит содержимое групп
-//    <notes>((<note\s><(.|/n)+?><\/note>){1,})<\/notes> находит группы
 
     public static void start() {
-        task2SortSentense();
+        task2SortSentense(xml);
     }
 
-    private static void task2SortSentense() {
+    private static void task2SortSentense(String xml) {
+        String openTag = "(?<openTag><[^/].*?>)";
+        String closeTag = "(?<closeTag><[/].*?>)";
+        String body = "(?<open><[^/].*?>)(?<body>.*)(?<close><[/].*?>)";
+        String singleTag = "(?<singleTag><.*?[/]>)";
 
-        //проверка на соответствие строки шаблону
-        Pattern pNotes = Pattern.compile("<notes>(<note(.){1,}>.+</note>){1,}</notes>{1}");
-        Matcher matcher = pNotes.matcher(xml);
+        Pattern pattern = Pattern.compile(body + "|" + openTag + "|" + closeTag + "|" + singleTag);
+        Matcher matcher = pattern.matcher(xml);
 
+        //сделать проверку что строка в целом соответствует регулярке
+        while (matcher.find()) {
+            if (matcher.group("body") != null) {
+                System.out.println("Open: " + matcher.group("open") +
+                        "Body: " + matcher.group("body") +
+                        "Close: " + matcher.group("close")
+                );
 
-        Pattern pOpenTeg = Pattern.compile("<[a-z]+?>");
-        Matcher matcheOpenTeg = pOpenTeg.matcher(xml);
-        Pattern pCloseTeg = Pattern.compile("<\\/[a-z]+?>");
-        Matcher matcheCloseTeg = pCloseTeg.matcher(xml);
-        int start = 0;
-        int end = 0;
-        boolean b = matcher.matches();
-
-        if (b == true) {
-//            System.out.println(b);
-
-//            StringBuilder stringBuilder = new StringBuilder();
-
-            for (int i = 0; i < xml.length(); i++) {
-                //открывающий тег
-                if (matcheOpenTeg.find()) {
-                    System.out.println("Открывающий тег:");
-                    System.out.println(matcheOpenTeg.group());
-                    if (start < matcheOpenTeg.end()) {
-                        start = matcheOpenTeg.end();
-                    }
-
-                    //закрывающий тег
-                    if (matcheCloseTeg.find()) {
-                        System.out.println("Закрывающий тег:");
-                        System.out.println(matcheCloseTeg.group());
-//                        stringBuilder.append(matcheCloseTeg.group());
-
-                        if (end < matcheCloseTeg.start()) {
-                            end = matcheCloseTeg.start();
-                        }
-                    }
-
-
-                }
-
-//                System.out.print("Содержимое тега");
-                //содержимое тега
-                for (int j = start; j < end; j++) {
-
-                    System.out.print(xml.charAt(j));
-                }
-
-//                stringBuilder.append(xml.charAt(i));
+            } else if (matcher.group("openTag") != null) {
+                System.out.println("Open: " + matcher.group("openTag"));
+            } else if (matcher.group("closeTag") != null) {
+                System.out.println("Close: " + matcher.group("closeTag"));
+            } else if (matcher.group("singleTag") != null) {
+                System.out.println("Single: " + matcher.group("singleTag"));
             }
-
-
-//            System.out.println(stringBuilder);
-
-
         }
     }
 }

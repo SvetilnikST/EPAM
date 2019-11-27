@@ -23,7 +23,7 @@ public class StartStrings {
 //        StringOrStringBuilder.Task10(new StringBuffer("sSSS a sJs aa ddddd"));
 //        StringOrStringBuilder.Task10(new StringBuffer("sSSS. a! sJs? aa ddddd."));
 
-        A_RegularExpressionsTask1.task1();
-//        B_RegularExpressionsTask2.start();
+//        A_RegularExpressionsTask1.task1();
+        B_RegularExpressionsTask2.start();
     }
 }
