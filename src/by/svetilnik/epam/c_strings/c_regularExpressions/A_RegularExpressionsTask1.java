@@ -1,37 +1,36 @@
 package by.svetilnik.epam.c_strings.c_regularExpressions;
 
+import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class A_RegularExpressionsTask1 {
 
-    private static final String text = new String("Регулярные выражения — задает шаблон для строк.\n Если у программиста стоит задача. Обработать большой набор строк. Отыскать в нем нужную или проверить соответствует ли входящая строка определенному правилу.\n Регулярные выражения появляются очень к стати.");
-    private static final String text2 = new String("av aaav aaaaa ghgjghgh ewa");
+    private static final String text = new String("Регулярные выражения — задает шаблон для строк.\nЕсли у программиста стоит задача. Обработать большой набор строк. Отыскать в нем нужную или проверить соответствует ли входящая строка определенному правилу.\nРегулярные выражения появляются очень к стати.");
+    private static final String text2 = new String("av aaav aaaaa gh ewa. zoka more. Not aaate");
     private static final String endOfSentence = "[.!?]";
     private static final String space = "\\s";
 
 
     public static void task1() {
-//        task1SortParagraf(text);
-//        System.out.println();
-//        task1SortSentence(text);
-        task1SortWords(text, "a");
+        task1SortParagraf(text);
+        task1SortSentence(text);
+        task1SortWords(text2, "a");
     }
 
     private static void task1SortWords(String text2, String a) {
         Pattern pattern = Pattern.compile(endOfSentence);
         Pattern patternWord = Pattern.compile(space);
-        String[] sentenses = pattern.split(text);
+        String[] sentenses = pattern.split(text2);
 
-        String pat = a+"*";
+        String pat = a;
 
         Pattern patternA = Pattern.compile(pat);
 
         for (int k = 0; k < sentenses.length; k++) {
             String[] words = patternWord.split(sentenses[k]);
 
-            //добавить паттерн на нахождение символа в строке
-
+            //найти количество раз сколько встречается символ этот.
             sentenses[k] = sortWord(words, patternA);
         }
         printArrayString(sentenses);
@@ -72,26 +71,32 @@ public class A_RegularExpressionsTask1 {
 
     public static String sortWord(String[] words, Pattern pattern) {
         String str = "";
-
         Matcher matcher;
 
         int[] rez = new int[words.length];
-
-        for (int i = words.length - 1; i > 0; i--) {
-            for (int j = 0; j < i; j++) {
-
-                //cчитаем кол-во вхождений
-                int count = 0;
-                matcher = pattern.matcher(words[j]);
-
-                while (matcher.find()) {
-                    count++;
-                }
-
-                rez[j] = count;
-                count = 0;
-                int a = 0;
+        int count = 0;
+        int countNull = 0;
+        //считаем сколько раз а встречается в слове
+        for (int i = 0; i < words.length; i++) {
+            matcher = pattern.matcher(words[i]);
+            while (matcher.find()) {
+                count++;
             }
+            rez[i] = count;
+            count = 0;
+        }
+
+        for (int aRez : rez) {
+            if (aRez == 0) {
+                countNull++;
+            }
+        }
+
+        if (countNull == rez.length) {
+            //сотриторка по алфавиту
+            Arrays.sort(words);
+        } else {
+            sortArray(rez, words);
         }
 
         for (String word : words) {
@@ -112,7 +117,7 @@ public class A_RegularExpressionsTask1 {
         //считаем количество абзацев
         for (String retval : text.split("\n")) {
             countParagraf++;
-            System.out.println(countParagraf + " " + retval);
+            System.out.println(retval);
         }
 
         //заполняем массив строк значениями
