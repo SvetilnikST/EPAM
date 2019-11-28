@@ -31,6 +31,7 @@ import static by.svetilnik.epam.d_classes.simpleClasses.task6.Time.printTime;
 import static by.svetilnik.epam.d_classes.simpleClasses.task7.TriangelLogic.*;
 import static by.svetilnik.epam.d_classes.simpleClasses.task8.CustomersListLogic.fillCustomersList;
 import static by.svetilnik.epam.d_classes.simpleClasses.task8.CustomersListLogic.findForNumberCreditCard;
+import static by.svetilnik.epam.d_classes.simpleClasses.task8.CustomersListLogic.sortSurname;
 import static by.svetilnik.epam.d_classes.simpleClasses.task8.CustomersListView.printCustomer;
 import static by.svetilnik.epam.d_classes.simpleClasses.task9.BooksListLogic.*;
 import static by.svetilnik.epam.d_classes.simpleClasses.task9.BooksListView.printBooksList;
@@ -50,7 +51,7 @@ public class StartSimpleClasses {
 //        task4();
 //        ArraysSort5();
 //        task6();
-//        task8();
+        task8();
     }
 
     private static void task10() {
@@ -62,10 +63,10 @@ public class StartSimpleClasses {
         printAirlines(findDay(airlinesList, DayOfTheWeek.FRIDAY));
 
         fillAirlinesList(airlinesList);
-        printAirlines(findDestination(airlinesList, new Destination(1,"Paris")));
+        printAirlines(findDestination(airlinesList, new Destination(1, "Paris")));
 
         fillAirlinesList(airlinesList);
-        printAirlines(findDayTime(airlinesList, DayOfTheWeek.FRIDAY, new Time(1,30,0)));
+        printAirlines(findDayTime(airlinesList, DayOfTheWeek.FRIDAY, new Time(1, 30, 0)));
     }
 
 
@@ -100,6 +101,7 @@ public class StartSimpleClasses {
         fillTrains(trains);
         printTrain(trains);
 
+        System.out.println("Сортировка по номерам поездов");
         sortTrainForNumbers(trains);
         System.out.println();
         printTrain(trains);
@@ -140,16 +142,13 @@ public class StartSimpleClasses {
 
     public static void task8() {
 
-        //создали объект класса списка
         CustomerList customerAggregation = new CustomerList();
-        //заполнили список
         fillCustomersList(customerAggregation);
-        //вывели на печать
         printCustomer(customerAggregation);
-
         System.out.println("Find:");
-//        //вывеод от номера одного до другого
         printCustomer(findForNumberCreditCard(customerAggregation, 2, 5));
+        printCustomer(sortSurname(customerAggregation));
+
     }
 
     public static void task9() {

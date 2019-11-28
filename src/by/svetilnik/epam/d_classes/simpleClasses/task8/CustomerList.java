@@ -1,6 +1,7 @@
 package by.svetilnik.epam.d_classes.simpleClasses.task8;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CustomerList {
     private ArrayList<Customer> customers;
@@ -19,4 +20,6 @@ public class CustomerList {
                 "customers=" + customers +
                 '}';
     }
+
+
 }

@@ -77,6 +77,8 @@ public class Customer {
         this.numberBunkAccount = numberBunkAccount;
     }
 
+
+
     @Override
     public String toString() {
         return "Customer{" +
@@ -89,4 +91,7 @@ public class Customer {
                 ", numberBunkAccount=" + numberBunkAccount +
                 '}';
     }
+
+
+
 }

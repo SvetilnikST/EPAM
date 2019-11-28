@@ -15,8 +15,24 @@ public class TrainLogic {
         return trains;
     }
 
-    public static List<Train> sortTrainForNumbers(List<Train> trains) {
 
+    //сортировка поездов по номерам
+    public static List<Train> sortTrainForNumbers(List<Train> trains) {
+        Train min = trains.get(0);
+        int minNum = 0;
+        List<Train> rez = new ArrayList<>(trains.size());
+
+        for (int i = 0; i < trains.size(); i++) {
+            if (trains.get(i).getNumberTrain() < min.getNumberTrain()) {
+//                Train tmp = trains.get(i);
+//                trains.set(i, min);
+//                trains.set(minNum, tmp);
+//                minNum = i;
+
+
+
+            }
+        }
 
         return trains;
     }
