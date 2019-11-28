@@ -1,7 +1,11 @@
 package by.svetilnik.epam.d_classes.simpleClasses.task4;
 
+import by.svetilnik.epam.d_classes.simpleClasses.task8.Customer;
+
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class TrainLogic {
@@ -10,32 +14,39 @@ public class TrainLogic {
         trains.add(new Train("five", 5, LocalTime.of(5, 0)));
         trains.add(new Train("one", 1, LocalTime.of(4, 50)));
         trains.add(new Train("tree", 3, LocalTime.of(10, 35)));
-        trains.add(new Train("two", 2, LocalTime.of(7, 30)));
+        trains.add(new Train("one", 2, LocalTime.of(7, 30)));
         trains.add(new Train("four", 4, LocalTime.of(1, 30)));
         return trains;
     }
 
 
-    //сортировка поездов по номерам
-    public static List<Train> sortTrainForNumbers(List<Train> trains) {
-        Train min = trains.get(0);
-        int minNum = 0;
-        List<Train> rez = new ArrayList<>(trains.size());
-
-        for (int i = 0; i < trains.size(); i++) {
-            if (trains.get(i).getNumberTrain() < min.getNumberTrain()) {
-//                Train tmp = trains.get(i);
-//                trains.set(i, min);
-//                trains.set(minNum, tmp);
-//                minNum = i;
-
-
-
+    //сортировка поездов по пункту назначения в алфавитном порядке
+    public static ArrayList<Train> sortTrainForNameDestination(ArrayList<Train> trains) {
+        if (trains.size() > 0) Collections.sort(trains, new Comparator<Train>() {
+            @Override
+            public int compare(final Train o1, final Train o2) {
+                if (o1.getNameDestination() == o2.getNameDestination()) {
+                    //сортировка по времени отправления
+                    return o1.getDepartureTime().compareTo(o2.getDepartureTime());
+                } else
+                    return o1.getNameDestination().compareTo(o2.getNameDestination());
             }
-        }
-
+        });
         return trains;
     }
 
+    //сортировка по номерам поездов
+    public static ArrayList<Train> sortTrainForNumber(ArrayList<Train> trains) {
+        if (trains.size() > 0) Collections.sort(trains, new Comparator<Train>() {
+            @Override
+            public int compare(final Train o1, final Train o2) {
+                if (o1.getNumberTrain() > o2.getNumberTrain()) {
+                    return o2.getNumberTrain();
+                } else
+                    return o1.getNumberTrain();
+            }
+        });
+        return trains;
+    }
 
 }

@@ -25,7 +25,8 @@ import static by.svetilnik.epam.d_classes.simpleClasses.task3.StudentLogic.findE
 import static by.svetilnik.epam.d_classes.simpleClasses.task3.StudentView.printAllInfoStudent;
 import static by.svetilnik.epam.d_classes.simpleClasses.task3.StudentView.printStudents;
 import static by.svetilnik.epam.d_classes.simpleClasses.task4.TrainLogic.fillTrains;
-import static by.svetilnik.epam.d_classes.simpleClasses.task4.TrainLogic.sortTrainForNumbers;
+import static by.svetilnik.epam.d_classes.simpleClasses.task4.TrainLogic.sortTrainForNameDestination;
+import static by.svetilnik.epam.d_classes.simpleClasses.task4.TrainLogic.sortTrainForNumber;
 import static by.svetilnik.epam.d_classes.simpleClasses.task4.TrainView.printTrain;
 import static by.svetilnik.epam.d_classes.simpleClasses.task6.Time.printTime;
 import static by.svetilnik.epam.d_classes.simpleClasses.task7.TriangelLogic.*;
@@ -44,14 +45,15 @@ public class StartSimpleClasses {
 //        task2();
 //        task3();
 //        task7();
+//        task8();
 //        task9();
 //        task10();
 
 
-//        task4();
+        task4();
 //        ArraysSort5();
 //        task6();
-        task8();
+
     }
 
     private static void task10() {
@@ -101,9 +103,11 @@ public class StartSimpleClasses {
         fillTrains(trains);
         printTrain(trains);
 
-        System.out.println("Сортировка по номерам поездов");
-        sortTrainForNumbers(trains);
+//        System.out.println("Сортировка по названию пункту назначения");
+//        sortTrainForNameDestination(trains);
         System.out.println();
+
+        sortTrainForNumber(trains);
         printTrain(trains);
     }
 
