@@ -1,12 +1,9 @@
 package by.svetilnik.epam.d_classes.simpleClasses.task4;
 
-import by.svetilnik.epam.d_classes.simpleClasses.task8.Customer;
-
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.List;
 
 public class TrainLogic {
 
@@ -48,5 +45,8 @@ public class TrainLogic {
         });
         return trains;
     }
+
+
+
 
 }

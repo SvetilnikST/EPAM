@@ -25,14 +25,13 @@ import static by.svetilnik.epam.d_classes.simpleClasses.task3.StudentLogic.findE
 import static by.svetilnik.epam.d_classes.simpleClasses.task3.StudentView.printAllInfoStudent;
 import static by.svetilnik.epam.d_classes.simpleClasses.task3.StudentView.printStudents;
 import static by.svetilnik.epam.d_classes.simpleClasses.task4.TrainLogic.fillTrains;
-import static by.svetilnik.epam.d_classes.simpleClasses.task4.TrainLogic.sortTrainForNameDestination;
+
 import static by.svetilnik.epam.d_classes.simpleClasses.task4.TrainLogic.sortTrainForNumber;
-import static by.svetilnik.epam.d_classes.simpleClasses.task4.TrainView.printTrain;
+import static by.svetilnik.epam.d_classes.simpleClasses.task4.TrainView.printInfo;
+import static by.svetilnik.epam.d_classes.simpleClasses.task4.TrainView.printTrains;
 import static by.svetilnik.epam.d_classes.simpleClasses.task6.Time.printTime;
 import static by.svetilnik.epam.d_classes.simpleClasses.task7.TriangelLogic.*;
-import static by.svetilnik.epam.d_classes.simpleClasses.task8.CustomersListLogic.fillCustomersList;
-import static by.svetilnik.epam.d_classes.simpleClasses.task8.CustomersListLogic.findForNumberCreditCard;
-import static by.svetilnik.epam.d_classes.simpleClasses.task8.CustomersListLogic.sortSurname;
+import static by.svetilnik.epam.d_classes.simpleClasses.task8.CustomersListLogic.*;
 import static by.svetilnik.epam.d_classes.simpleClasses.task8.CustomersListView.printCustomer;
 import static by.svetilnik.epam.d_classes.simpleClasses.task9.BooksListLogic.*;
 import static by.svetilnik.epam.d_classes.simpleClasses.task9.BooksListView.printBooksList;
@@ -101,15 +100,16 @@ public class StartSimpleClasses {
 
         ArrayList<Train> trains = new ArrayList<>();
         fillTrains(trains);
-        printTrain(trains);
+        printTrains(trains);
 
 //        System.out.println("Сортировка по названию пункту назначения");
 //        sortTrainForNameDestination(trains);
-        System.out.println();
-
+//        System.out.println();
+//        printInfo(trains, 1);
         sortTrainForNumber(trains);
-        printTrain(trains);
+        printTrains(trains);
     }
+
 
     public static void task5() {
 
