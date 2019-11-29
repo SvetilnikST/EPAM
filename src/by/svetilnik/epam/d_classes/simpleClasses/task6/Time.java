@@ -55,12 +55,13 @@ public class Time {
             this.second = second;
     }
 
-    public static String printTime(Time time) {
-        return "Time{" +
-                "hour=" + time.getHour() +
-                ", minutes=" + time.getMinutes() +
-                ", second=" + time.getSecond() +
-                '}';
+    public static void printTime(Time time) {
+        System.out.println(
+                "Time{" +
+                        "hour=" + time.getHour() +
+                        ", minutes=" + time.getMinutes() +
+                        ", second=" + time.getSecond() +
+                        '}');
     }
 
     @Override

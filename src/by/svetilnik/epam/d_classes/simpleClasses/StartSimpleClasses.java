@@ -24,12 +24,11 @@ import static by.svetilnik.epam.d_classes.simpleClasses.task2.Test2View.printTes
 import static by.svetilnik.epam.d_classes.simpleClasses.task3.StudentLogic.findExcellentStudents;
 import static by.svetilnik.epam.d_classes.simpleClasses.task3.StudentView.printAllInfoStudent;
 import static by.svetilnik.epam.d_classes.simpleClasses.task3.StudentView.printStudents;
-import static by.svetilnik.epam.d_classes.simpleClasses.task4.TrainLogic.fillTrains;
-
-import static by.svetilnik.epam.d_classes.simpleClasses.task4.TrainLogic.sortTrainForNumber;
+import static by.svetilnik.epam.d_classes.simpleClasses.task4.TrainLogic.*;
 import static by.svetilnik.epam.d_classes.simpleClasses.task4.TrainView.printInfo;
 import static by.svetilnik.epam.d_classes.simpleClasses.task4.TrainView.printTrains;
 import static by.svetilnik.epam.d_classes.simpleClasses.task6.Time.printTime;
+import static by.svetilnik.epam.d_classes.simpleClasses.task6.TimeLogic.*;
 import static by.svetilnik.epam.d_classes.simpleClasses.task7.TriangelLogic.*;
 import static by.svetilnik.epam.d_classes.simpleClasses.task8.CustomersListLogic.*;
 import static by.svetilnik.epam.d_classes.simpleClasses.task8.CustomersListView.printCustomer;
@@ -43,15 +42,14 @@ public class StartSimpleClasses {
 //        task1();
 //        task2();
 //        task3();
+//        task4();
 //        task7();
 //        task8();
 //        task9();
 //        task10();
 
 
-        task4();
-//        ArraysSort5();
-//        task6();
+        task6();
 
     }
 
@@ -97,15 +95,14 @@ public class StartSimpleClasses {
     }
 
     private static void task4() {
-
         ArrayList<Train> trains = new ArrayList<>();
         fillTrains(trains);
         printTrains(trains);
-
-//        System.out.println("Сортировка по названию пункту назначения");
-//        sortTrainForNameDestination(trains);
-//        System.out.println();
-//        printInfo(trains, 1);
+        System.out.println("Сортировка по названию пункту назначения");
+        sortTrainForNameDestination(trains);
+        System.out.println();
+        printInfo(trains, 1);
+        System.out.println("Sort for numbers trains:");
         sortTrainForNumber(trains);
         printTrains(trains);
     }
@@ -128,9 +125,25 @@ public class StartSimpleClasses {
 
     private static void task6() {
         Time time = new Time();
-        time.setHour(145);
-        time.setMinutes(10);
-        time.setSecond(122);
+//        time.setHour(10);
+//        time.setMinutes(10);
+//        time.setSecond(12);
+
+
+        //устанавливаем время полностью
+        setTimes(time, 10, 0, 3);
+        printTime(time);
+
+        //изменяем отдельные части (часы)
+//        replacePlusHour(time, 1);
+//        replaceMinusHour(time,5);
+
+        //изменяем отдельные части (- минуты)
+        time = replaceMinusMinute(time, 125);
+
+        //изменяем отдельные части (секунды)
+
+
         printTime(time);
     }
 

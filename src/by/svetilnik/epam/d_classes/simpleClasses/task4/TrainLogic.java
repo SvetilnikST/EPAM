@@ -38,15 +38,15 @@ public class TrainLogic {
             @Override
             public int compare(final Train o1, final Train o2) {
                 if (o1.getNumberTrain() > o2.getNumberTrain()) {
-                    return o2.getNumberTrain();
+                    return 1;
+                } else if (o1.getNumberTrain() < o2.getNumberTrain()) {
+                    return -1;
                 } else
-                    return o1.getNumberTrain();
+                    return 0;
             }
         });
         return trains;
     }
-
-
 
 
 }
