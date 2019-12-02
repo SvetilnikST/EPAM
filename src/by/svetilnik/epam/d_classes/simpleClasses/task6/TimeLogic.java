@@ -9,6 +9,7 @@ public class TimeLogic {
         return time;
     }
 
+    //    TODO
     public static Time replacePlusHour(Time time, int hour) {
 
         if (time.getHour() + hour > Time.maxHour) {
@@ -19,39 +20,77 @@ public class TimeLogic {
         return time;
     }
 
+    //TODO
     public static Time replaceMinusHour(Time time, int hour) {
 
         if (time.getHour() - hour > Time.maxHour || time.getHour() - hour < Time.min) {
             time.setHour(Time.min);
-        } else if (time.getHour() - hour < Time.maxHour) {
+        } else if (time.getHour() - hour < Time.maxHour && time.getHour() - hour > Time.min) {
             time.setHour(time.getHour() - hour);
         }
         return time;
     }
 
+
+    public static Time replaceMinusSec(Time time, int second) {
+
+        if (time.getSecond() - second > Time.maxMinuteSec || time.getSecond() - second < Time.min) {
+            time.setSecond(Time.min);
+        } else if (time.getSecond() - second < Time.maxMinuteSec) {
+            time.setSecond(time.getSecond() - second);
+        }
+        return time;
+    }
+
+
     public static Time replaceMinusMinute(Time time, int minutes) {
 
         int rez = time.getMinutes() - minutes; //0-120 = -120
 
-        if (rez > Time.maxMinSec) {
+        if (rez > Time.maxMinuteSec) {
             time.setMinutes(Time.min);
-        } else if (rez < Time.maxMinSec && rez > Time.min) {
+        } else if (rez < Time.maxMinuteSec && rez > Time.min) {
             time.setMinutes(rez);
         } else if (rez < Time.min) {
             int count = 1;
             int k = rez * (-1);
-            while (k >Time.maxMinSec) {
-                k = k - Time.maxMinSec;
+            while (k > Time.maxMinuteSec) {
+                k = k - Time.maxMinuteSec;
                 count++;
             }
+            //высчитываем часы
             Time hour = replaceMinusHour(time, count);
-            int minute = Time.maxMinSec-k;
+            //высчитываем минут
+            int minute = Time.maxMinuteSec - k;
             time.setHour(hour.getHour());
             time.setMinutes(minute);
-
-
         }
         return time;
     }
+
+    //TODO
+    public static Time replacePluseMinute(Time time, int minutes) {
+
+        int rez = time.getMinutes() + minutes; //55+60 = 115,
+
+        if (rez < Time.min) {
+            time.setMinutes(Time.min);
+        } else if (rez > Time.maxMinuteSec) {
+            int count = 0;
+
+            while (rez >= Time.maxMinuteSec) {
+                rez = rez - Time.maxMinuteSec;
+                count++;
+            }
+            //высчитываем часы
+            Time hour = replacePlusHour(time, count);
+            //высчитываем минут
+            int minute = rez;
+            time.setHour(hour.getHour());
+            time.setMinutes(minute);
+        }
+        return time;
+    }
+
 
 }

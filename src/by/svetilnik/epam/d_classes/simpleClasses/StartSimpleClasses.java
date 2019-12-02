@@ -131,18 +131,21 @@ public class StartSimpleClasses {
 
 
         //устанавливаем время полностью
-        setTimes(time, 10, 0, 3);
+        setTimes(time, 7, 55, 3);
         printTime(time);
 
         //изменяем отдельные части (часы)
 //        replacePlusHour(time, 1);
 //        replaceMinusHour(time,5);
 
+
         //изменяем отдельные части (- минуты)
-        time = replaceMinusMinute(time, 125);
+//        time = replaceMinusMinute(time, 125);
+        time = replacePluseMinute(time,65);
 
+//        printTime(time);
         //изменяем отдельные части (секунды)
-
+//        time = replaceMinusSecunds(time, 61);
 
         printTime(time);
     }

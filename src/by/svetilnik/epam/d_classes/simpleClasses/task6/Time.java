@@ -2,7 +2,7 @@ package by.svetilnik.epam.d_classes.simpleClasses.task6;
 
 public class Time {
     public static final int maxHour = 23;
-    public static final int maxMinSec = 60;
+    public static final int maxMinuteSec = 60;
     public static final int min = 0;
 
     private int hour;
@@ -38,7 +38,7 @@ public class Time {
 
     public void setMinutes(int minutes) {
 
-        if (minutes > maxMinSec || minutes < min) {
+        if (minutes > maxMinuteSec || minutes < min) {
             this.minutes = min;
         } else
             this.minutes = minutes;
@@ -49,7 +49,7 @@ public class Time {
     }
 
     public void setSecond(int second) {
-        if (second > maxMinSec || second < min) {
+        if (second > maxMinuteSec || second < min) {
             this.second = min;
         } else
             this.second = second;
