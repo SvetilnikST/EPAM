@@ -38,36 +38,17 @@ import static by.svetilnik.epam.d_classes.simpleClasses.task9.BooksListView.prin
 public class StartSimpleClasses {
 
     public static void startSimpleClasses() {
-
-//        task1();
-//        task2();
-//        task3();
-//        task4();
-//        task7();
-//        task8();
-//        task9();
-//        task10();
-
-
+        task1();
+        task2();
+        task3();
+        task4();
+        task5();
         task6();
-
+        task7();
+        task8();
+        task9();
+        task10();
     }
-
-    private static void task10() {
-        AirlinesList airlinesList = new AirlinesList();
-
-        fillAirlinesList(airlinesList);
-        printAirlines(airlinesList);
-
-        printAirlines(findDay(airlinesList, DayOfTheWeek.FRIDAY));
-
-        fillAirlinesList(airlinesList);
-        printAirlines(findDestination(airlinesList, new Destination(1, "Paris")));
-
-        fillAirlinesList(airlinesList);
-        printAirlines(findDayTime(airlinesList, DayOfTheWeek.FRIDAY, new Time(1, 30, 0)));
-    }
-
 
     private static void task1() {
         Test1 test1 = new Test1();
@@ -107,7 +88,6 @@ public class StartSimpleClasses {
         printTrains(trains);
     }
 
-
     public static void task5() {
 
         Counter counter = new Counter(5);
@@ -125,34 +105,39 @@ public class StartSimpleClasses {
 
     private static void task6() {
         Time time = new Time();
-//        time.setHour(10);
-//        time.setMinutes(10);
-//        time.setSecond(12);
 
-
-        //устанавливаем время полностью
+        System.out.print("Set time: ");
         setTimes(time, 7, 55, 3);
         printTime(time);
 
-        //изменяем отдельные части (часы)
-//        replacePlusHour(time, 1);
-//        replaceMinusHour(time,5);
+        System.out.print("+ 1 hour ");
+        replacePlusHour(time, 1);
+        printTime(time);
 
+        System.out.print("- 5 hour ");
+        replaceMinusHour(time, 5);
+        printTime(time);
 
-        //изменяем отдельные части (- минуты)
-//        time = replaceMinusMinute(time, 125);
-        time = replacePluseMinute(time,65);
+        System.out.print("+ 70 minutes ");
+        replacePlusMinutes(time, 70);
+        printTime(time);
 
-//        printTime(time);
-        //изменяем отдельные части (секунды)
-//        time = replaceMinusSecunds(time, 61);
+        System.out.print("- 125 minutes ");
+        replaceMinusMinute(time, 125);
+        printTime(time);
 
+        System.out.print("+ 3600 seconds ");
+        replacePlusSeconds(time, 3600);
+        printTime(time);
+
+        System.out.print("- 3600 seconds ");
+        replaceMinusSeconds(time, 3600);
         printTime(time);
     }
 
     public static void task7() {
-
         Triangel triangel = new Triangel();
+
         System.out.println("Area:" + area(triangel));
         System.out.println("Area:" + areaAcrossSide(triangel));
         System.out.println("Area Geron:" + areaGeron(triangel));
@@ -168,7 +153,6 @@ public class StartSimpleClasses {
         System.out.println("Find:");
         printCustomer(findForNumberCreditCard(customerAggregation, 2, 5));
         printCustomer(sortSurname(customerAggregation));
-
     }
 
     public static void task9() {
@@ -183,4 +167,20 @@ public class StartSimpleClasses {
         fillBooks(booksList);
         printBooksList(printBookAfterYear(booksList, 2005));
     }
+
+    private static void task10() {
+        AirlinesList airlinesList = new AirlinesList();
+
+        fillAirlinesList(airlinesList);
+        printAirlines(airlinesList);
+
+        printAirlines(findDay(airlinesList, DayOfTheWeek.FRIDAY));
+
+        fillAirlinesList(airlinesList);
+        printAirlines(findDestination(airlinesList, new Destination(1, "Paris")));
+
+        fillAirlinesList(airlinesList);
+        printAirlines(findDayTime(airlinesList, DayOfTheWeek.FRIDAY, new Time(1, 30, 0)));
+    }
+
 }

@@ -198,7 +198,7 @@ public class a_OneDimensionalArrays {
 //
 //        int num = a[0];
 //        int secondBySize = 1;
-//        int min = a[0];
+//        int minimum = a[0];
 //
 //        for (int i = 0; i < a.length; i++) {
 //
@@ -212,8 +212,8 @@ public class a_OneDimensionalArrays {
 //                    if (count > secondBySize) {
 //                        secondBySize = count;
 //                        num = a[i];
-//                        if (num < min) {
-//                            min=num;
+//                        if (num < minimum) {
+//                            minimum=num;
 //                            secondBySize = count;
 //                        }
 //
@@ -226,7 +226,7 @@ public class a_OneDimensionalArrays {
 //
 //        System.out.println();
 //        if (secondBySize > 1) {
-//            System.out.println("встречается" + secondBySize + " раз  " + min);
+//            System.out.println("встречается" + secondBySize + " раз  " + minimum);
 //        } else System.out.println("все уник");
 //    }
 

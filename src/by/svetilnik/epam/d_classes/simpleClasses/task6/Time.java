@@ -2,17 +2,17 @@ package by.svetilnik.epam.d_classes.simpleClasses.task6;
 
 public class Time {
     public static final int maxHour = 23;
-    public static final int maxMinuteSec = 60;
-    public static final int min = 0;
+    public static final int maximum = 60;
+    public static final int minimum = 0;
 
     private int hour;
     private int minutes;
     private int second;
 
     public Time() {
-        this.hour = min;
-        this.minutes = min;
-        this.second = min;
+        this.hour = minimum;
+        this.minutes = minimum;
+        this.second = minimum;
     }
 
     public Time(int hour, int minutes, int second) {
@@ -26,8 +26,8 @@ public class Time {
     }
 
     public void setHour(int hour) {
-        if (hour > maxHour || hour < min) {
-            this.hour = min;
+        if (hour > maxHour || hour < minimum) {
+            this.hour = minimum;
         } else
             this.hour = hour;
     }
@@ -38,8 +38,8 @@ public class Time {
 
     public void setMinutes(int minutes) {
 
-        if (minutes > maxMinuteSec || minutes < min) {
-            this.minutes = min;
+        if (minutes > maximum || minutes < minimum) {
+            this.minutes = minimum;
         } else
             this.minutes = minutes;
     }
@@ -49,8 +49,8 @@ public class Time {
     }
 
     public void setSecond(int second) {
-        if (second > maxMinuteSec || second < min) {
-            this.second = min;
+        if (second > maximum || second < minimum) {
+            this.second = minimum;
         } else
             this.second = second;
     }

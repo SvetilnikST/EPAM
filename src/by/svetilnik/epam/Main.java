@@ -10,7 +10,7 @@ public class Main {
 //        StartBasics.startBasics();
 //        e_StartAlgorithmization.startAlgorithmization();
 //        StartStrings.startStrings();
-        StartSimpleClasses.startSimpleClasses();
+//        StartSimpleClasses.startSimpleClasses();
 //        StartAggregationAndComposition.start();
     }
 }
