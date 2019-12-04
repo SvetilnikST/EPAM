@@ -10,15 +10,61 @@ import by.svetilnik.epam.d_classes.aggregationAndComposition.task3.District;
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task3.Region;
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task3.State;
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task3.Town;
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task4.BankAccount;
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task4.Client;
 
 import java.util.ArrayList;
 
+import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.ClientLogic.addAccount;
+import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.ClientLogic.deleteAccount;
+import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.ClientLogic.editActiveAccount;
+import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.ClientView.printClientInfo;
 
 public class StartAggregationAndComposition {
     public static void start() {
 //        task1();
 //        task2();
 //        task3();
+
+        task4();
+
+    }
+
+    private static void task4() {
+
+        BankAccount bankAccount1 = new BankAccount(1, 1001, 10, true);
+        BankAccount bankAccount2 = new BankAccount(2, 1002, 100, true);
+        BankAccount bankAccount3 = new BankAccount(1, 2001, 0, false);
+        BankAccount bankAccount4 = new BankAccount(2, 2002, 200, true);
+
+        ArrayList<BankAccount> bankAccountsFirst = new ArrayList<>();
+        bankAccountsFirst.add(bankAccount1);
+        bankAccountsFirst.add(bankAccount2);
+
+        ArrayList<BankAccount> bankAccountsSecond = new ArrayList<>();
+        bankAccountsSecond.add(bankAccount3);
+        bankAccountsSecond.add(bankAccount4);
+
+        Client clientOne = new Client(1, "TheFirst", bankAccountsFirst);
+        Client clientTwo = new Client(2, "TheSecond", bankAccountsSecond);
+        Client clientThree = new Client(2, "TheSecond");
+        //добавим аккаунт клиенту
+//        addAccount(clientOne,)
+
+        boolean active = false;
+
+        printClientInfo(clientOne);
+        //добавили счет
+        addAccount(clientOne, bankAccount4);
+        printClientInfo(clientOne);
+
+        //удалили счет с определенным
+        deleteAccount(clientOne, 2002);
+
+        printClientInfo(clientOne);
+//        printClientInfo(clientThree);
+//        editActiveAccount(clientOne, 1001, active);
+
 
     }
 
