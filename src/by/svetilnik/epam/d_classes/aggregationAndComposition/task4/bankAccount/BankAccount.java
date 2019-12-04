@@ -1,4 +1,4 @@
-package by.svetilnik.epam.d_classes.aggregationAndComposition.task4;
+package by.svetilnik.epam.d_classes.aggregationAndComposition.task4.bankAccount;
 
 public class BankAccount {
     private int id;

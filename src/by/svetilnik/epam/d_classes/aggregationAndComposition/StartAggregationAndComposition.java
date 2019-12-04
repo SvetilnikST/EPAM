@@ -10,15 +10,17 @@ import by.svetilnik.epam.d_classes.aggregationAndComposition.task3.District;
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task3.Region;
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task3.State;
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task3.Town;
-import by.svetilnik.epam.d_classes.aggregationAndComposition.task4.BankAccount;
-import by.svetilnik.epam.d_classes.aggregationAndComposition.task4.Client;
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task4.bankAccount.BankAccount;
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task4.client.Client;
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task4.client.ClientsList;
 
 import java.util.ArrayList;
 
-import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.ClientLogic.addAccount;
-import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.ClientLogic.deleteAccount;
-import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.ClientLogic.editActiveAccount;
-import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.ClientView.printClientInfo;
+import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.bankAccount.BankAccountLogic.findAccount;
+import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.bankAccount.BankView.printAccount;
+import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.bankAccount.BankView.printInfoAccounts;
+import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.client.ClientLogic.*;
+import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.client.ClientView.printClientInfo;
 
 public class StartAggregationAndComposition {
     public static void start() {
@@ -33,7 +35,7 @@ public class StartAggregationAndComposition {
     private static void task4() {
 
         BankAccount bankAccount1 = new BankAccount(1, 1001, 10, true);
-        BankAccount bankAccount2 = new BankAccount(2, 1002, 100, true);
+        BankAccount bankAccount2 = new BankAccount(2, 1002, -100, true);
         BankAccount bankAccount3 = new BankAccount(1, 2001, 0, false);
         BankAccount bankAccount4 = new BankAccount(2, 2002, 200, true);
 
@@ -48,23 +50,35 @@ public class StartAggregationAndComposition {
         Client clientOne = new Client(1, "TheFirst", bankAccountsFirst);
         Client clientTwo = new Client(2, "TheSecond", bankAccountsSecond);
         Client clientThree = new Client(2, "TheSecond");
-        //добавим аккаунт клиенту
-//        addAccount(clientOne,)
 
-        boolean active = false;
+        ArrayList<Client> clients = new ArrayList<>();
+        clients.add(clientOne);
+        clients.add(clientTwo);
+        clients.add(clientThree);
 
-        printClientInfo(clientOne);
-        //добавили счет
-        addAccount(clientOne, bankAccount4);
-        printClientInfo(clientOne);
 
-        //удалили счет с определенным
-        deleteAccount(clientOne, 2002);
+        ClientsList clientsList = new ClientsList(clients);
+        findAccount(clientsList, 1002);
+//        printInfoAccounts(clientsList);
 
-        printClientInfo(clientOne);
-//        printClientInfo(clientThree);
-//        editActiveAccount(clientOne, 1001, active);
 
+//        printClientInfo(clientOne);
+//
+//        addAccount(clientOne, bankAccount4);
+//        printClientInfo(clientOne);
+//
+//        deleteAccount(clientOne, 2002);
+//        printClientInfo(clientOne);
+//
+//        editActiveAccount(clientOne, 1001, false);
+//        printClientInfo(clientOne);
+//
+//        System.out.println("Sum positive accounts " + "Client " + clientOne.getFullName() + " = " + getPositiveSumAccount(clientOne));
+//        System.out.println("Sum negative accounts " + "Client " + clientOne.getFullName() + " = " + getNegativeSumAccounts(clientOne));
+//        System.out.println("Sum all accounts = " + getSumAllAccounts(clientOne));
+
+
+        //        printClientInfo(clientOne);
 
     }
 

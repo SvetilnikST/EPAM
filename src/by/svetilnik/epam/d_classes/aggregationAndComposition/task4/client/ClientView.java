@@ -1,4 +1,6 @@
-package by.svetilnik.epam.d_classes.aggregationAndComposition.task4;
+package by.svetilnik.epam.d_classes.aggregationAndComposition.task4.client;
+
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task4.client.Client;
 
 public class ClientView {
     public static void printClientInfo(Client client) {
