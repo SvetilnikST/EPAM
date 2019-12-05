@@ -36,8 +36,8 @@ public class StartAggregationAndComposition {
 
         BankAccount bankAccount1 = new BankAccount(1, 1001, 10, true);
         BankAccount bankAccount2 = new BankAccount(2, 1002, -100, true);
-        BankAccount bankAccount3 = new BankAccount(1, 2001, 0, false);
-        BankAccount bankAccount4 = new BankAccount(2, 2002, 200, true);
+        BankAccount bankAccount3 = new BankAccount(3, 2001, 0, false);
+        BankAccount bankAccount4 = new BankAccount(4, 1002, 200, true);
 
         ArrayList<BankAccount> bankAccountsFirst = new ArrayList<>();
         bankAccountsFirst.add(bankAccount1);
@@ -58,7 +58,13 @@ public class StartAggregationAndComposition {
 
 
         ClientsList clientsList = new ClientsList(clients);
-        findAccount(clientsList, 1002);
+
+        //поиск счетов по номеру
+        ArrayList<BankAccount> bankAccounts = findAccount(clientsList, 1002);
+        printAccount(bankAccounts);
+
+        //сортировка счетов по номерам
+
 //        printInfoAccounts(clientsList);
 
 
@@ -77,8 +83,7 @@ public class StartAggregationAndComposition {
 //        System.out.println("Sum negative accounts " + "Client " + clientOne.getFullName() + " = " + getNegativeSumAccounts(clientOne));
 //        System.out.println("Sum all accounts = " + getSumAllAccounts(clientOne));
 
-
-        //        printClientInfo(clientOne);
+//        printClientInfo(clientOne);
 
     }
 

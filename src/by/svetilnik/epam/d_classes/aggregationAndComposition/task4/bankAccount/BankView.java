@@ -11,11 +11,12 @@ public class BankView {
                 "BankAccount{" +
                         "id=" + bankAccount.getId() +
                         ", number=" + bankAccount.getNumber() +
-                        ", sum=" + bankAccount.getNumber() +
+                        ", sum=" + bankAccount.getSum() +
                         ", active=" + bankAccount.isActive() +
                         "}"
 
         );
+
     }
 
 
@@ -28,10 +29,10 @@ public class BankView {
         }
     }
 
-    public static void printAccount(ArrayList<BankAccount> bankAccount) {
+    public static void printAccount(ArrayList<BankAccount> bankAccounts) {
 
-        for (int i = 0; i < bankAccount.size() - 1; i++) {
-            printInfoAccount(bankAccount.get(i));
+        for (int i = 0; i < bankAccounts.size(); i++) {
+            printInfoAccount(bankAccounts.get(i));
         }
     }
 
