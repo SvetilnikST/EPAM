@@ -17,6 +17,7 @@ import by.svetilnik.epam.d_classes.aggregationAndComposition.task4.client.Client
 import java.util.ArrayList;
 
 import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.bankAccount.BankAccountLogic.findAccount;
+import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.bankAccount.BankAccountLogic.sortAccounts;
 import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.bankAccount.BankView.printAccount;
 import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.bankAccount.BankView.printInfoAccounts;
 import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.client.ClientLogic.*;
@@ -34,10 +35,10 @@ public class StartAggregationAndComposition {
 
     private static void task4() {
 
-        BankAccount bankAccount1 = new BankAccount(1, 1001, 10, true);
-        BankAccount bankAccount2 = new BankAccount(2, 1002, -100, true);
+        BankAccount bankAccount1 = new BankAccount(1, 10001, 10, true);
+        BankAccount bankAccount2 = new BankAccount(2, 10002, -100, true);
         BankAccount bankAccount3 = new BankAccount(3, 2001, 0, false);
-        BankAccount bankAccount4 = new BankAccount(4, 1002, 200, true);
+        BankAccount bankAccount4 = new BankAccount(4, 2002, 200, true);
 
         ArrayList<BankAccount> bankAccountsFirst = new ArrayList<>();
         bankAccountsFirst.add(bankAccount1);
@@ -59,9 +60,11 @@ public class StartAggregationAndComposition {
 
         ClientsList clientsList = new ClientsList(clients);
 
-        //поиск счетов по номеру
-        ArrayList<BankAccount> bankAccounts = findAccount(clientsList, 1002);
-        printAccount(bankAccounts);
+        //поиск счета по номеру
+//        ArrayList<BankAccount> bankAccounts = findAccount(clientsList, 1002);
+//        printAccount(bankAccounts);
+
+        printAccount(sortAccounts(clientsList));
 
         //сортировка счетов по номерам
 
