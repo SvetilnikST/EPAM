@@ -13,6 +13,7 @@ import by.svetilnik.epam.d_classes.aggregationAndComposition.task3.Town;
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task4.bankAccount.BankAccount;
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task4.client.Client;
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task4.client.ClientsList;
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.TypeVoucher;
 
 import java.util.ArrayList;
 
@@ -28,6 +29,15 @@ public class StartAggregationAndComposition {
 //        task2();
 //        task3();
 //        task4();
+        task5();
+    }
+
+    private static void task5() {
+        TypeVoucher typeVoucher1 = new TypeVoucher("Отдых");
+        TypeVoucher typeVoucher2 = new TypeVoucher("Экскурсия");
+        TypeVoucher typeVoucher3 = new TypeVoucher("Шопинг");
+
+
     }
 
     public static void task1() {
