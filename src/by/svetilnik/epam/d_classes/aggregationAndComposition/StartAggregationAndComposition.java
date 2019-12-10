@@ -19,7 +19,6 @@ import java.util.ArrayList;
 import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.bankAccount.BankAccountLogic.findAccount;
 import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.bankAccount.BankAccountLogic.sortAccounts;
 import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.bankAccount.BankView.printAccount;
-import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.bankAccount.BankView.printInfoAccounts;
 import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.client.ClientLogic.*;
 import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.client.ClientView.printClientInfo;
 
@@ -28,66 +27,7 @@ public class StartAggregationAndComposition {
 //        task1();
 //        task2();
 //        task3();
-
-        task4();
-
-    }
-
-    private static void task4() {
-
-        BankAccount bankAccount1 = new BankAccount(1, 10001, 10, true);
-        BankAccount bankAccount2 = new BankAccount(2, 10002, -100, true);
-        BankAccount bankAccount3 = new BankAccount(3, 2001, 0, false);
-        BankAccount bankAccount4 = new BankAccount(4, 2002, 200, true);
-
-        ArrayList<BankAccount> bankAccountsFirst = new ArrayList<>();
-        bankAccountsFirst.add(bankAccount1);
-        bankAccountsFirst.add(bankAccount2);
-
-        ArrayList<BankAccount> bankAccountsSecond = new ArrayList<>();
-        bankAccountsSecond.add(bankAccount3);
-        bankAccountsSecond.add(bankAccount4);
-
-        Client clientOne = new Client(1, "TheFirst", bankAccountsFirst);
-        Client clientTwo = new Client(2, "TheSecond", bankAccountsSecond);
-        Client clientThree = new Client(2, "TheSecond");
-
-        ArrayList<Client> clients = new ArrayList<>();
-        clients.add(clientOne);
-        clients.add(clientTwo);
-        clients.add(clientThree);
-
-
-        ClientsList clientsList = new ClientsList(clients);
-
-        //поиск счета по номеру
-//        ArrayList<BankAccount> bankAccounts = findAccount(clientsList, 1002);
-//        printAccount(bankAccounts);
-
-        printAccount(sortAccounts(clientsList));
-
-        //сортировка счетов по номерам
-
-//        printInfoAccounts(clientsList);
-
-
-//        printClientInfo(clientOne);
-//
-//        addAccount(clientOne, bankAccount4);
-//        printClientInfo(clientOne);
-//
-//        deleteAccount(clientOne, 2002);
-//        printClientInfo(clientOne);
-//
-//        editActiveAccount(clientOne, 1001, false);
-//        printClientInfo(clientOne);
-//
-//        System.out.println("Sum positive accounts " + "Client " + clientOne.getFullName() + " = " + getPositiveSumAccount(clientOne));
-//        System.out.println("Sum negative accounts " + "Client " + clientOne.getFullName() + " = " + getNegativeSumAccounts(clientOne));
-//        System.out.println("Sum all accounts = " + getSumAllAccounts(clientOne));
-
-//        printClientInfo(clientOne);
-
+//        task4();
     }
 
     public static void task1() {
@@ -190,6 +130,56 @@ public class StartAggregationAndComposition {
         State.countRegion(belarus);
         State.printAreaState(belarus);
         State.printRegionsCenter(belarus);
+    }
+
+    private static void task4() {
+
+        BankAccount bankAccount1 = new BankAccount(1, 1005, 10, true);
+        BankAccount bankAccount2 = new BankAccount(2, 1002, -100, true);
+        BankAccount bankAccount3 = new BankAccount(3, 2013, 0, false);
+        BankAccount bankAccount4 = new BankAccount(4, 2002, 200, true);
+
+        ArrayList<BankAccount> bankAccountsFirst = new ArrayList<>();
+        bankAccountsFirst.add(bankAccount1);
+        bankAccountsFirst.add(bankAccount2);
+
+        ArrayList<BankAccount> bankAccountsSecond = new ArrayList<>();
+        bankAccountsSecond.add(bankAccount3);
+        bankAccountsSecond.add(bankAccount4);
+
+        Client clientOne = new Client(1, "TheFirst", bankAccountsFirst);
+        Client clientTwo = new Client(2, "TheSecond", bankAccountsSecond);
+        Client clientThree = new Client(2, "TheSecond");
+
+        ArrayList<Client> clients = new ArrayList<>();
+        clients.add(clientOne);
+        clients.add(clientTwo);
+        clients.add(clientThree);
+
+        ClientsList clientsList = new ClientsList(clients);
+
+        //поиск счета по номеру
+        printAccount(findAccount(clientsList, 1002));
+        //сортировка счетов по номеру
+        printAccount(sortAccounts(clientsList));
+
+        printClientInfo(clientOne);
+
+        addAccount(clientOne, bankAccount4);
+        printClientInfo(clientOne);
+
+        deleteAccount(clientOne, 2002);
+        printClientInfo(clientOne);
+
+        editActiveAccount(clientOne, 1001, false);
+        printClientInfo(clientOne);
+
+        System.out.println("Sum positive accounts " + "Client " + clientOne.getFullName() + " = " + getPositiveSumAccount(clientOne));
+        System.out.println("Sum negative accounts " + "Client " + clientOne.getFullName() + " = " + getNegativeSumAccounts(clientOne));
+        System.out.println("Sum all accounts = " + getSumAllAccounts(clientOne));
+
+        printClientInfo(clientOne);
+
     }
 
 }
