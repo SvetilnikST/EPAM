@@ -1,7 +1,4 @@
 package by.svetilnik.epam.d_classes.aggregationAndComposition.task5;
 
-public enum  TypeVoucher {
-    Relaxation,
-    Excursion,
-    Shopping
+public class TravelVouncerList {
 }

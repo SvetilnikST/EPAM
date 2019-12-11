@@ -13,6 +13,9 @@ import by.svetilnik.epam.d_classes.aggregationAndComposition.task3.Town;
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task4.bankAccount.BankAccount;
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task4.client.Client;
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task4.client.ClientsList;
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.TravelVoucher;
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.TypeOfFoodOnTour;
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.TypeOfTransport;
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.TypeVoucher;
 
 import java.util.ArrayList;
@@ -33,11 +36,15 @@ public class StartAggregationAndComposition {
     }
 
     private static void task5() {
-        TypeVoucher typeVoucher1 = new TypeVoucher("Отдых");
-        TypeVoucher typeVoucher2 = new TypeVoucher("Экскурсия");
-        TypeVoucher typeVoucher3 = new TypeVoucher("Шопинг");
 
+        //тип питания
+        TypeOfFoodOnTour typeOfFoodOnTour1 = new TypeOfFoodOnTour("Все включено ");
+        TypeOfFoodOnTour typeOfFoodOnTour2 = new TypeOfFoodOnTour("Только завтрак ");
+        TypeOfFoodOnTour typeOfFoodOnTour3 = new TypeOfFoodOnTour("Завтрак и обед ");
 
+        TravelVoucher travelVoucher1 = new TravelVoucher("Первый", TypeVoucher.Relaxation, TypeOfTransport.SHIP, typeOfFoodOnTour1);
+        TravelVoucher travelVoucher2 = new TravelVoucher("Второй", TypeVoucher.Excursion, TypeOfTransport.BUS, typeOfFoodOnTour2);
+        TravelVoucher travelVoucher3 = new TravelVoucher("Третий", TypeVoucher.Shopping, TypeOfTransport.CAR, typeOfFoodOnTour3);
     }
 
     public static void task1() {
