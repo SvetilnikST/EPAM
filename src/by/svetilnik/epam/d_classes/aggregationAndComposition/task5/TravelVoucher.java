@@ -1,16 +1,23 @@
 package by.svetilnik.epam.d_classes.aggregationAndComposition.task5;
 
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.enums.TypeFood;
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.enums.TypeTransport;
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.enums.TypeVoucher;
+
+import java.util.ArrayList;
+
 public class TravelVoucher {
     private String name;
-    private TypeVoucher typeVoucher;
-    private TypeOfTransport typeOfTransport;
-    private TypeOfFoodOnTour typeOfFoodOnTour;
+    private ArrayList<TypeVoucher> typeVouchers;
 
-    public TravelVoucher(String name, TypeVoucher typeVoucher, TypeOfTransport typeOfTransport, TypeOfFoodOnTour typeOfFoodOnTour) {
+    private ArrayList<TypeTransport> typeTransports;
+    private TypeFood typeFoodOnTour;
+
+    public TravelVoucher(String name, ArrayList<TypeVoucher> typeVouchers, ArrayList<TypeTransport> typeTransports, TypeFood typeOfFoodOnTour) {
         this.name = name;
-        this.typeVoucher = typeVoucher;
-        this.typeOfTransport = typeOfTransport;
-        this.typeOfFoodOnTour = typeOfFoodOnTour;
+        this.typeVouchers = typeVouchers;
+        this.typeTransports = typeTransports;
+        this.typeFoodOnTour = typeFoodOnTour;
     }
 
     public String getName() {
@@ -21,27 +28,27 @@ public class TravelVoucher {
         this.name = name;
     }
 
-    public TypeVoucher getTypeVoucher() {
-        return typeVoucher;
+    public ArrayList<TypeVoucher> getTypeVouchers() {
+        return typeVouchers;
     }
 
-    public void setTypeVoucher(TypeVoucher typeVoucher) {
-        this.typeVoucher = typeVoucher;
+    public void setTypeVouchers(ArrayList<TypeVoucher> typeVouchers) {
+        this.typeVouchers = typeVouchers;
     }
 
-    public TypeOfTransport getTypeOfTransport() {
-        return typeOfTransport;
+    public ArrayList<TypeTransport> getTypeOfTransports() {
+        return typeTransports;
     }
 
-    public void setTypeOfTransport(TypeOfTransport typeOfTransport) {
-        this.typeOfTransport = typeOfTransport;
+    public void setTypeOfTransports(ArrayList<TypeTransport> typeOfTransports) {
+        this.typeTransports = typeOfTransports;
     }
 
-    public TypeOfFoodOnTour getTypeOfFoodOnTour() {
-        return typeOfFoodOnTour;
+    public TypeFood getTypeFoodOnTour() {
+        return typeFoodOnTour;
     }
 
-    public void setTypeOfFoodOnTour(TypeOfFoodOnTour typeOfFoodOnTour) {
-        this.typeOfFoodOnTour = typeOfFoodOnTour;
+    public void setTypeFoodOnTour(TypeFood typeFoodOnTour) {
+        this.typeFoodOnTour = typeFoodOnTour;
     }
 }
