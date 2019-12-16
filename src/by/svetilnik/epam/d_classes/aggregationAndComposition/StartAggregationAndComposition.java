@@ -13,6 +13,10 @@ import by.svetilnik.epam.d_classes.aggregationAndComposition.task3.Town;
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task4.bankAccount.BankAccount;
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task4.client.Client;
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task4.client.ClientsList;
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.TravelVouncerList;
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.enums.CountDays;
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.enums.TypeFood;
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.enums.TypeTransport;
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.enums.TypeVoucher;
 
 import java.util.ArrayList;
@@ -22,6 +26,8 @@ import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.bankAc
 import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.bankAccount.BankView.printAccount;
 import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.client.ClientLogic.*;
 import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.client.ClientView.printClientInfo;
+import static by.svetilnik.epam.d_classes.aggregationAndComposition.task5.VouncherCreate.*;
+import static by.svetilnik.epam.d_classes.aggregationAndComposition.task5.VouncherView.printVouncherList;
 
 public class StartAggregationAndComposition {
     public static void start() {
@@ -33,9 +39,32 @@ public class StartAggregationAndComposition {
     }
 
     private static void task5() {
-        //запонили список видов питания
 
-        System.out.println(TypeVoucher.Excursion);
+        TravelVouncerList travelVouncerList = new TravelVouncerList(createTravelsList());
+
+        //список всех предложений
+        printVouncherList(travelVouncerList);
+
+        //поиск по типу путевки
+        searchByTypeVouncher(travelVouncerList, TypeVoucher.Excursion);
+        System.out.println();
+        printVouncherList(travelVouncerList);
+
+        //поиск путевок по типу транспорта
+        searchByTypeTransport(travelVouncerList, TypeTransport.BUS);
+        System.out.println();
+        printVouncherList(travelVouncerList);
+
+        //поиск по типу питания
+        searchByFood(travelVouncerList, TypeFood.Breakfast);
+        System.out.println();
+        printVouncherList(travelVouncerList);
+
+        //поиск по кол-ву дней путевки
+        searchByCountDays(travelVouncerList, CountDays.Three);
+        System.out.println();
+        printVouncherList(travelVouncerList);
+
 
     }
 

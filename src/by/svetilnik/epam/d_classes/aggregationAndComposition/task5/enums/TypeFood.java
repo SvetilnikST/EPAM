@@ -13,7 +13,7 @@ public enum TypeFood {
         this.title = title;
     }
 
-    String getTitle() {
+    public String getTitle() {
         return title;
     }
 
