@@ -1,9 +1,9 @@
-package by.svetilnik.epam.d_classes.aggregationAndComposition.task5;
+package by.svetilnik.epam.d_classes.aggregationAndComposition.task5.travelVouncher;
 
-import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.enums.CountDays;
-import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.enums.TypeFood;
-import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.enums.TypeTransport;
-import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.enums.TypeVoucher;
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.CountDays;
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.TypeFood;
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.TypeTransport;
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.TypeVoucher;
 
 import java.util.ArrayList;
 

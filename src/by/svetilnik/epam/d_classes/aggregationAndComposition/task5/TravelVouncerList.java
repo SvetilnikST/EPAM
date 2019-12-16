@@ -1,5 +1,7 @@
 package by.svetilnik.epam.d_classes.aggregationAndComposition.task5;
 
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.travelVouncher.TravelVoucher;
+
 import java.util.ArrayList;
 
 public class TravelVouncerList {

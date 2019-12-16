@@ -1,13 +1,15 @@
-package by.svetilnik.epam.d_classes.aggregationAndComposition.task5;
+package by.svetilnik.epam.d_classes.aggregationAndComposition.task5.travelVouncher;
 
-import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.enums.CountDays;
-import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.enums.TypeFood;
-import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.enums.TypeTransport;
-import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.enums.TypeVoucher;
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.TravelVouncerList;
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.CountDays;
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.TypeFood;
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.TypeTransport;
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.TypeVoucher;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
-public class VouncherCreate {
+public class TravelVouncherLogic {
 
     public static ArrayList<TravelVoucher> createTravelsList() {
         ArrayList<TypeVoucher> typeVouchers1 = new ArrayList<>();
@@ -15,7 +17,7 @@ public class VouncherCreate {
         typeVouchers1.add(TypeVoucher.Shopping);
         ArrayList<TypeTransport> typeTransports1 = new ArrayList<>();
         typeTransports1.add(TypeTransport.BUS);
-        TravelVoucher travelVoucher1 = new TravelVoucher("First", typeVouchers1, typeTransports1, TypeFood.Breakfast, CountDays.Three);
+        TravelVoucher travelVoucher1 = new TravelVoucher("First", typeVouchers1, typeTransports1, TypeFood.Breakfast, CountDays.Ten);
 
         ArrayList<TypeVoucher> typeVouchers2 = new ArrayList<>();
         typeVouchers2.add(TypeVoucher.Relaxation);
@@ -23,7 +25,7 @@ public class VouncherCreate {
         ArrayList<TypeTransport> typeTransports2 = new ArrayList<>();
         typeTransports2.add(TypeTransport.PLANE);
         typeTransports2.add(TypeTransport.CAR);
-        TravelVoucher travelVoucher2 = new TravelVoucher("Second", typeVouchers2, typeTransports2, TypeFood.AllInclusive, CountDays.Ten);
+        TravelVoucher travelVoucher2 = new TravelVoucher("Second", typeVouchers2, typeTransports2, TypeFood.AllInclusive, CountDays.Three);
 
         ArrayList<TravelVoucher> travelVouncherList = new ArrayList<>();
         travelVouncherList.add(travelVoucher1);
@@ -89,4 +91,37 @@ public class VouncherCreate {
         }
         return travelVouncerList;
     }
+
+    //сортировка путевок по кол-ву дней
+    public static void sortVouncher(TravelVouncerList travelVouncerList) {
+
+        ArrayList<TravelVoucher> travelVouchers = new ArrayList<>();
+        for (int i = 0; i < travelVouncerList.getTravelVouchers().size() - 1; i++) {
+            ArrayList<TravelVoucher> vounchers = sortVounchers(travelVouncerList.getTravelVouchers());
+            travelVouchers.addAll(vounchers);
+        }
+    }
+
+    //сортировка счетов по кол-ву дней
+    public static ArrayList<TravelVoucher> sortVounchers(ArrayList<TravelVoucher> vouchers) {
+        if (vouchers.size() > 0) vouchers.sort(new Comparator<TravelVoucher>() {
+            @Override
+            public int compare(final TravelVoucher o1, final TravelVoucher o2) {
+                return Integer.compare(o1.getCountDays().getCount(), o2.getCountDays().getCount());
+            }
+        });
+        return vouchers;
+    }
+
+    public static TravelVouncerList selectionVoucher(TravelVouncerList travelVouncerList, TypeVoucher typeVoucher, TypeTransport typeTransport, TypeFood typeFood, CountDays countDays) {
+
+        searchByTypeVouncher(travelVouncerList, typeVoucher);
+        searchByTypeTransport(travelVouncerList, typeTransport);
+        searchByFood(travelVouncerList, typeFood);
+        searchByCountDays(travelVouncerList, countDays);
+
+        return travelVouncerList;
+    }
+
+
 }

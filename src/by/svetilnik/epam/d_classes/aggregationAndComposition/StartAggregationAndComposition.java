@@ -14,10 +14,10 @@ import by.svetilnik.epam.d_classes.aggregationAndComposition.task4.bankAccount.B
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task4.client.Client;
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task4.client.ClientsList;
 import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.TravelVouncerList;
-import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.enums.CountDays;
-import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.enums.TypeFood;
-import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.enums.TypeTransport;
-import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.enums.TypeVoucher;
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.CountDays;
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.TypeFood;
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.TypeTransport;
+import by.svetilnik.epam.d_classes.aggregationAndComposition.task5.TypeVoucher;
 
 import java.util.ArrayList;
 
@@ -26,46 +26,16 @@ import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.bankAc
 import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.bankAccount.BankView.printAccount;
 import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.client.ClientLogic.*;
 import static by.svetilnik.epam.d_classes.aggregationAndComposition.task4.client.ClientView.printClientInfo;
-import static by.svetilnik.epam.d_classes.aggregationAndComposition.task5.VouncherCreate.*;
-import static by.svetilnik.epam.d_classes.aggregationAndComposition.task5.VouncherView.printVouncherList;
+import static by.svetilnik.epam.d_classes.aggregationAndComposition.task5.travelVouncher.TravelVouncherLogic.*;
+import static by.svetilnik.epam.d_classes.aggregationAndComposition.task5.travelVouncher.TravelVouncherView.printVouncherList;
 
 public class StartAggregationAndComposition {
     public static void start() {
-//        task1();
-//        task2();
-//        task3();
-//        task4();
+        task1();
+        task2();
+        task3();
+        task4();
         task5();
-    }
-
-    private static void task5() {
-
-        TravelVouncerList travelVouncerList = new TravelVouncerList(createTravelsList());
-
-        //список всех предложений
-        printVouncherList(travelVouncerList);
-
-        //поиск по типу путевки
-        searchByTypeVouncher(travelVouncerList, TypeVoucher.Excursion);
-        System.out.println();
-        printVouncherList(travelVouncerList);
-
-        //поиск путевок по типу транспорта
-        searchByTypeTransport(travelVouncerList, TypeTransport.BUS);
-        System.out.println();
-        printVouncherList(travelVouncerList);
-
-        //поиск по типу питания
-        searchByFood(travelVouncerList, TypeFood.Breakfast);
-        System.out.println();
-        printVouncherList(travelVouncerList);
-
-        //поиск по кол-ву дней путевки
-        searchByCountDays(travelVouncerList, CountDays.Three);
-        System.out.println();
-        printVouncherList(travelVouncerList);
-
-
     }
 
     public static void task1() {
@@ -218,6 +188,25 @@ public class StartAggregationAndComposition {
 
         printClientInfo(clientOne);
 
+    }
+
+    private static void task5() {
+
+        TravelVouncerList travelVouncerList = new TravelVouncerList(createTravelsList());
+
+        //список всех предложений
+        printVouncherList(travelVouncerList);
+
+        //сортировка путевок по кол-ву дней по возрастанию
+        sortVouncher(travelVouncerList);
+
+        //список всех предложений
+        printVouncherList(travelVouncerList);
+
+        //выбор путевки
+        selectionVoucher(travelVouncerList, TypeVoucher.Excursion, TypeTransport.BUS, TypeFood.Breakfast, CountDays.Ten);
+        System.out.println("Результат запроса");
+        printVouncherList(travelVouncerList);
     }
 
 }
