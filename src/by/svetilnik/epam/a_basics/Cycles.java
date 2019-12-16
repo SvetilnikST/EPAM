@@ -32,7 +32,7 @@ public class Cycles {
             number = scanner.nextInt();
         }
 
-        System.out.print("Cycles task_1 Result: ");
+        System.out.print("Cycles task1 Result: ");
         for (int i = 1; i < number; i++) {
             sum = sum + i;
             System.out.print(i + " ");
