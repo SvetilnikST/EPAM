@@ -1,21 +1,29 @@
 package by.svetilnik.epam.e_BasicsOfOOP.task1;
 
-import by.svetilnik.epam.e_BasicsOfOOP.task1.file.File;
-
 public class TextFile extends File {
 
-    private String typeFile;
+    private static final String typeFile = ".txt";
+    private String body;
 
-    public TextFile(String nameFile, Directory directory, String body, String typeFile) {
-        super(nameFile, directory, body);
-        this.typeFile = typeFile;
+    public TextFile(String nameFile, Directory directory, String body) {
+        super(nameFile + typeFile, directory);
+        this.body = body;
     }
 
-    public String getTypeFile() {
+    public static String getTypeFile() {
         return typeFile;
     }
 
-    public void setTypeFile(String typeFile) {
-        this.typeFile = typeFile;
+    public String getBody() {
+        return body;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
+    }
+
+    @Override
+    public void setNameFile(String nameFile) {
+        super.setNameFile(nameFile + typeFile);
     }
 }
