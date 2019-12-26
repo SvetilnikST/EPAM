@@ -1,15 +1,13 @@
 package by.svetilnik.epam.e_BasicsOfOOP;
 
-import by.svetilnik.epam.e_BasicsOfOOP.task1.Directory;
-import by.svetilnik.epam.e_BasicsOfOOP.task1.TextFile;
-import by.svetilnik.epam.e_BasicsOfOOP.task2.Payment;
 import by.svetilnik.epam.e_BasicsOfOOP.task3.Calendar;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
-import static by.svetilnik.epam.e_BasicsOfOOP.task1.FileLogic.*;
-import static by.svetilnik.epam.e_BasicsOfOOP.task3.Calendar.setDays;
+import static by.svetilnik.epam.e_BasicsOfOOP.task3.CalendarLogic.makeDaysAsHoliday;
+import static by.svetilnik.epam.e_BasicsOfOOP.task3.CalendarLogic.setDays;
+import static by.svetilnik.epam.e_BasicsOfOOP.task3.CalendarView.printHoliday;
+import static by.svetilnik.epam.e_BasicsOfOOP.task3.FillDataCalendar.fillHolidays;
 
 public class StartBasics {
 //    public static void task1() {
@@ -40,13 +38,10 @@ public class StartBasics {
 //        }
 //    }
 
-    public static void task3() throws IOException {
-
-
+    public static void task3() {
         Calendar calendar = new Calendar(2020);
-       setDays(calendar);
-
-        int a=0;
-
+        setDays(calendar);
+        makeDaysAsHoliday(calendar, fillHolidays());
+        printHoliday(calendar);
     }
 }

@@ -2,8 +2,6 @@ package by.svetilnik.epam.e_BasicsOfOOP.task3;
 
 import java.util.ArrayList;
 
-import static by.svetilnik.epam.e_BasicsOfOOP.task3.FillMonth.*;
-
 public class Calendar {
     private int year;
     private ArrayList<Days> days;
@@ -15,11 +13,13 @@ public class Calendar {
         private int day;
         private Month month;
         private boolean isHoliday;
+        private boolean isWeekend;
 
-        public Days(int day, Month month, boolean isHoliday) {
+        public Days(int day, Month month, boolean isHoliday, boolean isWeekend) {
             this.day = day;
             this.month = month;
             this.isHoliday = isHoliday;
+            this.isWeekend = isWeekend;
         }
 
         public int getDay() {
@@ -45,6 +45,14 @@ public class Calendar {
         public void setHoliday(boolean holiday) {
             isHoliday = holiday;
         }
+
+        public boolean isWeekend() {
+            return isWeekend;
+        }
+
+        public void setWeekend(boolean weekend) {
+            isWeekend = weekend;
+        }
     }
 
     public Calendar(int year) {
@@ -67,30 +75,4 @@ public class Calendar {
     public void setDays(ArrayList<Days> days) {
         this.days = days;
     }
-
-    public static void setDays(Calendar calendar) {
-        ArrayList<Days> days = new ArrayList<>();
-
-        for (int i = 1; i <13; i++) {
-            days.addAll(fill(calendar, i));
-        }
-
-        calendar.setDays(days);
-        int a = 0;
-    }
-
-
-//    public ArrayList<Days> fillHolidays() {
-//        ArrayList<Days> days = new ArrayList<>();
-//        days.add(new Days(1, find(1), true));
-//        days.add(new Days(2, find(1), true));
-//        days.add(new Days(7, find(1), true));
-//        days.add(new Days(8, find(3), true));
-//
-//        return days;
-//    }
-//
-//
-
-
 }

@@ -32,8 +32,6 @@ public enum Month {
 
     @Override
     public String toString() {
-        return "NameMouth{" +
-                "name='" + name + '\'' +
-                '}';
+        return "{" + name + '}';
     }
 }
