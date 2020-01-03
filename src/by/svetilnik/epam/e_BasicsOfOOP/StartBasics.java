@@ -1,8 +1,12 @@
 package by.svetilnik.epam.e_BasicsOfOOP;
 
 import by.svetilnik.epam.e_BasicsOfOOP.task3.Calendar;
+import by.svetilnik.epam.e_BasicsOfOOP.task4.Dragon;
+import by.svetilnik.epam.e_BasicsOfOOP.task4.Treasure;
+import by.svetilnik.epam.e_BasicsOfOOP.task4.TreasureView;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import static by.svetilnik.epam.e_BasicsOfOOP.task3.CalendarLogic.makeDaysAsHoliday;
 import static by.svetilnik.epam.e_BasicsOfOOP.task3.CalendarLogic.setDays;
@@ -38,10 +42,18 @@ public class StartBasics {
 //        }
 //    }
 
-    public static void task3() {
-        Calendar calendar = new Calendar(2020);
-        setDays(calendar);
-        makeDaysAsHoliday(calendar, fillHolidays());
-        printHoliday(calendar);
+//    public static void task3() {
+//        Calendar calendar = new Calendar(2020);
+//        setDays(calendar);
+//        makeDaysAsHoliday(calendar, fillHolidays());
+//        printHoliday(calendar);
+//    }
+
+    public static void task4() {
+
+        ArrayList<Treasure> treasures = new ArrayList<>();
+        Treasure treasure = new Treasure(new TreasureView("briliant"), 20);
+
+        Dragon dragon = new Dragon("Drqagon1", treasures);
     }
 }
