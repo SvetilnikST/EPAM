@@ -1,20 +1,22 @@
 package by.svetilnik.epam.e_BasicsOfOOP.task4;
 
 public class Treasure {
-    private TreasureView treasureView;
+    private int number;
+    private String name;
     private int cost;
 
-    public Treasure(TreasureView treasureView, int cost) {
-        this.treasureView = treasureView;
+    public Treasure(int number, String name, int cost) {
+        this.number = number;
+        this.name = name;
         this.cost = cost;
     }
 
-    public TreasureView getTreasureView() {
-        return treasureView;
+    public String getName() {
+        return name;
     }
 
-    public void setTreasureView(TreasureView treasureView) {
-        this.treasureView = treasureView;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getCost() {
@@ -23,5 +25,13 @@ public class Treasure {
 
     public void setCost(int cost) {
         this.cost = cost;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
     }
 }

@@ -2,7 +2,7 @@ package by.svetilnik.epam;
 
 import java.io.IOException;
 
-import static by.svetilnik.epam.e_BasicsOfOOP.StartBasics.task3;
+import static by.svetilnik.epam.e_BasicsOfOOP.StartBasics.task4;
 
 public class Main {
 
@@ -13,6 +13,6 @@ public class Main {
 //        StartSimpleClasses.startSimpleClasses();
 //        StartAggregationAndComposition.start();
 //        task2();
-        task3();
+        task4();
     }
 }

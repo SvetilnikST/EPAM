@@ -1,17 +1,12 @@
 package by.svetilnik.epam.e_BasicsOfOOP;
 
-import by.svetilnik.epam.e_BasicsOfOOP.task3.Calendar;
+import by.svetilnik.epam.e_BasicsOfOOP.task4.cave.Cave;
 import by.svetilnik.epam.e_BasicsOfOOP.task4.Dragon;
-import by.svetilnik.epam.e_BasicsOfOOP.task4.Treasure;
-import by.svetilnik.epam.e_BasicsOfOOP.task4.TreasureView;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
-import static by.svetilnik.epam.e_BasicsOfOOP.task3.CalendarLogic.makeDaysAsHoliday;
-import static by.svetilnik.epam.e_BasicsOfOOP.task3.CalendarLogic.setDays;
-import static by.svetilnik.epam.e_BasicsOfOOP.task3.CalendarView.printHoliday;
-import static by.svetilnik.epam.e_BasicsOfOOP.task3.FillDataCalendar.fillHolidays;
+import static by.svetilnik.epam.e_BasicsOfOOP.task4.cave.CaveLogic.findMaxCost;
+import static by.svetilnik.epam.e_BasicsOfOOP.task4.cave.CaveLogic.setTreasure;
+import static by.svetilnik.epam.e_BasicsOfOOP.task4.cave.CaveView.printCave;
+import static by.svetilnik.epam.e_BasicsOfOOP.task4.cave.CaveView.printTreasure;
 
 public class StartBasics {
 //    public static void task1() {
@@ -51,9 +46,12 @@ public class StartBasics {
 
     public static void task4() {
 
-        ArrayList<Treasure> treasures = new ArrayList<>();
-        Treasure treasure = new Treasure(new TreasureView("briliant"), 20);
+        Cave cave = new Cave("one", new Dragon("oneDragon"));
+        setTreasure(cave);
 
-        Dragon dragon = new Dragon("Drqagon1", treasures);
+//        printCave(cave);
+
+        printTreasure(cave, findMaxCost(cave));
+        int a = 0;
     }
 }
